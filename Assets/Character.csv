@@ -1,0 +1,4 @@
+name,Level,Explain,Health,Attack,Magic,Defense,Recover,Action,GHealth,GAttack,GMagic,GDefense,GRecover,GAction
+탱커,1,탱커다.,200,25,5,40,30,8,40,5,1,10,10,2
+근접딜러,1,근접딜러이다.,150,40,10,20,15,10,20,10,1,5,5,3
+힐러,1,힐러다.,100,15,40,15,20,5,15,5,25,5,10,2

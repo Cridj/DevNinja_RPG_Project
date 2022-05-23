@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3313557476799281944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3313557476799281945}
+  - component: {fileID: 3313557476799281946}
+  - component: {fileID: 3313557476799281947}
+  m_Layer: 0
+  m_Name: DataController
+  m_TagString: Info
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3313557476799281945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3313557476799281944}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3313557476799281946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3313557476799281944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7619dc922c013c84aa5560cff36083ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlatformScript: {fileID: 0}
+  m_PlayerData:
+    nCoin: 0
+    nCurStage: 0
+    nStageProcess: 0
+    bStageClear: 
+    bCharUnlock: 
+    bMonsUnlock: 
+    bItemUnlock: 
+  m_OptionData:
+    fMsValue: 0
+    fMsPrev: 0
+    fBGMsValue: 0
+    fBGMsPrev: 0
+    fGEsValue: 0
+    fGEsPrev: 0
+    fUIEsValue: 0
+    fUIEsPrev: 0
+    bMsMute: 0
+    bBGMsMute: 0
+    bGEsMute: 0
+    bUIEsMute: 0
+  MapDataBase_TA: {fileID: 4900000, guid: 90a4400949687214185193ab674dc7e1, type: 3}
+  m_MapData: []
+  MyMapList: []
+  CharacterDataBase_TA: {fileID: 4900000, guid: 0643dac087b65d84da0df340e32fc64f,
+    type: 3}
+  m_CharacterData: []
+  MyCharacterList: []
+  CurCharacter: []
+  m_CharacterSkillData: []
+  MyCharacterSkillList: []
+  MonsterDataBase_TA: {fileID: 4900000, guid: 3f9974bc5a80cc14486c094237b6554b, type: 3}
+  m_MonsterData: []
+  MyMonsterList: []
+  m_MonsterSkillData: []
+  MyMonsterSkillList: []
+  ItemDataBase_TA: {fileID: 4900000, guid: b30b82a532fdb194fb846fdac1f5d001, type: 3}
+  m_ItemData: []
+  MyItemList: []
+  Maps_Spr:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Char_Spr:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Mons_Spr:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Item_Spr:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  CharSkill_Spr:
+  - CharSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - CharSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - CharSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  MonsSkill_Spr:
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+--- !u!114 &3313557476799281947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3313557476799281944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04c7cfc6d64c2844aa39c9a181e731d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MSM: {fileID: 24100000, guid: 3a1a0960c63516a4a8022d7950d028c7, type: 2}
+  fMSvalue: 0
+  fMSprev: 0
+  fBGMSvalue: 0
+  fBGMSprev: 0
+  fGESvalue: 0
+  fGESprev: 0
+  fUIESvalue: 0
+  fUIESprev: 0
+  bMSmute: 0
+  bBGMSmute: 0
+  bGESmute: 0
+  bUIESmute: 0

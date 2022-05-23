@@ -1,0 +1,101 @@
+﻿using System;
+using UnityEngine;
+using UnityEngine.Events;
+
+namespace Assets.HeroEditor.Common.CharacterScripts
+{
+	
+	/// <summary>
+	/// Animation events. If you want to get animation callback, use it.
+	/// For example, if you want to know exact hit moment for attack animation, use custom event 'Hit' that is fired in most attack animations.
+	/// </summary>
+	public class AnimationEvents : MonoBehaviour
+    {
+		public Hero hero;
+		public AudioSource sfx_audio;
+
+        private void Awake()
+        {
+			sfx_audio = GameObject.Find("Sound").GetComponent<LogoSound>().SFX_as;
+		}
+
+        /// <summary>
+        /// Subscribe it to get animation callback.
+        /// </summary>
+        public event Action<string> OnCustomEvent = s =>
+        {
+
+        };
+
+
+
+		public void AnimCustomEvent(string value)
+        {
+			switch (value)
+			{
+				case "TranceHit":
+					hero.TranceAttackCount++;
+					break;
+			}
+		}
+
+		public void PlaySound(AudioClip clip)
+        {
+			sfx_audio.PlayOneShot(clip);
+
+		}
+
+
+		/// <summary>
+		/// Set bool param, usage example: Idle=false
+		/// </summary>
+		public void SetBool(string value)
+        {
+			
+            var parts = value.Split('=');
+
+            GetComponent<Animator>().SetBool(parts[0], bool.Parse(parts[1]));
+        }
+
+		/// <summary>
+		/// Set integer param, usage example: WeaponType=2
+		/// </summary>
+		public void SetInteger(string value)
+        {
+            var parts = value.Split('=');
+
+            GetComponent<Animator>().SetInteger(parts[0], int.Parse(parts[1]));
+        }
+
+	    /// <summary>
+	    /// Called from animation.
+	    /// </summary>
+	    public void CustomEvent(string eventName)
+	    {
+		    OnCustomEvent(eventName);
+	    }
+
+	    /// <summary>
+	    /// Set characters' expression. Called from animation.
+	    /// </summary>
+		public void SetExpression(string expression)
+	    {
+		    transform.parent.GetComponent<Character>().SetExpression(expression);
+		}
+
+	    /// <summary>
+	    /// Reset animation.
+	    /// </summary>
+	    public void ResetAnimation()
+	    {
+			transform.parent.GetComponent<Character>().UpdateAnimation();
+	    }
+
+		public void TranceAttack()
+        {
+
+        }
+
+
+	}
+}

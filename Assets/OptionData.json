@@ -1,0 +1,14 @@
+{
+    "fMsValue": 0.0,
+    "fMsPrev": 0.0,
+    "fBGMsValue": 0.0,
+    "fBGMsPrev": 0.0,
+    "fGEsValue": 0.0,
+    "fGEsPrev": 0.0,
+    "fUIEsValue": 0.0,
+    "fUIEsPrev": 0.0,
+    "bMsMute": false,
+    "bBGMsMute": false,
+    "bGEsMute": false,
+    "bUIEsMute": false
+}

@@ -1,0 +1,85 @@
+0	대거	딜러	100		Common		5			1	FALSE
+1	대형 나이프	딜러	100		Common		5			1	FALSE
+2	페링대거	딜러	100		Common		5			1	FALSE
+3	숏소드	딜러	100		Common		5			1	FALSE
+4	롱소드	딜러	100		Common		5			1	FALSE
+5	브로드소드	딜러	100		Common		5			1	FALSE
+6	자비의 단검	딜러	200		Rare		10			2	FALSE
+7	핏빛 단도	딜러	200		Rare		10			2	FALSE
+8	협차	딜러	200		Rare		10			2	FALSE
+9	어쌔신의 단도	딜러	200		Rare		10			2	FALSE
+10	군주군의 직검	딜러	200		Rare		10			2	FALSE
+11	친퀘디아	딜러	500		Epic		20			4	FALSE
+12	레두비아	딜러	500		Epic		20			4	FALSE
+13	비문자검	딜러	500		Epic		20			4	FALSE
+14	검은칼날	딜러	1000		Legend		35			8	FALSE
+15	핸드엑스	탱커	100		Common		5			1	FALSE
+16	두갈래 손도끼	탱커	100		Common		5			1	FALSE
+17	배틀엑스	탱커	100		Common		5			1	FALSE
+18	바스타드소드	탱커	100		Common		5			1	FALSE
+19	그레이트소드	탱커	100		Common		5			1	FALSE
+20	워해머	탱커	100		Common		5			1	FALSE
+21	하이랜드엑스	탱커	200		Rare		10			2	FALSE
+22	산제물의 도끼	탱커	200		Rare		10			2	FALSE
+23	츠바이핸더	탱커	200		Rare		10			2	FALSE
+24	클레이모어	탱커	200		Rare		10			2	FALSE
+25	트롤해머	탱커	200		Rare		10			2	FALSE
+26	폭풍매의 도끼	탱커	500		Epic		20			4	FALSE
+27	별 부수는 대검	탱커	500		Epic		20			4	FALSE
+28	모닝스타	탱커	500		Epic		20			4	FALSE
+29	엘레오노라	탱커	1000		Legend		35			8	FALSE
+30	모험가의 지팡이	힐러	100		Common			3		1	FALSE
+31	별점 지팡이	힐러	100		Common			3		1	FALSE
+32	휘석 지팡이	힐러	100		Common			3		1	FALSE
+33	운석 지팡이	힐러	100		Common			3		1	FALSE
+34	마술사 지팡이	힐러	100		Common			3		1	FALSE
+35	이단의 지팡이	힐러	100		Common			3		1	FALSE
+36	궁정 마술사의 지팡이	힐러	200		Rare			6		2	FALSE
+37	봉인의 지팡이	힐러	200		Rare			6		2	FALSE
+38	결정 지팡이	힐러	200		Rare			6		2	FALSE
+39	상실의 지팡이	힐러	200		Rare			6		2	FALSE
+40	백금 지팡이	힐러	200		Rare			6		2	FALSE
+41	대주교의 큰지팡이	힐러	500		Epic			12		4	FALSE
+42	요목의 가지	힐러	500		Epic			12		4	FALSE
+43	죄인의 지팡이	힐러	500		Epic			12		4	FALSE
+44	죽음의 왕자에 지팡이	힐러	1000		Legend			20		8	FALSE
+45	철제 원형 방패	탱커	100		Common				2		FALSE
+46	나무 방패	탱커	100		Common				2		FALSE
+47	놋쇠 방패	탱커	100		Common				2		FALSE
+48	가죽 방패	탱커	100		Common				2		FALSE
+49	카이트 쉴드	탱커	200		Rare				4		FALSE
+50	플래티넘 쉴드	탱커	200		Rare				8		FALSE
+51	금장의 방패	탱커	200		Rare				8		FALSE
+52	뿔회오리 방패	탱커	500		Epic				8		FALSE
+53	청금의 카이트 쉴드	탱커	500		Epic				16		FALSE
+54	용수의 방패	탱커	1000		Legend				25		FALSE
+55	천갑옷	딜러	100		Common	5					FALSE
+56	레더아머	딜러	100		Common	5					FALSE
+57	모험가의 옷	딜러	100		Common	5					FALSE
+58	사냥복	딜러	100		Common	5					FALSE
+59	추적자의 옷	딜러	200		Rare	10					FALSE
+60	겐지의 갑옷	딜러	200		Rare	10					FALSE
+61	암살자의 옷	딜러	200		Rare	10					FALSE
+62	피신혁갑	딜러	500		Epic	20					FALSE
+63	쌍생아의 옷	딜러	500		Epic	20					FALSE
+64	맹금의 검은 깃털	딜러	1000		Legend	35					FALSE
+65	뼈 갑옷	탱커	100		Common	5					FALSE
+66	판층갑옷	탱커	100		Common	5					FALSE
+67	사슬갑옷	탱커	100		Common	5					FALSE
+68	판금갑옷	탱커	100		Common	5					FALSE
+69	플레이트 메일	탱커	200		Rare	10					FALSE
+70	하드 플레이트	탱커	200		Rare	10					FALSE
+71	기사의 갑옷	탱커	200		Rare	10					FALSE
+72	용기사의 갑옷	탱커	500		Epic	20					FALSE
+73	용맹의 갑옷	탱커	500		Epic	20					FALSE
+74	검은 수호자	탱커	1000		Legend	35					FALSE
+75	천로브	힐러	100		Common	5					FALSE
+76	모험자의 로브	힐러	100		Common	5					FALSE
+77	수도생의 로브	힐러	100		Common	5					FALSE
+78	마법사의 로브	힐러	100		Common	5					FALSE
+79	성직자의 로브	힐러	200		Rare	10					FALSE
+80	점성술사의 로브	힐러	200		Rare	10					FALSE
+81	주술사의 옷	힐러	200		Rare	10					FALSE
+82	성녀의 옷	힐러	500		Epic	20					FALSE
+83	대주교의 옷	힐러	500		Epic	20					FALSE
+84	신의 가호	힐러	1000		Legend	35					FALSE
