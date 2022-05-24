@@ -461,7 +461,7 @@ public class Unit : Stats
 
         while (shoutingDuration > 0)
         {
-            yield return new WaitForEndOfFrame();
+            yield return null ;
         }
 
 
@@ -492,7 +492,7 @@ public class Unit : Stats
 
         while (roarDuration > 0)
         {
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
 
         if (CheckHero())
@@ -529,7 +529,7 @@ public class Unit : Stats
 
         while (howlingBuffDebuffDuration > 0)
         {
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
 
         if (CheckHero())
@@ -564,7 +564,7 @@ public class Unit : Stats
 
         while (howlingBuffDebuffDuration > 0)
         {
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
 
         if (CheckHero())
@@ -591,7 +591,7 @@ public class Unit : Stats
 
         while(darkArmorDuration > 0)
         {
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
 
 
@@ -974,7 +974,7 @@ public class Unit : Stats
             print("되고있는거냐");
             if (mainCamera.orthographicSize <= 3.001f && mainCamera.transform.position.x < targetPos.x * 0.99f)
                 break;
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
 
         Animator animator = GetComponent<Hero>().animator;
@@ -993,7 +993,7 @@ public class Unit : Stats
             print("되고있는거냐2");
             if (mainCamera.orthographicSize >= 4.999f && mainCamera.transform.position.x > -0.0001f)
                 break;
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
         UI_Camera.gameObject.SetActive(true);
         mainCamera.GetComponent<CamShake>().enabled = true;
@@ -1038,7 +1038,7 @@ public class Unit : Stats
             print("되고있는거냐");
             if (mainCamera.orthographicSize <= 3.001f && mainCamera.transform.position.x < targetPos.x * 0.99f)
                 break;
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
 
         Animator animator = GetComponent<Hero>().animator;

@@ -234,7 +234,7 @@ public class BattleScene : HSingleton<BattleScene>
                     break;
                 }
                 pointerCurSec += Time.deltaTime;
-                yield return new WaitForEndOfFrame();
+                yield return null;
             }
         }
     }

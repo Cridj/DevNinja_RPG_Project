@@ -112,24 +112,36 @@ public class Hero : HeroSkill
     private void Awake()
     {
         //플레이어 경험치 요구량 초기화
-        switch (job)
-        {
-            case PlayerJob.Dealer :
-                Experience = GameInstance.Instance.gamdData.dealerData.Exp;
-                heroLevel = GameInstance.Instance.gamdData.dealerData.Level;
-                break;
+        //switch (job)
+        //{
+        //    case PlayerJob.Dealer :
 
-            case PlayerJob.Healer:
-                Experience = GameInstance.Instance.gamdData.healerData.Exp;
-                heroLevel = GameInstance.Instance.gamdData.healerData.Level;
-                break;
+        //        //Experience = GameInstance.Instance.gamdData.dealerData.Exp;
+        //        //heroLevel = GameInstance.Instance.gamdData.dealerData.Level;
 
-            case PlayerJob.Tanker:
-                Experience = GameInstance.Instance.gamdData.tankerData.Exp;
-                heroLevel = GameInstance.Instance.gamdData.tankerData.Level;
-                break;
 
-        }
+        //        Experience = DataManager.Instance.m_PlayerData.fExp[0];
+        //        heroLevel = DataManager.Instance.m_PlayerData.nLevel[0];
+
+        //        break;
+
+        //    case PlayerJob.Healer:
+        //        //Experience = GameInstance.Instance.gamdData.healerData.Exp;
+        //        //heroLevel = GameInstance.Instance.gamdData.healerData.Level;
+
+        //        Experience = DataManager.Instance.m_PlayerData.fExp[2];
+        //        heroLevel = DataManager.Instance.m_PlayerData.nLevel[2];
+        //        break;
+
+        //    case PlayerJob.Tanker:
+        //        //Experience = GameInstance.Instance.gamdData.tankerData.Exp;
+        //        //heroLevel = GameInstance.Instance.gamdData.tankerData.Level;
+
+        //        Experience = DataManager.Instance.m_PlayerData.fExp[1];
+        //        heroLevel = DataManager.Instance.m_PlayerData.nLevel[1];
+        //        break;
+
+        //}
             
         
         sfx_Audio = GameObject.Find("Sound").GetComponent<LogoSound>().SFX_as;
@@ -333,7 +345,7 @@ public class Hero : HeroSkill
         colors.Clear();
         while (true)
         {
-            yield return new WaitForEndOfFrame();
+            yield return null;
             if (transform.position == targetPosV3)
             { break; }
         }
@@ -380,7 +392,7 @@ public class Hero : HeroSkill
 
         while (true)
         {
-            yield return new WaitForEndOfFrame();
+            yield return null;
             if (transform.position == beginPosV3)
             { break; }
         }
@@ -562,15 +574,25 @@ public class Hero : HeroSkill
         {
             case PlayerJob.Dealer:
                 //스탯 적용
-                unit.Hp = GameInstance.Instance.gamdData.dealerData.HP;
-                unit.maxHP = GameInstance.Instance.gamdData.dealerData.HP;
-                unit.PhysicalAttack = GameInstance.Instance.gamdData.dealerData.Attack;
-                unit.Defense = GameInstance.Instance.gamdData.dealerData.Defense;
-                unit.MagicalAttack = GameInstance.Instance.gamdData.dealerData.MagicalAttack;
-                unit.Speed = GameInstance.Instance.gamdData.dealerData.Speed;
+                //unit.Hp = GameInstance.Instance.gamdData.dealerData.HP;
+                //unit.maxHP = GameInstance.Instance.gamdData.dealerData.HP;
+                //unit.PhysicalAttack = GameInstance.Instance.gamdData.dealerData.Attack;
+                //unit.Defense = GameInstance.Instance.gamdData.dealerData.Defense;
+                //unit.MagicalAttack = GameInstance.Instance.gamdData.dealerData.MagicalAttack;
+                //unit.Speed = GameInstance.Instance.gamdData.dealerData.Speed;
+
+                unit.Hp = DataManager.Instance.m_PlayerData.fHealth[0];
+                unit.maxHP = DataManager.Instance.m_PlayerData.fHealth[0];
+                unit.PhysicalAttack = DataManager.Instance.m_PlayerData.fAttack[0];
+                unit.Defense = DataManager.Instance.m_PlayerData.fDefense[0];
+                unit.MagicalAttack = DataManager.Instance.m_PlayerData.fMagic[0];
+                unit.Speed = DataManager.Instance.m_PlayerData.fSpeed[0];
 
                 //경험치 적용
-                Experience = GameInstance.Instance.gamdData.dealerData.Exp;                
+                Experience = DataManager.Instance.m_PlayerData.fExp[0];
+
+                //레벨 적용
+                heroLevel = DataManager.Instance.m_PlayerData.nLevel[0];
 
                 //스킬 적용
                 skill_set1 = GameInstance.Instance.gamdData.dealerData.skillSets[0];
@@ -593,16 +615,18 @@ public class Hero : HeroSkill
                 break;
 
             case PlayerJob.Tanker:
-                //스탯 적용
-                unit.Hp = GameInstance.Instance.gamdData.tankerData.HP;
-                unit.maxHP = GameInstance.Instance.gamdData.tankerData.HP;
-                unit.PhysicalAttack = GameInstance.Instance.gamdData.tankerData.Attack;
-                unit.Defense = GameInstance.Instance.gamdData.tankerData.Defense;
-                unit.MagicalAttack = GameInstance.Instance.gamdData.tankerData.MagicalAttack;
-                unit.Speed = GameInstance.Instance.gamdData.tankerData.Speed;
+                unit.Hp = DataManager.Instance.m_PlayerData.fHealth[1];
+                unit.maxHP = DataManager.Instance.m_PlayerData.fHealth[1];
+                unit.PhysicalAttack = DataManager.Instance.m_PlayerData.fAttack[1];
+                unit.Defense = DataManager.Instance.m_PlayerData.fDefense[1];
+                unit.MagicalAttack = DataManager.Instance.m_PlayerData.fMagic[1];
+                unit.Speed = DataManager.Instance.m_PlayerData.fSpeed[1];
 
                 //경험치 적용
-                Experience = GameInstance.Instance.gamdData.tankerData.Exp;
+                Experience = DataManager.Instance.m_PlayerData.fExp[1];
+
+                //레벨 적용
+                heroLevel = DataManager.Instance.m_PlayerData.nLevel[1];
 
                 //스킬 적용
                 skill_set1 = GameInstance.Instance.gamdData.tankerData.skillSets[0];
@@ -616,16 +640,18 @@ public class Hero : HeroSkill
                 break;
 
             case PlayerJob.Healer:
-                //스탯 적용
-                unit.Hp = GameInstance.Instance.gamdData.healerData.HP;
-                unit.maxHP = GameInstance.Instance.gamdData.healerData.HP;
-                unit.PhysicalAttack = GameInstance.Instance.gamdData.healerData.Attack;
-                unit.Defense = GameInstance.Instance.gamdData.healerData.Defense;
-                unit.MagicalAttack = GameInstance.Instance.gamdData.healerData.MagicalAttack;
-                unit.Speed = GameInstance.Instance.gamdData.healerData.Speed;
+                unit.Hp = DataManager.Instance.m_PlayerData.fHealth[2];
+                unit.maxHP = DataManager.Instance.m_PlayerData.fHealth[2];
+                unit.PhysicalAttack = DataManager.Instance.m_PlayerData.fAttack[2];
+                unit.Defense = DataManager.Instance.m_PlayerData.fDefense[2];
+                unit.MagicalAttack = DataManager.Instance.m_PlayerData.fMagic[2];
+                unit.Speed = DataManager.Instance.m_PlayerData.fSpeed[2];
 
                 //경험치 적용
-                Experience = GameInstance.Instance.gamdData.healerData.Exp;
+                Experience = DataManager.Instance.m_PlayerData.fExp[2];
+
+                //레벨 적용
+                heroLevel = DataManager.Instance.m_PlayerData.nLevel[2];
 
                 //스킬 적용
                 skill_set1 = GameInstance.Instance.gamdData.healerData.skillSets[0];

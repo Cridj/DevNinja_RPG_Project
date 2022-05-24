@@ -253,7 +253,7 @@ public class EnemySkill : MonoBehaviour
 
         while (unit.defenseBuffDuration > 0)
         {
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
         DefenseBuffParticle.SetActive(false);
 

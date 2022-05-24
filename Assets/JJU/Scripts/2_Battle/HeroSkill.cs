@@ -105,7 +105,7 @@ public class HeroSkill : MonoBehaviour
 
         while (TranceAttackCount < 1)
         {
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }        
         damagedUnit.DecreaseHP(unit.currentPhysicalAttack * 0.5f, unit);
         sfx_Audio.PlayOneShot(GameInstance.Instance.soundPrefab["Hit"]);
@@ -117,7 +117,7 @@ public class HeroSkill : MonoBehaviour
         Camera.main.GetComponent<CamShake>().ShakeTime = 0.15f;
         while (TranceAttackCount < 2)
         {
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
         damagedUnit.DecreaseHP(unit.currentPhysicalAttack * 0.5f, unit);
         sfx_Audio.PlayOneShot(GameInstance.Instance.soundPrefab["Hit"]);
@@ -129,7 +129,7 @@ public class HeroSkill : MonoBehaviour
         Camera.main.GetComponent<CamShake>().ShakeTime = 0.15f;
         while (TranceAttackCount < 3)
         {
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
         damagedUnit.DecreaseHP(unit.currentPhysicalAttack * 0.5f, unit);
         sfx_Audio.PlayOneShot(GameInstance.Instance.soundPrefab["Hit"]);
@@ -141,7 +141,7 @@ public class HeroSkill : MonoBehaviour
         Camera.main.GetComponent<CamShake>().ShakeTime = 0.15f;
         while (TranceAttackCount < 4)
         {
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
         damagedUnit.DecreaseHP(unit.currentPhysicalAttack * 0.5f, unit);
         sfx_Audio.PlayOneShot(GameInstance.Instance.soundPrefab["Hit"]);
@@ -153,7 +153,7 @@ public class HeroSkill : MonoBehaviour
         Camera.main.GetComponent<CamShake>().ShakeTime = 0.15f;
         while (TranceAttackCount < 5)
         {
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
         foreach (Enemy enemy in BattleManager.I.enemyCollection.collection)
         {

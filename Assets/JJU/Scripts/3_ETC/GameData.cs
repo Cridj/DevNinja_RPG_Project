@@ -19,7 +19,6 @@ public class HeroData
     public int Speed;
     public float Exp;
     public int Level;    
-
     public SKILLSET[] skillSets;
     public List<HeroItem> heroItems = new List<HeroItem>();
 
