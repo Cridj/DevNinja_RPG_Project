@@ -10,26 +10,60 @@ using System.Linq;
 public class PlayerData
 {
     [Header("플레이어 데이터")]
+
+    //[Header("돈")]
     public int nCoin;
 
+    //[Header("튜토리얼 클리어 여부")]
     public bool bTutorialClear;
 
+    //[Header("진행 노드 *ex)1-'4'")]
     public int nCurStage;
+
+    //[Header("진행 스테이지 *ex)'1'-4 ")]
     public int nStageProcess;
+
+    //[Header("실제 노드 진행 * 26번째 노드")]
     public int nLevelProcess;
+
+    //[Header("노드 클리어 했는지.")]
     public bool[] bNodeClear = new bool[33];
 
+    [Space(1)]
+
+    //[Header("캐릭터들 인덱스 넘버")]
     public string[] nCharIndex = new string[15];
+
+    //[Header("캐릭터들 랭크")]
     public int[] nRank = new int[15];
+
+    //[Header("캐릭터들 레벨")]
     public int[] nLevel = new int[15];
+
+    //[Header("캐릭터들 경험치")]
     public float[] fExp = new float[15];
+
+    //[Header("캐릭터들 체력치")]
     public float[] fHealth = new float[15];
+
+    //[Header("캐릭터들 공격치")]
     public float[] fAttack = new float[15];
+
+    //[Header("캐릭터들 주문치")]
     public float[] fMagic = new float[15];
+
+    //[Header("캐릭터들 방어치")]
     public float[] fDefense = new float[15];
+
+    //[Header("캐릭터들 행동치")]
     public float[] fSpeed = new float[15];
 
+    [Space(1)]
+
+    //[Header("아이템들 인덱스")]
     public string[] nItemIndex = new string[100];
+
+    //[Header("아이템들 이름 (체크용)")]
     public string[] sItemName = new string[100];
 }
 
@@ -151,27 +185,31 @@ public class DataManager : MonoBehaviour
     [SerializeField]
     PlatformScript m_PlatformScript;
 
+    //[Header("플레이어 정보")]
     public PlayerData m_PlayerData;
+
+    //[Header("옵션 정보")]
     public OptionData m_OptionData;
 
-    public TextAsset MapDataBase_TA;
-    public List<MapData> m_MapData, MyMapList;
+    //[Header("맵 정보")]
+    public List<MapData> MyMapList;
 
-    public TextAsset CharacterDataBase_TA;
-    public List<CharacterData> m_CharacterData, MyCharacterList;
+    //[Header("캐릭터 기본 정보")]
+    public List<CharacterData> MyCharacterList;
 
-    //public TextAsset CharacterSkillDataBase_TA;
-    public List<CharacterSkillData> m_CharacterSkillData, MyCharacterSkillList;
+    //[Header("캐릭터 스킬 기본 정보")]
+    public List<CharacterSkillData> MyCharacterSkillList;
 
-    public TextAsset MonsterDataBase_TA;
-    public List<MonsterData> m_MonsterData, MyMonsterList;
+    //[Header("몬스터 기본 정보")]
+    public List<MonsterData> MyMonsterList;
 
-    //public TextAsset MonsterSkillDataBase_TA;
-    public List<MonsterSkillData> m_MonsterSkillData, MyMonsterSkillList;
+    //[Header("몬스터 스킬 기본 정보")]
+    public List<MonsterSkillData> MyMonsterSkillList;
 
-    public TextAsset ItemDataBase_TA;
-    public List<ItemData> m_ItemData, MyItemList;
+    //[Header("아이템 기본 정보")]
+    public List<ItemData> MyItemList;
 
+    //[Header("스프라이트 정보")]
     public Sprite[] Maps_Spr;
     public Sprite[] Char_Spr;
     public Sprite[] Mons_Spr;
@@ -179,6 +217,19 @@ public class DataManager : MonoBehaviour
 
     public CharacterSkillSprite[] CharSkill_Spr;
     public MonsterSkillSprite[] MonsSkill_Spr;
+
+    public TextAsset MapDataBase_TA;
+    private List<MapData> m_MapData;
+    public TextAsset CharacterDataBase_TA;
+    private List<CharacterData> m_CharacterData;
+    //public TextAsset CharacterSkillDataBase_TA;
+    private List<CharacterSkillData> m_CharacterSkillData;
+    public TextAsset MonsterDataBase_TA;
+    private List<MonsterData> m_MonsterData;
+    //public TextAsset MonsterSkillDataBase_TA;
+    private List<MonsterSkillData> m_MonsterSkillData;
+    public TextAsset ItemDataBase_TA;
+    private List<ItemData> m_ItemData;
 
     private static DataManager instance = null;
 
@@ -217,7 +268,7 @@ public class DataManager : MonoBehaviour
         {
             m_PlatformScript = GameObject.FindGameObjectWithTag("PlatformCS").GetComponent<PlatformScript>();
 
-            m_PlatformScript.m_MapData = m_MapData;
+            m_PlatformScript.m_MapData = MyMapList;
             m_PlatformScript.m_PlayerData = m_PlayerData;
             m_PlatformScript.m_OptionData = m_OptionData;
             m_PlatformScript.m_CharacterData = MyCharacterList;
@@ -294,7 +345,7 @@ public class DataManager : MonoBehaviour
             m_PlayerData = new PlayerData();
         }
 
-        if(m_PlayerData.nCharIndex[0] == "")
+        if(m_PlayerData.nCharIndex[0] == "" || m_PlayerData.nCharIndex[0] == null)
         {
             m_PlayerData.nCoin = 1000;
 

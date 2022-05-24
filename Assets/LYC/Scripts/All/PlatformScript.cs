@@ -20,7 +20,7 @@ public class PlatformScript : MonoBehaviour
     {
         m_Datamanager = GameObject.FindGameObjectWithTag("Info").GetComponent<DataManager>();
 
-        m_Datamanager.m_MapData = m_MapData;
+        m_Datamanager.MyMapList = m_MapData;
         m_Datamanager.m_PlayerData = m_PlayerData;
         m_Datamanager.m_OptionData = m_OptionData;
         m_Datamanager.MyCharacterList = m_CharacterData;

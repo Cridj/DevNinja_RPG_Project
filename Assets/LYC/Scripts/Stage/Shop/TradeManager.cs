@@ -69,7 +69,7 @@ public class TradeManager : MonoBehaviour
 
         for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
         {
-            if (m_PlayerData.nItemIndex[i] == "")
+            if (m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex[i] == null)
             {
                 break;
             }
@@ -85,7 +85,7 @@ public class TradeManager : MonoBehaviour
 
         for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
         {
-            if (m_PlayerData.nItemIndex[i] == "")
+            if (m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex[i] == null)
             {
                 break;
             }
@@ -101,7 +101,7 @@ public class TradeManager : MonoBehaviour
 
         for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
         {
-            if (m_PlayerData.nItemIndex[i] == "")
+            if (m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex[i] == null)
             {
                 break;
             }
@@ -117,7 +117,7 @@ public class TradeManager : MonoBehaviour
 
         for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
         {
-            if (m_PlayerData.nItemIndex[i] == "")
+            if (m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex[i] == null)
             {
                 break;
             }
@@ -218,7 +218,7 @@ public class TradeManager : MonoBehaviour
 
                 for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
                 {
-                    if (m_PlayerData.nItemIndex[i] == "")
+                    if (m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex[i] == null)
                     {
                         break;
                     }
@@ -234,20 +234,26 @@ public class TradeManager : MonoBehaviour
 
                 int commonNum = CommonDeck.Count;
 
+                Debug.Log(m_PlayerData.nItemIndex.Length);
                 for (int i = 0; i <m_PlayerData.nItemIndex.Length; i++) //만약 common 아이템을 다 갖고 있을 때
                 {
-                    if(m_PlayerData.nItemIndex[i] == "")
+                    if(m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex == null)
                     {
                         break;
                     }
 
-                    if(m_ItemData[int.Parse(m_PlayerData.nItemIndex[i])].sRank == "Common")
-                    {
-                        commonNum -= 1;
+                    Debug.Log(m_PlayerData.nItemIndex[i]);
 
-                        if(commonNum <= 0)
+                    if (int.TryParse(m_PlayerData.nItemIndex[i], out int nIndexNum))
+                    {
+                        if (m_ItemData[nIndexNum].sRank == "Common")
                         {
-                            return -1;
+                            commonNum -= 1;
+
+                            if (commonNum <= 0)
+                            {
+                                return -1;
+                            }
                         }
                     }
                 }
@@ -257,37 +263,29 @@ public class TradeManager : MonoBehaviour
 
                 if (_slot>0)
                 {
-                    if (selectNum == Slots[_slot - 1].nIndex)
+                    if (CommonDeck[selectNum].nIndex == Slots[_slot - 1].nIndex.ToString())
                     {
                         CommonDeck.RemoveAt(selectNum);
                         Debug.Log("일반1");
                         selectNum = Random.Range(0, CommonDeck.Count);
-                        //selectNum = ItemResult(_slot, 0);
                     }
                 }               
 
-                //for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
-                //{
-                //    if(m_PlayerData.nItemIndex[i] == "")
-                //    {
-                //        break;
-                //    }
-
-                //    if(selectNum == int.Parse(m_PlayerData.nItemIndex[i]))
-                //    {
-                //        Debug.Log("일반2");
-                //        selectNum = ItemResult(_slot, 0);
-                //        break;
-                //    }
-                //}
-
                 Debug.Log(selectNum);
-                return int.Parse(CommonDeck[selectNum].nIndex);
+
+                if(int.TryParse(CommonDeck[selectNum].nIndex, out int nResult0))
+                {
+                    return nResult0;
+                }
+                else
+                {
+                    return -1;
+                }               
             case 1:
 
                 for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
                 {
-                    if (m_PlayerData.nItemIndex[i] == "")
+                    if (m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex == null)
                     {
                         break;
                     }
@@ -305,20 +303,24 @@ public class TradeManager : MonoBehaviour
 
                 for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
                 {
-                    if (m_PlayerData.nItemIndex[i] == "")
+                    if (m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex == null)
                     {
                         break;
                     }
 
-                    if (m_ItemData[int.Parse(m_PlayerData.nItemIndex[i])].sRank == "Rare")
+                    if (int.TryParse(m_PlayerData.nItemIndex[i], out int nIndexNum))
                     {
-                        rareNum -= 1;
-
-                        if (rareNum <= 0)
+                        if (m_ItemData[nIndexNum].sRank == "Rare")
                         {
-                            return -1;
+                            rareNum -= 1;
+
+                            if (rareNum <= 0)
+                            {
+                                return -1;
+                            }
                         }
                     }
+                        
                 }
 
                 Debug.Log(RareDeck.Count);
@@ -326,38 +328,30 @@ public class TradeManager : MonoBehaviour
 
                 if (_slot > 0)
                 {
-                    if (selectNum == Slots[_slot - 1].nIndex)
+                    if (RareDeck[selectNum].nIndex == Slots[_slot - 1].nIndex.ToString())
                     {
                         RareDeck.RemoveAt(selectNum);
                         Debug.Log("레어1");
                         selectNum = Random.Range(0, RareDeck.Count);
-                        //selectNum = ItemResult(_slot, 1);
                     }
                 }
 
-                //for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
-                //{
-                //    if (m_PlayerData.nItemIndex[i] == "")
-                //    {
-                //        break;
-                //    }
-
-                //    if (selectNum == int.Parse(m_PlayerData.nItemIndex[i]))
-                //    {
-                //        Debug.Log("레어2");
-                //        selectNum = ItemResult(_slot, 1);
-                //        break;
-                //    }
-                //}
-
                 Debug.Log(selectNum);
-                return int.Parse(RareDeck[selectNum].nIndex);
+
+                if (int.TryParse(RareDeck[selectNum].nIndex, out int nResult1))
+                {
+                    return nResult1;
+                }
+                else
+                {
+                    return -1;
+                }
 
             case 2:
 
                 for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
                 {
-                    if (m_PlayerData.nItemIndex[i] == "")
+                    if (m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex == null)
                     {
                         break;
                     }
@@ -375,20 +369,23 @@ public class TradeManager : MonoBehaviour
 
                 for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
                 {
-                    if (m_PlayerData.nItemIndex[i] == "")
+                    if (m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex == null)
                     {
                         break;
                     }
 
-                    if (m_ItemData[int.Parse(m_PlayerData.nItemIndex[i])].sRank == "Epic")
+                    if (int.TryParse(m_PlayerData.nItemIndex[i], out int nIndexNum))
                     {
-                        epicNum -= 1;
-
-                        if (epicNum <= 0)
+                        if (m_ItemData[nIndexNum].sRank == "Epic")
                         {
-                            return -1;
+                            epicNum -= 1;
+
+                            if (epicNum <= 0)
+                            {
+                                return -1;
+                            }
                         }
-                    }
+                    }                       
                 }
 
                 Debug.Log(EpicDeck.Count);
@@ -396,38 +393,29 @@ public class TradeManager : MonoBehaviour
 
                 if (_slot > 0)
                 {
-                    if (selectNum == Slots[_slot - 1].nIndex)
+                    if (EpicDeck[selectNum].nIndex == Slots[_slot - 1].nIndex.ToString())
                     {
                         EpicDeck.RemoveAt(selectNum);
                         Debug.Log("에픽1");
                         selectNum = Random.Range(0, EpicDeck.Count);
-                        //selectNum = ItemResult(_slot, 2);
                     }
                 }
 
-                //for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
-                //{
-                //    if (m_PlayerData.nItemIndex[i] == "")
-                //    {
-                //        break;
-                //    }
-
-                //    if (selectNum == int.Parse(m_PlayerData.nItemIndex[i]))
-                //    {
-                //        Debug.Log("에픽2");
-                //        selectNum = ItemResult(_slot, 2);
-                //        break;
-                //    }
-                //}
-
                 Debug.Log(selectNum);
-                return int.Parse(EpicDeck[selectNum].nIndex);
+                if (int.TryParse(EpicDeck[selectNum].nIndex, out int nResult2))
+                {
+                    return nResult2;
+                }
+                else
+                {
+                    return -1;
+                }
 
             case 3:
 
                 for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
                 {
-                    if (m_PlayerData.nItemIndex[i] == "")
+                    if (m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex[i] == null)
                     {
                         break;
                     }
@@ -445,18 +433,21 @@ public class TradeManager : MonoBehaviour
 
                 for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
                 {
-                    if (m_PlayerData.nItemIndex[i] == "")
+                    if (m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex[i] == null)
                     {
                         break;
                     }
 
-                    if (m_ItemData[int.Parse(m_PlayerData.nItemIndex[i])].sRank == "Legend")
+                    if (int.TryParse(m_PlayerData.nItemIndex[i], out int nIndexNum))
                     {
-                        legendNum -= 1;
-
-                        if (legendNum <= 0)
+                        if (m_ItemData[nIndexNum].sRank == "Legend")
                         {
-                            return -1;
+                            legendNum -= 1;
+
+                            if (legendNum <= 0)
+                            {
+                                return -1;
+                            }
                         }
                     }
                 }
@@ -466,32 +457,23 @@ public class TradeManager : MonoBehaviour
 
                 if (_slot > 0)
                 {
-                    if (selectNum == Slots[_slot - 1].nIndex)
+                    if (LegendDeck[selectNum].nIndex == Slots[_slot - 1].nIndex.ToString())
                     {
                         LegendDeck.RemoveAt(selectNum);
                         Debug.Log("레전드1");
                         selectNum = Random.Range(0, LegendDeck.Count);
-                        //selectNum = ItemResult(_slot, 3);
                     }
                 }
 
-                //for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
-                //{
-                //    if (m_PlayerData.nItemIndex[i] == "")
-                //    {
-                //        break;
-                //    }
-
-                //    if (selectNum == int.Parse(m_PlayerData.nItemIndex[i]))
-                //    {
-                //        Debug.Log("레전드2");
-                //        selectNum = ItemResult(_slot, 3);
-                //        break;
-                //    }
-                //}
-
                 Debug.Log(selectNum);
-                return int.Parse(LegendDeck[selectNum].nIndex);
+                if (int.TryParse(LegendDeck[selectNum].nIndex, out int nResult3))
+                {
+                    return nResult3;
+                }
+                else
+                {
+                    return -1;
+                }
 
             default:
                 return -1;

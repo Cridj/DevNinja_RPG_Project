@@ -35,7 +35,7 @@ public class ReinforceManager : MonoBehaviour
         for(int i = 0; i < Slots.Length; i++)
         {
             
-            if (m_PlayerData.nCharIndex[i] == "")
+            if (m_PlayerData.nCharIndex[i] == "" || m_PlayerData.nCharIndex[i] == null)
             {
                 Slots[i].gameObject.SetActive(false);
                 break;
