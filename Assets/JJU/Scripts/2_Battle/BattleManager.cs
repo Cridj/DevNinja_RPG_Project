@@ -681,6 +681,188 @@ public class BattleManager : HSingleton<BattleManager>
         turnUnit.UnitTurnAction(type);
     }
 
+    public void ItemInit()
+    {
+
+    }
+
+    //아이템 리스트
+    private List<ItemData> CommonDeck = new List<ItemData>();
+    private List<ItemData> RareDeck = new List<ItemData>();
+    private List<ItemData> EpicDeck = new List<ItemData>();
+    private List<ItemData> LegendDeck = new List<ItemData>();
+
+        
+    public int ItemDrop()
+    {
+        print("아이템드랍");
+        CommonDeck.Clear();
+        RareDeck.Clear();
+        EpicDeck.Clear();
+        LegendDeck.Clear();
+
+        PlayerData m_PlayerData = DataManager.Instance.m_PlayerData;
+        List<ItemData> m_ItemData = DataManager.Instance.MyItemList;
+
+        //아이템 초기화
+        for (int i = 0; i < m_ItemData.Count; i++)
+        {
+            switch (m_ItemData[i].sRank)
+            {
+                case "Common":
+                    CommonDeck.Add(m_ItemData[i]);
+                    break;
+                case "Rare":
+                    RareDeck.Add(m_ItemData[i]);
+                    break;
+                case "Epic":
+                    EpicDeck.Add(m_ItemData[i]);
+                    break;
+                case "Legend":
+                    LegendDeck.Add(m_ItemData[i]);
+                    break;
+                default:
+                    break;
+            }
+        }
+    
+        //중복되는 아이템 걸러내기
+        for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
+        {
+            if (m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex[i] == null)
+            {
+                break;
+            }
+
+            for (int j = 0; j < CommonDeck.Count; j++)
+            {
+                if (m_PlayerData.nItemIndex[i] == CommonDeck[j].nIndex)
+                {
+                    CommonDeck.RemoveAt(j);
+                }
+            }
+        }
+        for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
+        {
+            if (m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex[i] == null)
+            {
+                break;
+            }
+
+            for (int j = 0; j < RareDeck.Count; j++)
+            {
+                if (m_PlayerData.nItemIndex[i] == RareDeck[j].nIndex)
+                {
+                    RareDeck.RemoveAt(j);
+                }
+            }
+        }
+        for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
+        {
+            if (m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex[i] == null)
+            {
+                break;
+            }
+
+            for (int j = 0; j < EpicDeck.Count; j++)
+            {
+                if (m_PlayerData.nItemIndex[i] == EpicDeck[j].nIndex)
+                {
+                    EpicDeck.RemoveAt(j);
+                }
+            }
+        }
+        for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
+        {
+            if (m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex[i] == null)
+            {
+                break;
+            }
+
+            for (int j = 0; j < LegendDeck.Count; j++)
+            {
+                if (m_PlayerData.nItemIndex[i] == LegendDeck[j].nIndex)
+                {
+                    LegendDeck.RemoveAt(j);
+                }
+            }
+        }
+        
+        //랜덤으로 아이템등급 설정
+        int ranRank = Random.Range(0,101);
+
+        
+        
+        int? ranItem = RanDropItem(ranRank).Value;
+
+        if (ranItem.HasValue)
+        {
+            for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
+            {
+                if (m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex[i] == null)
+                {
+                    m_PlayerData.nItemIndex[i] = ranItem.Value.ToString();
+                    m_PlayerData.sItemName[i] = m_ItemData[ranItem.Value].sName;
+                    m_ItemData[ranItem.Value].bUnlock = true;
+                    break;
+                }
+            }
+        }
+
+        return ranItem.Value;
+    }
+
+    private int? RanDropItem(int ranRank)
+    {
+        int ranCommon;
+        switch (ranRank)
+        {
+            //커먼
+            case int n when (0 <= n && n <= 50):
+
+                ranCommon = Random.Range(0, CommonDeck.Count);
+
+                if (int.TryParse(CommonDeck[ranCommon].nIndex, out int nResult1))
+                {
+                    return nResult1;
+                }
+                return null;
+
+            //레어
+            case int n when (51 <= n && n <= 80):
+
+                ranCommon = Random.Range(0, CommonDeck.Count);
+
+                if (int.TryParse(CommonDeck[ranCommon].nIndex, out int nResult2))
+                {
+                    return nResult2;
+                }
+                return null;
+
+            //에픽
+            case int n when (81 <= n && n <= 95):
+
+                ranCommon = Random.Range(0, CommonDeck.Count);
+
+                if (int.TryParse(CommonDeck[ranCommon].nIndex, out int nResult3))
+                {
+                    return nResult3;
+                }
+                return null;
+
+            //전설
+            case int n when (96 <= n && n <= 100):
+
+                ranCommon = Random.Range(0, CommonDeck.Count);
+
+                if (int.TryParse(CommonDeck[ranCommon].nIndex, out int nResult4))
+                {
+                    return nResult4;
+                }
+                return null;
+        }
+        return null;
+    }
 
     /// <summary>
     /// 적 전원처치, 아군 사망 체크
@@ -744,6 +926,7 @@ public class BattleManager : HSingleton<BattleManager>
                 DestroyEnemys[inum] = enemy;
                 inum++;
             }
+
             EnemyDummyRemove();
             enemyCollection.collection.Clear();
             InitDestinationVec3();
@@ -881,6 +1064,8 @@ public class BattleManager : HSingleton<BattleManager>
                        
 
         victoryResultPanel.SetActive(true);       
+
+
 
         foreach(var enemy in enemyCollection.collection)
         {
