@@ -129,6 +129,7 @@ public class MapManager : MonoBehaviour
     public void MapReset()
     {
         m_PlayerData.nCoin = 1000;
+        m_PlayerData.nStack = 0;
         m_PlayerData.nCurStage = 0;
         m_PlayerData.nStageProcess = 0;
         m_PlayerData.nLevelProcess = 0;

@@ -2604,6 +2604,7 @@ MonoBehaviour:
   m_PlatformScript: {fileID: 0}
   m_PlayerData:
     nCoin: 0
+    nStack: 0
     bTutorialClear: 0
     nCurStage: 0
     nStageProcess: 0
@@ -3407,6 +3408,7 @@ MonoBehaviour:
   m_DataManager: {fileID: 0}
   m_PlayerData:
     nCoin: 0
+    nStack: 0
     bTutorialClear: 0
     nCurStage: 0
     nStageProcess: 0
@@ -3475,6 +3477,7 @@ MonoBehaviour:
   m_PlatformScript: {fileID: 1681641530}
   m_PlayerData:
     nCoin: 0
+    nStack: 0
     bTutorialClear: 0
     nCurStage: 0
     nStageProcess: 0
@@ -3526,6 +3529,7 @@ MonoBehaviour:
   m_PlatformScript: {fileID: 1681641530}
   m_PlayerData:
     nCoin: 0
+    nStack: 0
     bTutorialClear: 0
     nCurStage: 0
     nStageProcess: 0
@@ -10207,6 +10211,7 @@ MonoBehaviour:
   m_DataManager: {fileID: 0}
   m_PlayerData:
     nCoin: 0
+    nStack: 0
     bTutorialClear: 0
     nCurStage: 0
     nStageProcess: 0
@@ -10895,6 +10900,7 @@ MonoBehaviour:
   m_DataManager: {fileID: 0}
   m_PlayerData:
     nCoin: 0
+    nStack: 0
     bTutorialClear: 0
     nCurStage: 0
     nStageProcess: 0

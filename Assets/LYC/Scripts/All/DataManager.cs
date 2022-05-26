@@ -14,6 +14,9 @@ public class PlayerData
     //[Header("돈")]
     public int nCoin;
 
+    //[Header("상점스택")]
+    public int nStack;
+
     //[Header("튜토리얼 클리어 여부")]
     public bool bTutorialClear;
 
