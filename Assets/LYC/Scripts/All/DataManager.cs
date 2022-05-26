@@ -282,6 +282,13 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    public void Save()
+    {
+        SaveListDataToJson();
+        SavePlayerDataToJson();
+        SaveOptionDataToJson();
+    }
+
     [ContextMenu("Load CSV")]
     public void LoadCSV()
     {
