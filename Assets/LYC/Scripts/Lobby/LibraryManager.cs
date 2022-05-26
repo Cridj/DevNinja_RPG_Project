@@ -86,6 +86,7 @@ public class LibraryManager : MonoBehaviour
         selectColorBlock = Char_Btn.colors;
         unselectColorBlock = Mons_Btn.colors;
 
+        Info_Img.gameObject.SetActive(false);
         
 
         switch (nType)
@@ -231,7 +232,7 @@ public class LibraryManager : MonoBehaviour
                 }
                 else
                 {
-                    Info_Img.transform.gameObject.SetActive(true);
+                    Info_Img.transform.gameObject.SetActive(false);
                     Info_Img.sprite = m_DataManager.Char_Spr[_index];
                     Name_Txt.text = "???";
                     Ability_Txt.text = "타입 : " + m_CharacterData[_index].sType + "\n" + "체력 : " + "???" + "\n" + "공격력 : " + "???" + "\n" + "주문력 : " + "???" + "\n" + "방어력 : " + "???" + "\n" + "행동력 : " + "???";
@@ -249,7 +250,7 @@ public class LibraryManager : MonoBehaviour
                 }
                 else
                 {
-                    Info_Img.transform.gameObject.SetActive(true);
+                    Info_Img.transform.gameObject.SetActive(false);
                     Info_Img.sprite = m_DataManager.Mons_Spr[_index];
                     Name_Txt.text = "???";
                     Ability_Txt.text = "타입 : " + "???" + "\n" + "체력 : " + "???" + "\n" + "공격력 : " + "???" + "\n" + "주문력 : " + "???" + "\n" + "방어력 : " + "???" + "\n" + "행동력 : " + "???";
@@ -305,7 +306,7 @@ public class LibraryManager : MonoBehaviour
                 }
                 else
                 {
-                    Info_Img.transform.gameObject.SetActive(true);
+                    Info_Img.transform.gameObject.SetActive(false);
                     Info_Img.sprite = m_DataManager.Item_Spr[_index];
                     Name_Txt.text = "???";
                     Ability_Txt.text = "???";

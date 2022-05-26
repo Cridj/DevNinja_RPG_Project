@@ -1,14 +1,14 @@
 {
-    "fMsValue": -25.394609451293947,
-    "fMsPrev": -25.394609451293947,
-    "fBGMsValue": -4.175825119018555,
-    "fBGMsPrev": 0.0,
+    "fMsValue": -6.49749755859375,
+    "fMsPrev": -6.49749755859375,
+    "fBGMsValue": -40.0,
+    "fBGMsPrev": -4.175825119018555,
     "fGEsValue": -28.091909408569337,
     "fGEsPrev": 0.0,
     "fUIEsValue": -8.691301345825196,
     "fUIEsPrev": 0.0,
     "bMsMute": false,
-    "bBGMsMute": false,
+    "bBGMsMute": true,
     "bGEsMute": false,
     "bUIEsMute": false
 }

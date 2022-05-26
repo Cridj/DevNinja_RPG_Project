@@ -245,6 +245,6 @@ public class ShopManager : MonoBehaviour
 
     public void CloseShop()
     {
-        OpenShop();
+        OpenTradeTap();
     }
 }

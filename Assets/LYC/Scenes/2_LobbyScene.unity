@@ -12578,6 +12578,7 @@ GameObject:
   - component: {fileID: 678425043}
   - component: {fileID: 678425044}
   - component: {fileID: 678425045}
+  - component: {fileID: 678425046}
   m_Layer: 0
   m_Name: LobbyManager
   m_TagString: Untagged
@@ -12909,6 +12910,7 @@ MonoBehaviour:
   m_PlatformScript: {fileID: 8691808944274300294}
   m_PlayerData:
     nCoin: 0
+    nStack: 0
     bTutorialClear: 0
     nCurStage: 0
     nStageProcess: 0
@@ -13045,6 +13047,18 @@ MonoBehaviour:
   - {fileID: 1495522822}
   - {fileID: 205412285}
   - {fileID: 822474130}
+--- !u!114 &678425046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678425039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09093f1c439e04a4e8ceeb0b5728efa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &681307460
 GameObject:
   m_ObjectHideFlags: 0

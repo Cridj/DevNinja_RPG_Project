@@ -30,7 +30,8 @@ public class InventoryManager : MonoBehaviour
 
     public void SetInventory()
     {
-
+        m_CharacterInfoManager.SetCharTap();
+        m_ItemInfoManager.SetItemTap();
     }
 
     public void OpenCharacterInfo()
@@ -55,6 +56,24 @@ public class InventoryManager : MonoBehaviour
 
     public void OpenItemInfo()
     {
+        if(nSelect == 1)
+        {
+            return;
+        }
 
+        nSelect = 1;
+
+        Character_Btn.colors = UnSelectColorBlock;
+        Item_Btn.colors = SelectColorBlock;
+
+        Character_RT.anchoredPosition = new Vector2(35, Character_RT.anchoredPosition.y);
+        Item_Rt.anchoredPosition = new Vector2(5, Item_Rt.anchoredPosition.y);
+        CharInfo_Obj.SetActive(false);
+        ItemInfo_Obj.SetActive(true);
+    }
+
+    public void CloseInventory()
+    {
+        OpenCharacterInfo();
     }
 }
