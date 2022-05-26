@@ -884,7 +884,7 @@ public class BattleManager : HSingleton<BattleManager>
                     //    BackToStageScene();
                     //    return true;
                     //}
-                    if (battleNum == 1)
+                    if (battleNum == 3)
                     {
                         BackToStageScene();
                         return true;
