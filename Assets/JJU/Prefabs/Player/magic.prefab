@@ -5558,6 +5558,7 @@ MonoBehaviour:
   skillAble: 0
   PoisonDuration: 0
   howlingBuffDebuffDuration: 0
+  trollShoutingDuration: 0
   bAttackIncrease_Passive_Bear: 0
   bMasteredBlackMagic_Passive: 0
   defenseBuffDuration: 0
@@ -5623,6 +5624,7 @@ MonoBehaviour:
   WeaponTrail1: {fileID: 0}
   WeaponTrail2: {fileID: 0}
   edge: {fileID: 0}
+  ultPanelAnimator: {fileID: 0}
   HealingOnce: {fileID: 0}
   TranceAttackCount: 0
   job: 0
