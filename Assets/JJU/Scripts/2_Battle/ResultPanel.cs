@@ -151,7 +151,7 @@ public class ResultPanel : MonoBehaviour
         DataManager.Instance.SaveListDataToJson();
 
         dropGold = 200;
-
+        stageGetGoldText.text = "";
 
     }
 
@@ -167,7 +167,7 @@ public class ResultPanel : MonoBehaviour
         {
             if (dropCurGold == dropGold)
                 break;
-            dropCurGold = (int)Mathf.Round(Mathf.Lerp(dropCurGold, 200f, 0.1f));
+            dropCurGold = (int)Mathf.Round(Mathf.Lerp(dropCurGold, dropGold, 0.1f * Time.deltaTime));
             stageGetGoldText.text = dropCurGold.ToString();
             yield return null;
         }
