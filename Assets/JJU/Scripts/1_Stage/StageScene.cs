@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MHomiLibrary;
+using TMPro;
+using UnityEngine.UI;
 
 public class StageScene : HSingleton<StageScene>
 {
@@ -12,6 +14,10 @@ public class StageScene : HSingleton<StageScene>
     public GameObject MapInfoPanel;
     public GameObject[] points;
 
+    public TextMeshProUGUI goldText;
+
+    public Image shopImage;
+
     /// <summary>
     /// 스테이지 맵 정보 온오프 여부
     /// </summary>
@@ -21,6 +27,26 @@ public class StageScene : HSingleton<StageScene>
     {
         points = GameObject.FindGameObjectsWithTag("Point");
     }
+
+    private void Start()
+    {
+        GoldTextUpdate();
+        if(DataManager.Instance.m_PlayerData.nStack < 5)
+        {
+            shopImage.color = Color.gray;
+        }
+        else
+        {
+            shopImage.color = Color.white;
+        }
+    }
+
+    public void GoldTextUpdate()
+    {
+        goldText.text = DataManager.Instance.m_PlayerData.nCoin.ToString();
+    }
+
+
 
     public void OnDisableInfoPanel()
     {

@@ -37,6 +37,16 @@ public class PrefabDataClass
     public Sprite Portrait;
 }
 
+[Serializable]
+public class ItemStatData
+{
+    public float hp;
+    public float attack;
+    public float magic;
+    public float defense;
+    public float speed;
+}
+
 public class GameInstance : MonoBehaviour
 {
 
@@ -52,7 +62,7 @@ public class GameInstance : MonoBehaviour
     public ENEMY_TYPE[] enemies;
     public ENEMY_TYPE eliteEnemy;
 
-
+    public ItemStatData[] itemStatData;
 
 
     public int nowStage;
@@ -113,7 +123,7 @@ public class GameInstance : MonoBehaviour
 
     void Start()
     {
-        
+        HeroItemInit();
     }
 
     // Update is called once per frame
@@ -199,4 +209,100 @@ public class GameInstance : MonoBehaviour
         }
         return null;
     }
+
+    void HeroItemInit()
+    {
+        //æ∆¿Ã≈€ ¿˚øÎ
+        foreach (var item in DataManager.Instance.m_PlayerData.nItemIndex)
+        {
+            if (item != "" && item != null)
+            {
+                ApplyItem(item);
+                print("æ∆¿Ã≈€");
+            }
+        }
+    }
+
+
+
+    void ApplyItem(string item)
+    {
+        int.TryParse(item, out var index);
+
+        switch (DataManager.Instance.MyItemList[index].sType)
+        {
+            case "µÙ∑Ø":
+                if (DataManager.Instance.MyItemList[index].fHealth != "")
+                {
+                    itemStatData[0].hp += float.Parse(DataManager.Instance.MyItemList[index].fHealth);
+                }
+                if (DataManager.Instance.MyItemList[index].fAttack != "")
+                {
+                    itemStatData[0].attack += float.Parse(DataManager.Instance.MyItemList[index].fAttack);
+                }
+                if (DataManager.Instance.MyItemList[index].fMagic != "")
+                {
+                    itemStatData[0].magic += float.Parse(DataManager.Instance.MyItemList[index].fMagic);
+                }
+                if (DataManager.Instance.MyItemList[index].fDefense != "")
+                {
+                    itemStatData[0].defense += float.Parse(DataManager.Instance.MyItemList[index].fDefense);
+                }
+                if (DataManager.Instance.MyItemList[index].fSpeed != "")
+                {
+                    itemStatData[0].speed += float.Parse(DataManager.Instance.MyItemList[index].fSpeed);
+                }
+                break;
+
+            case "≈ ƒø":
+                if (DataManager.Instance.MyItemList[index].fHealth != "")
+                {
+                    itemStatData[1].hp += float.Parse(DataManager.Instance.MyItemList[index].fHealth);
+                }
+                if (DataManager.Instance.MyItemList[index].fAttack != "")
+                {
+                    itemStatData[1].attack += float.Parse(DataManager.Instance.MyItemList[index].fAttack);
+                }
+                if (DataManager.Instance.MyItemList[index].fMagic != "")
+                {
+                    itemStatData[1].magic += float.Parse(DataManager.Instance.MyItemList[index].fMagic);
+                }
+                if (DataManager.Instance.MyItemList[index].fDefense != "")
+                {
+                    itemStatData[1].defense += float.Parse(DataManager.Instance.MyItemList[index].fDefense);
+                }
+                if (DataManager.Instance.MyItemList[index].fSpeed != "")
+                {
+                    itemStatData[1].speed += float.Parse(DataManager.Instance.MyItemList[index].fSpeed);
+                }
+                break;
+
+            case "»˙∑Ø":
+                if (DataManager.Instance.MyItemList[index].fHealth != "")
+                {
+                    itemStatData[2].hp += float.Parse(DataManager.Instance.MyItemList[index].fHealth);
+                }
+                if (DataManager.Instance.MyItemList[index].fAttack != "")
+                {
+                    itemStatData[2].attack += float.Parse(DataManager.Instance.MyItemList[index].fAttack);
+                }
+                if (DataManager.Instance.MyItemList[index].fMagic != "")
+                {
+                    itemStatData[2].magic += float.Parse(DataManager.Instance.MyItemList[index].fMagic);
+                }
+                if (DataManager.Instance.MyItemList[index].fDefense != "")
+                {
+                    itemStatData[2].defense += float.Parse(DataManager.Instance.MyItemList[index].fDefense);
+                }
+                if (DataManager.Instance.MyItemList[index].fSpeed != "")
+                {
+                    itemStatData[2].speed += float.Parse(DataManager.Instance.MyItemList[index].fSpeed);
+                }
+                break;
+
+
+        }
+
+    }
+
 }

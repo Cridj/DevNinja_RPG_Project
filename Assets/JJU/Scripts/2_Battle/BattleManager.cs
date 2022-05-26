@@ -981,8 +981,8 @@ public class BattleManager : HSingleton<BattleManager>
             }
         }
     }
-
-
+        
+ 
 
     void EnemyInit()
     {
