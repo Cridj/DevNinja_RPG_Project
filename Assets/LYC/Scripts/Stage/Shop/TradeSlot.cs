@@ -56,6 +56,10 @@ public class TradeSlot : MonoBehaviour
 
     public void LockSlot()
     {
+        m_DataManager = GameObject.FindGameObjectWithTag("Info").GetComponent<DataManager>();
+        m_PlayerData = m_PlatformScript.m_PlayerData;
+        m_ItemData = m_PlatformScript.m_ItemData;
+
         nIndex = -1;
 
         Check_Obj.SetActive(false);

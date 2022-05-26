@@ -79,8 +79,8 @@ public class ShopManager : MonoBehaviour
         Trade_Btn.colors = SelectColorBlock;
         Reinforce_Btn.colors = UnselectColorBlock;
 
-        Trade_RT.anchoredPosition = new Vector2(5, Trade_RT.anchoredPosition.y);
-        Reinforce_Rt.anchoredPosition = new Vector2(35, Reinforce_Rt.anchoredPosition.y);
+        Trade_RT.anchoredPosition = new Vector2(0, Trade_RT.anchoredPosition.y);
+        Reinforce_Rt.anchoredPosition = new Vector2(45, Reinforce_Rt.anchoredPosition.y);
         Reinforce_Obj.SetActive(false);
         Trade_Obj.SetActive(true);
 
