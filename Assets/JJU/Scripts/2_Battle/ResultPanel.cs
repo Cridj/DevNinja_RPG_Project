@@ -7,6 +7,8 @@ using TMPro;
 public class ResultPanel : MonoBehaviour
 {
     public Image itemSprite;
+    public TextMeshProUGUI ItemNameText;
+
 
     /// <summary>
     /// 총경험치량
@@ -68,6 +70,8 @@ public class ResultPanel : MonoBehaviour
     public TextMeshProUGUI healerExpText;
     public TextMeshProUGUI tankerExpText;
 
+    public TextMeshProUGUI totalGoldText;
+    public TextMeshProUGUI stageGetGoldText;
 
 
 
@@ -115,13 +119,22 @@ public class ResultPanel : MonoBehaviour
 
     public int ranItemIndex;
 
+    public int dropGold;
+
+    public int dropCurGold = 0;
+
     private void OnEnable()
     {
         StartCoroutine(StartDelay());
 
         ranItemIndex = BattleManager.I.ItemDrop();
+        
 
         itemSprite.sprite = DataManager.Instance.Item_Spr[ranItemIndex];
+        ItemNameText.text = DataManager.Instance.MyItemList[ranItemIndex].sName;
+
+        DataManager.Instance.MyItemList[ranItemIndex].bUnlock = true;
+
 
         //경험치 초기회
         totalEXP_dealer = BattleManager.I.TotalExp;
@@ -134,6 +147,12 @@ public class ResultPanel : MonoBehaviour
         healerExpText.text = totalEXP_healer.ToString();
         tankerExpText.text = totalEXP_tanker.ToString();
 
+        DataManager.Instance.SavePlayerDataToJson();
+        DataManager.Instance.SaveListDataToJson();
+
+        dropGold = 200;
+
+
     }
 
 
@@ -143,6 +162,16 @@ public class ResultPanel : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         StartExp();
+
+        while (true)
+        {
+            if (dropCurGold == dropGold)
+                break;
+            dropCurGold = (int)Mathf.Round(Mathf.Lerp(dropCurGold, 200f, 0.1f));
+            stageGetGoldText.text = dropCurGold.ToString();
+            yield return null;
+        }
+
     }
 
 
