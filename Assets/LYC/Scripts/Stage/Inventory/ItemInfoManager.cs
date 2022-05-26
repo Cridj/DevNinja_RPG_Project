@@ -50,6 +50,9 @@ public class ItemInfoManager : MonoBehaviour
                 Slots[i].SetItemSlot(Result0);
             }
         }
+
+        PlayerInfo_Txt.text = "소지금 : " + m_PlayerData.nCoin + "\n" +
+            "아이템 수 : ";
     }
 
     
