@@ -573,14 +573,7 @@ public class Hero : HeroSkill
         switch (job)
         {
             case PlayerJob.Dealer:
-                //스탯 적용
-                //unit.Hp = GameInstance.Instance.gamdData.dealerData.HP;
-                //unit.maxHP = GameInstance.Instance.gamdData.dealerData.HP;
-                //unit.PhysicalAttack = GameInstance.Instance.gamdData.dealerData.Attack;
-                //unit.Defense = GameInstance.Instance.gamdData.dealerData.Defense;
-                //unit.MagicalAttack = GameInstance.Instance.gamdData.dealerData.MagicalAttack;
-                //unit.Speed = GameInstance.Instance.gamdData.dealerData.Speed;
-
+                //기본스탯 적용
                 unit.Hp = DataManager.Instance.m_PlayerData.fHealth[0];
                 unit.maxHP = DataManager.Instance.m_PlayerData.fHealth[0];
                 unit.PhysicalAttack = DataManager.Instance.m_PlayerData.fAttack[0];
@@ -599,15 +592,15 @@ public class Hero : HeroSkill
                 skill_set2 = GameInstance.Instance.gamdData.dealerData.skillSets[1];
                 skill_set3 = GameInstance.Instance.gamdData.dealerData.skillSets[2];
 
-
                 //아이템 적용
-                foreach (var item in GameInstance.Instance.gamdData.dealerData.heroItems)
-                {
-                    if(item != null)
-                    {
-                        ApplyItem(item);
-                    }
-                }
+                unit.Hp *= GameInstance.Instance.itemStatData[0].hp / 100f + 1f;
+                unit.maxHP *= GameInstance.Instance.itemStatData[0].hp / 100 + 1f;
+                unit.PhysicalAttack *= GameInstance.Instance.itemStatData[0].attack / 100 + 1f;
+                unit.MagicalAttack *= GameInstance.Instance.itemStatData[0].magic / 100 + 1f;
+                unit.Defense *= GameInstance.Instance.itemStatData[0].defense / 100 + 1f;
+                unit.Speed += GameInstance.Instance.itemStatData[0].speed;
+
+
                 unit.currentPhysicalAttack = unit.PhysicalAttack;
                 unit.currentMagicalAttack = unit.MagicalAttack;
                 unit.currentDefense = unit.Defense;
@@ -615,6 +608,7 @@ public class Hero : HeroSkill
                 break;
 
             case PlayerJob.Tanker:
+                //기본스탯 적용
                 unit.Hp = DataManager.Instance.m_PlayerData.fHealth[1];
                 unit.maxHP = DataManager.Instance.m_PlayerData.fHealth[1];
                 unit.PhysicalAttack = DataManager.Instance.m_PlayerData.fAttack[1];
@@ -633,6 +627,14 @@ public class Hero : HeroSkill
                 skill_set2 = GameInstance.Instance.gamdData.tankerData.skillSets[1];
                 skill_set3 = GameInstance.Instance.gamdData.tankerData.skillSets[2];
 
+                ////아이템 적용
+                unit.Hp *= GameInstance.Instance.itemStatData[1].hp / 100f + 1f;
+                unit.maxHP *= GameInstance.Instance.itemStatData[1].hp / 100 + 1f;
+                unit.PhysicalAttack *= GameInstance.Instance.itemStatData[1].attack / 100 + 1f;
+                unit.MagicalAttack *= GameInstance.Instance.itemStatData[1].magic / 100 + 1f;
+                unit.Defense *= GameInstance.Instance.itemStatData[1].defense / 100 + 1f;
+                unit.Speed += GameInstance.Instance.itemStatData[1].speed;
+
                 unit.currentPhysicalAttack = unit.PhysicalAttack;
                 unit.currentMagicalAttack = unit.MagicalAttack;
                 unit.currentDefense = unit.Defense;
@@ -640,6 +642,7 @@ public class Hero : HeroSkill
                 break;
 
             case PlayerJob.Healer:
+                //기본스탯 적용
                 unit.Hp = DataManager.Instance.m_PlayerData.fHealth[2];
                 unit.maxHP = DataManager.Instance.m_PlayerData.fHealth[2];
                 unit.PhysicalAttack = DataManager.Instance.m_PlayerData.fAttack[2];
@@ -657,6 +660,14 @@ public class Hero : HeroSkill
                 skill_set1 = GameInstance.Instance.gamdData.healerData.skillSets[0];
                 skill_set2 = GameInstance.Instance.gamdData.healerData.skillSets[1];
                 skill_set3 = GameInstance.Instance.gamdData.healerData.skillSets[2];
+
+                ////아이템 적용
+                unit.Hp *= GameInstance.Instance.itemStatData[2].hp / 100f + 1f;
+                unit.maxHP *= GameInstance.Instance.itemStatData[2].hp / 100 + 1f;
+                unit.PhysicalAttack *= GameInstance.Instance.itemStatData[2].attack / 100 + 1f;
+                unit.MagicalAttack *= GameInstance.Instance.itemStatData[2].magic / 100 + 1f;
+                unit.Defense *= GameInstance.Instance.itemStatData[2].defense / 100 + 1f;
+                unit.Speed += GameInstance.Instance.itemStatData[2].speed;
 
                 unit.currentPhysicalAttack = unit.PhysicalAttack;
                 unit.currentMagicalAttack = unit.MagicalAttack;

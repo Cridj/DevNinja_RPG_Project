@@ -121,7 +121,7 @@ public class ResultPanel : MonoBehaviour
 
     public int dropGold;
 
-    public int dropCurGold = 0;
+    public float dropCurGold = 0;
 
     private void OnEnable()
     {
@@ -136,7 +136,7 @@ public class ResultPanel : MonoBehaviour
         DataManager.Instance.MyItemList[ranItemIndex].bUnlock = true;
 
 
-        //경험치 초기회
+        //경험치 초기화
         totalEXP_dealer = BattleManager.I.TotalExp;
         totalEXP_healer = BattleManager.I.TotalExp;
         totalEXP_tanker = BattleManager.I.TotalExp;
@@ -150,7 +150,7 @@ public class ResultPanel : MonoBehaviour
         DataManager.Instance.SavePlayerDataToJson();
         DataManager.Instance.SaveListDataToJson();
 
-        dropGold = 200;
+        dropGold = Random.Range(100,301);
         stageGetGoldText.text = "";
 
     }
@@ -165,12 +165,14 @@ public class ResultPanel : MonoBehaviour
 
         while (true)
         {
-            if (dropCurGold == dropGold)
+            if (Mathf.Round(dropCurGold) == dropGold)
                 break;
-            dropCurGold = (int)Mathf.Round(Mathf.Lerp(dropCurGold, dropGold, 0.1f * Time.deltaTime));
-            stageGetGoldText.text = dropCurGold.ToString();
+            dropCurGold = Mathf.Lerp(dropCurGold, (float)dropGold, 0.05f);
+            stageGetGoldText.text = Mathf.Round(dropCurGold).ToString();
+            print("골드올라가는중");
             yield return null;
         }
+        DataManager.Instance.m_PlayerData.nCoin += dropGold;
 
     }
 
@@ -361,6 +363,8 @@ public class ResultPanel : MonoBehaviour
 
     public void BackToStageScene()
     {
+        DataManager.Instance.Save();
+
         SceneLoad.LoadScene(BattleManager.I.nowStage);
     }
 }
