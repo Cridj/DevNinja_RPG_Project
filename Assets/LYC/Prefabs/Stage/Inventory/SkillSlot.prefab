@@ -379,9 +379,9 @@ MonoBehaviour:
     - 
   m_CharacterData: []
   m_CharSkillData: []
-  Skill_Img: {fileID: 0}
-  Name_Txt: {fileID: 0}
-  Type_Txt: {fileID: 0}
+  Skill_Img: {fileID: 1366602721835376112}
+  Name_Txt: {fileID: 1366602722360072338}
+  Type_Txt: {fileID: 1366602721207938978}
   nIndex: 0
   nNum: 0
 --- !u!1 &1366602721207938977

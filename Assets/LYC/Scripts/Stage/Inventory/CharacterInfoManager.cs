@@ -14,8 +14,10 @@ public class CharacterInfoManager : MonoBehaviour
     [SerializeField]
     List<CharacterSkillData> m_CharacterSkillData;
 
+    [SerializeField]
     CharInfoSlot[] CharSlots;
     public CharInfoSlot[] GetCharSlots() { return CharSlots; }
+    [SerializeField]
     CharSkillInfoSlot[] SkillSlots;
     public CharSkillInfoSlot[] GetSkillSlots() { return SkillSlots; }
 

@@ -33,8 +33,8 @@ public class MapSlot : MonoBehaviour
         }
         else
         {
-            Mons_Img.sprite = m_DataManager.Mons_Spr[nIndex];
-            Mons_Img.gameObject.SetActive(false);
+            Mons_Img.sprite = m_DataManager.Unknown_Spr;
+            Mons_Img.gameObject.SetActive(true);
             Mons_Txt.text = "???";
         }
                 

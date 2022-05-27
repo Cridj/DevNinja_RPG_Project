@@ -117,8 +117,6 @@ public class MapManager : MonoBehaviour
                 default: MonsterSlotList[nSlotIndex].type = "N0000"; nMonsterIndex = 0; break;
             }
 
-            Debug.Log(nMonsterIndex);
-
             Slots[i].UnlockSlot(nMonsterIndex, m_MonsterData[i].bUnlock);
             Slots[i].gameObject.SetActive(true);
             nSlotIndex++;

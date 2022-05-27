@@ -93,6 +93,7 @@ MonoBehaviour:
   m_DataManager: {fileID: 0}
   m_PlayerData:
     nCoin: 0
+    nStack: 0
     bTutorialClear: 0
     nCurStage: 0
     nStageProcess: 0
@@ -417,9 +418,32 @@ MonoBehaviour:
   m_CharacterData: []
   m_PlatformScript: {fileID: 0}
   m_CharInfoManager: {fileID: 0}
-  Char_Img: {fileID: 0}
-  NameBG_Img: {fileID: 0}
-  Name_Txt: {fileID: 0}
+  Char_Btn: {fileID: 7564121039977394793}
+  Char_Img: {fileID: 9096185914623282625}
+  Char_Obj: {fileID: 9096185914623282631}
+  NameBG_Img: {fileID: 9096185915460346520}
+  Name_Txt: {fileID: 9096185914444850184}
+  SelectColor: {r: 0, g: 0, b: 0, a: 0}
+  UnSelectColor: {r: 0, g: 0, b: 0, a: 0}
+  SelectColors:
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 0}
+    m_SelectedColor: {r: 0, g: 0, b: 0, a: 0}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0}
+    m_ColorMultiplier: 0
+    m_FadeDuration: 0
+  UnSelectColors:
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 0}
+    m_SelectedColor: {r: 0, g: 0, b: 0, a: 0}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0}
+    m_ColorMultiplier: 0
+    m_FadeDuration: 0
+  nIndex: 0
+  nSlot: 0
+  bUnlock: 0
 --- !u!1 &9096185914444850191
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +662,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9096185914623282625}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2031922569}
+        m_TargetAssemblyTypeName: CharInfoSlot, Assembly-CSharp
+        m_MethodName: CharSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9096185914623282631
 GameObject:
   m_ObjectHideFlags: 0

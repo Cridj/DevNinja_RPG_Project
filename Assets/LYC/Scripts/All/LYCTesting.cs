@@ -10,6 +10,7 @@ public class LYCTesting : MonoBehaviour
     public GameObject test1_Obj;
     public GameObject test2_Obj;
     public GameObject test3_Obj;
+    public GameObject test4_Obj;
 
     public void OpenShop()
     {
@@ -40,6 +41,16 @@ public class LYCTesting : MonoBehaviour
     public void CloseClose()
     {
         test3_Obj.SetActive(false);
+    }
+
+    public void OpenInven()
+    {
+        test4_Obj.SetActive(true);
+    }
+
+    public void CloseInven()
+    {
+        test4_Obj.SetActive(false);
     }
 
     public void GotoLobby()

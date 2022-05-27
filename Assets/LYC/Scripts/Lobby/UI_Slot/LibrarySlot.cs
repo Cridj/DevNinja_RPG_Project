@@ -35,43 +35,44 @@ public class LibrarySlot : MonoBehaviour
         
         switch (_type)
         {
-            case 0:
-                List_Img.sprite = m_DataManager.Char_Spr[_index];                
+            case 0:               
                 if(_unlock==false)
                 {
-                    List_Img.gameObject.SetActive(false);
-                    Name_Txt.gameObject.SetActive(true);
+                    List_Img.sprite = m_DataManager.Unknown_Spr;
+                    List_Img.gameObject.SetActive(true);
                     Name_Txt.text = "???";
                 }
                 else
                 {
+                    List_Img.sprite = m_DataManager.Char_Spr[_index];
                     List_Img.gameObject.SetActive(true);
-                    Name_Txt.gameObject.SetActive(true);
                     Name_Txt.text = m_LibraryManager.m_CharacterData[_index].sName;
                 }
                 break;
-            case 1:
-                List_Img.sprite = m_DataManager.Mons_Spr[_index];                
+            case 1:       
                 if (_unlock == false)
                 {
-                    List_Img.gameObject.SetActive(false);
+                    List_Img.sprite = m_DataManager.Unknown_Spr;
+                    List_Img.gameObject.SetActive(true);
                     Name_Txt.text = "???";
                 }
                 else
                 {
+                    List_Img.sprite = m_DataManager.Mons_Spr[_index];
                     List_Img.gameObject.SetActive(true);
                     Name_Txt.text = m_LibraryManager.m_MonsterData[_index].sName;
                 }
                 break;
-            case 2:
-                List_Img.sprite = m_DataManager.Item_Spr[_index];          
+            case 2:       
                 if (_unlock == false)
                 {
-                    List_Img.gameObject.SetActive(false);
+                    List_Img.sprite = m_DataManager.Unknown_Spr;
+                    List_Img.gameObject.SetActive(true);
                     Name_Txt.text = "???";
                 }
                 else
                 {
+                    List_Img.sprite = m_DataManager.Item_Spr[_index];
                     List_Img.gameObject.SetActive(true);
                     Name_Txt.text = m_LibraryManager.m_ItemData[_index].sName;
                 }

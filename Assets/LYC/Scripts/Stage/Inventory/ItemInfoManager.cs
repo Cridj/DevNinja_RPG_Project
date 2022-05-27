@@ -12,6 +12,7 @@ public class ItemInfoManager : MonoBehaviour
     [SerializeField]
     List<ItemData> m_ItemData;
 
+    [SerializeField]
     ItemInfoSlot[] Slots;
 
     public ItemInfoSlot[] GetSlots() { return Slots; }
@@ -55,6 +56,7 @@ public class ItemInfoManager : MonoBehaviour
             if(int.TryParse(m_PlayerData.nItemIndex[i], out int Result0))
             {
                 Slots[i].SetItemSlot(Result0);
+                Slots[i].gameObject.SetActive(true);
             }
 
             nItemStack++;
@@ -78,25 +80,70 @@ public class ItemInfoManager : MonoBehaviour
             switch(m_ItemData[Result0].sType)
             {
                 case "µô·¯":
-                    fDHealth += float.Parse(m_ItemData[Result0].fHealth);
-                    fDAttack += float.Parse(m_ItemData[Result0].fAttack);
-                    fDMagic += float.Parse(m_ItemData[Result0].fMagic);
-                    fDDefense += float.Parse(m_ItemData[Result0].fDefense);
-                    fDSpeed += float.Parse(m_ItemData[Result0].fSpeed);
+                    if(m_ItemData[Result0].fHealth != "" && m_ItemData[Result0].fHealth != null)
+                    {
+                        fDHealth += float.Parse(m_ItemData[Result0].fHealth);
+                    }
+                    if(m_ItemData[Result0].fAttack != "" && m_ItemData[Result0].fAttack != null)
+                    {
+                        fDAttack += float.Parse(m_ItemData[Result0].fAttack);
+                    }
+                    if(m_ItemData[Result0].fMagic != "" && m_ItemData[Result0].fMagic != null)
+                    {
+                        fDMagic += float.Parse(m_ItemData[Result0].fMagic);
+                    }
+                    if (m_ItemData[Result0].fDefense != "" && m_ItemData[Result0].fDefense != null)
+                    {
+                        fDDefense += float.Parse(m_ItemData[Result0].fDefense);
+                    }
+                    if (m_ItemData[Result0].fSpeed != "" && m_ItemData[Result0].fSpeed != null)
+                    {
+                        fDSpeed += float.Parse(m_ItemData[Result0].fSpeed);
+                    }                    
                     break;
                 case "ÅÊÄ¿":
-                    fTHealth += float.Parse(m_ItemData[Result0].fHealth);
-                    fTAttack += float.Parse(m_ItemData[Result0].fAttack);
-                    fTMagic += float.Parse(m_ItemData[Result0].fMagic);
-                    fTDefense += float.Parse(m_ItemData[Result0].fDefense);
-                    fTSpeed += float.Parse(m_ItemData[Result0].fSpeed);
+                    if (m_ItemData[Result0].fHealth != "" && m_ItemData[Result0].fHealth != null)
+                    {
+                        fTHealth += float.Parse(m_ItemData[Result0].fHealth);
+                    }
+                    if (m_ItemData[Result0].fAttack != "" && m_ItemData[Result0].fAttack != null)
+                    {
+                        fTAttack += float.Parse(m_ItemData[Result0].fAttack);
+                    }
+                    if (m_ItemData[Result0].fMagic != "" && m_ItemData[Result0].fMagic != null)
+                    {
+                        fTMagic += float.Parse(m_ItemData[Result0].fMagic);
+                    }
+                    if (m_ItemData[Result0].fDefense != "" && m_ItemData[Result0].fDefense != null)
+                    {
+                        fTDefense += float.Parse(m_ItemData[Result0].fDefense);
+                    }
+                    if (m_ItemData[Result0].fSpeed != "" && m_ItemData[Result0].fSpeed != null)
+                    {
+                        fTSpeed += float.Parse(m_ItemData[Result0].fSpeed);
+                    }                
                     break;
                 case "Èú·¯":
-                    fHHealth += float.Parse(m_ItemData[Result0].fHealth);
-                    fHAttack += float.Parse(m_ItemData[Result0].fAttack);
-                    fHMagic += float.Parse(m_ItemData[Result0].fMagic);
-                    fHDefense += float.Parse(m_ItemData[Result0].fDefense);
-                    fHSpeed += float.Parse(m_ItemData[Result0].fSpeed);
+                    if (m_ItemData[Result0].fHealth != "" && m_ItemData[Result0].fHealth != null)
+                    {
+                        fHHealth += float.Parse(m_ItemData[Result0].fHealth);
+                    }
+                    if (m_ItemData[Result0].fAttack != "" && m_ItemData[Result0].fAttack != null)
+                    {
+                        fHAttack += float.Parse(m_ItemData[Result0].fAttack);
+                    }
+                    if (m_ItemData[Result0].fMagic != "" && m_ItemData[Result0].fMagic != null)
+                    {
+                        fHMagic += float.Parse(m_ItemData[Result0].fMagic);
+                    }
+                    if (m_ItemData[Result0].fDefense != "" && m_ItemData[Result0].fDefense != null)
+                    {
+                        fHDefense += float.Parse(m_ItemData[Result0].fDefense);
+                    }
+                    if (m_ItemData[Result0].fSpeed != "" && m_ItemData[Result0].fSpeed != null)
+                    {
+                        fHSpeed += float.Parse(m_ItemData[Result0].fSpeed);
+                    }            
                     break;
                 default:
                     break;

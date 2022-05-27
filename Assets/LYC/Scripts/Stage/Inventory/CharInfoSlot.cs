@@ -55,7 +55,7 @@ public class CharInfoSlot : MonoBehaviour
         }
         else
         {
-            LockSlot();
+            //LockSlot();
         }
     }
 
@@ -70,8 +70,6 @@ public class CharInfoSlot : MonoBehaviour
         bUnlock = false;
 
         Char_Btn.interactable = false;
-        Char_Obj.SetActive(false);
-        Char_Img.sprite = null;
         NameBG_Img.color = UnSelectColor;
         Name_Txt.text = "???";
     }
@@ -89,8 +87,8 @@ public class CharInfoSlot : MonoBehaviour
 
     public void CharUnSelect()
     {
-        Char_Btn.colors = UnSelectColors;
-        NameBG_Img.color = UnSelectColor;
+        //Char_Btn.colors = UnSelectColors;
+        //NameBG_Img.color = UnSelectColor;
     }
 
 }

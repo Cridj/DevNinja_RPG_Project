@@ -39,11 +39,11 @@ public class PreviewSlot : MonoBehaviour
 
         switch(_type)
         {
-            case 0:
-                Skill_Img.sprite = m_DataManager.CharSkill_Spr[_index].CharSkillSpr[_num];
+            case 0:                
                 if(_unlock==false)
                 {
-                    Skill_Img.gameObject.SetActive(false);
+                    Skill_Img.sprite = m_DataManager.Unknown_Spr;
+                    Skill_Img.gameObject.SetActive(true);
                     Name_Txt.gameObject.SetActive(true);
                     Name_Txt.text = "???";
                     Exp_Txt.gameObject.SetActive(true);
@@ -51,6 +51,7 @@ public class PreviewSlot : MonoBehaviour
                 }
                 else
                 {
+                    Skill_Img.sprite = m_DataManager.CharSkill_Spr[_index].CharSkillSpr[_num];
                     Skill_Img.gameObject.SetActive(true);
                     Name_Txt.gameObject.SetActive(true);
                     Name_Txt.text = m_PreviewManager.m_CharacterSkillData[_index].sName[_num];
@@ -58,11 +59,11 @@ public class PreviewSlot : MonoBehaviour
                     Exp_Txt.text = m_PreviewManager.m_CharacterSkillData[_index].sExplain[_num];
                 }
                 break;
-            case 1:
-                Skill_Img.sprite = m_DataManager.MonsSkill_Spr[_index].MonsSkillSpr[_num];
+            case 1:               
                 if(_unlock==false)
                 {
-                    Skill_Img.gameObject.SetActive(false);
+                    Skill_Img.sprite = m_DataManager.Unknown_Spr;
+                    Skill_Img.gameObject.SetActive(true);
                     Name_Txt.gameObject.SetActive(true);
                     Name_Txt.text = "???";
                     Exp_Txt.gameObject.SetActive(true);
@@ -70,7 +71,8 @@ public class PreviewSlot : MonoBehaviour
                 }
                 else
                 {
-                    Skill_Img.gameObject.SetActive(false);
+                    Skill_Img.sprite = m_DataManager.MonsSkill_Spr[_index].MonsSkillSpr[_num];
+                    Skill_Img.gameObject.SetActive(true);
                     Name_Txt.gameObject.SetActive(true);
                     Name_Txt.text = m_PreviewManager.m_MonsterSkillData[_index].sName[_num];
                     Exp_Txt.gameObject.SetActive(true);

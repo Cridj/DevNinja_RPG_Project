@@ -217,6 +217,7 @@ public class DataManager : MonoBehaviour
     public Sprite[] Char_Spr;
     public Sprite[] Mons_Spr;
     public Sprite[] Item_Spr;
+    public Sprite Unknown_Spr;
 
     public CharacterSkillSprite[] CharSkill_Spr;
     public MonsterSkillSprite[] MonsSkill_Spr;
