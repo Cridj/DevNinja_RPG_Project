@@ -113,6 +113,51 @@ public class MapManager : MonoBehaviour
                 case "N0002":
                     nMonsterIndex = 2;
                     break;
+                case "N0003":
+                    nMonsterIndex = 3;
+                    break;
+                case "N0004":
+                    nMonsterIndex = 4;
+                    break;
+                case "N0005":
+                    nMonsterIndex = 5;
+                    break;
+                case "N0006":
+                    nMonsterIndex = 6;
+                    break;
+                case "N0007":
+                    nMonsterIndex = 7;
+                    break;
+                case "N0008":
+                    nMonsterIndex = 8;
+                    break;
+                case "N0009":
+                    nMonsterIndex = 9;
+                    break;
+                case "N0010":
+                    nMonsterIndex = 10;
+                    break;
+                case "N0011":
+                    nMonsterIndex = 11;
+                    break;
+                case "N0012":
+                    nMonsterIndex = 12;
+                    break;
+                case "N0013":
+                    nMonsterIndex = 13;
+                    break;
+                case "N0014":
+                    nMonsterIndex = 14;
+                    break;
+                case "N0015":
+                    nMonsterIndex = 15;
+                    break;
+                case "N0016":
+                    nMonsterIndex = 16;
+                    break;
+                case "N0017":
+                    nMonsterIndex = 17;
+                    break;
 
                 default: MonsterSlotList[nSlotIndex].type = "N0000"; nMonsterIndex = 0; break;
             }

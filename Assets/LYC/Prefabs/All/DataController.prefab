@@ -129,6 +129,7 @@ MonoBehaviour:
     bGEsMute: 0
     bUIEsMute: 0
   MyMapList: []
+  MyStageList: []
   MyCharacterList: []
   MyCharacterSkillList: []
   MyMonsterList: []
