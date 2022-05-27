@@ -18,6 +18,8 @@ public class StageScene : HSingleton<StageScene>
 
     public Image shopImage;
 
+    public Animator FadeAnimator;
+
     /// <summary>
     /// 스테이지 맵 정보 온오프 여부
     /// </summary>

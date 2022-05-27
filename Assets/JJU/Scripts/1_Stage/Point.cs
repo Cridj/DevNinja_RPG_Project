@@ -189,7 +189,8 @@ public class Point : MonoBehaviour
         {
             case POINT_TYPE.BATTLE:
                 //배틀 스테이지로 이동하기
-                BattleRoom();
+                StartCoroutine(BattleRoom()); 
+                print("배틀로이동");
                 break;
 
             case POINT_TYPE.SP_BATTLE:
@@ -225,8 +226,10 @@ public class Point : MonoBehaviour
     ////////////////////////////////////////////////////////////////
     
 
-    private void BattleRoom()
+    private IEnumerator BattleRoom()
     {
+        StageScene.I.FadeAnimator.SetTrigger("Fade");
+        yield return new WaitForSeconds(2f);
         SceneLoad.LoadScene("Battle");
     }
 

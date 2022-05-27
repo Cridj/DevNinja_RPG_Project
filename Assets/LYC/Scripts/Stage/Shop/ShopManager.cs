@@ -59,8 +59,11 @@ public class ShopManager : MonoBehaviour
         //m_TradeManager.SetTradeItem();
     }
 
-    public void OpenShop()
+    public void OpenShop(GameObject obj)
     {
+        if (DataManager.Instance.m_PlayerData.nStack < 5)
+            return;
+        obj.SetActive(true);
         m_TradeManager.SetTradeItem();
         m_ReinforceManager.SetReinforceChar();
     }

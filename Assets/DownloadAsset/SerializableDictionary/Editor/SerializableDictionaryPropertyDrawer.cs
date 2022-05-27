@@ -15,6 +15,7 @@ using System;
 [CustomPropertyDrawer(typeof(HeroItemListPrefabDic))] 
 [CustomPropertyDrawer(typeof(ParticlePrefabDic))]
 [CustomPropertyDrawer(typeof(SoundPrefabDic))]
+
 public class SerializableDictionaryPropertyDrawer : PropertyDrawer
 {
 	const string KeysFieldName = "m_keys";

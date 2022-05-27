@@ -14,7 +14,7 @@ public class LYCTesting : MonoBehaviour
 
     public void OpenShop()
     {
-        m_ShopManager.OpenShop();
+        //m_ShopManager.OpenShop();
         test1_Obj.SetActive(true);
     }
 
