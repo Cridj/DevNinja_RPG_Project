@@ -3572,7 +3572,8 @@ PrefabInstance:
         type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5873017260834634985, guid: 3a1a0960c63516a4a8022d7950d028c7,
+        type: 2}
     - target: {fileID: 737984064955192831, guid: b24cc5fa84f84a84db4c162d268ddcaf,
         type: 3}
       propertyPath: m_PlayOnAwake
@@ -3582,7 +3583,8 @@ PrefabInstance:
         type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: -2947891074995519175, guid: 3a1a0960c63516a4a8022d7950d028c7,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b24cc5fa84f84a84db4c162d268ddcaf, type: 3}
 --- !u!82 &602194668 stripped
@@ -5285,6 +5287,7 @@ MonoBehaviour:
   currentPlayerSlider: {fileID: 0}
   currentPlayerHp: {fileID: 0}
   currentPlayerMaxHp: {fileID: 0}
+  currentPlayerPortrait: {fileID: 0}
   swordOffsets:
   - {fileID: 803555604}
   - {fileID: 1499518392}
@@ -5297,7 +5300,10 @@ MonoBehaviour:
   - {fileID: 562153040}
   - {fileID: 788923996}
   - {fileID: 171848540}
-  unitPortraits: []
+  unitPortraits:
+  - {fileID: 21300000, guid: 819c33e5ef9027e45a4ed5473caa0855, type: 3}
+  - {fileID: 21300000, guid: 819c33e5ef9027e45a4ed5473caa0855, type: 3}
+  - {fileID: 21300000, guid: bb8bae8d3b4ba4481b28f0c8f2568db4, type: 3}
   turnText:
   - {fileID: 0}
   - {fileID: 0}
@@ -5314,10 +5320,12 @@ MonoBehaviour:
   CharacterUI_MaxHP: {fileID: 1096777529}
   CharacterUI_HeroName: {fileID: 126351189}
   CharacterUI_heroHP_ProgressBar: {fileID: 1608623417}
+  CharacterUI_HeroPotrait: {fileID: 6044981194302280506}
   CharacterUI_CurrentHP2: {fileID: 769443835}
   CharacterUI_MaxHP2: {fileID: 1259686566}
   CharacterUI_HeroName2: {fileID: 1955762865}
   CharacterUI_heroHP_ProgressBar2: {fileID: 220891068}
+  CharacterUI_HeroPotrait2: {fileID: 1851177694}
   bBattleStart: 0
   Skill1_Img: {fileID: 1066323780}
   Skill2_Img: {fileID: 513655450}
@@ -14916,6 +14924,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6044981194302280504}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6044981194302280506 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6044981193440271753, guid: 21c4c2131b1d8485b8a3e90443abb9dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 6044981194302280504}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7856072518842473682
 PrefabInstance:
   m_ObjectHideFlags: 0

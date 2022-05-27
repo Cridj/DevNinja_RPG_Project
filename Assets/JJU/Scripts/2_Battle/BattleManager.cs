@@ -514,6 +514,7 @@ public class BattleManager : HSingleton<BattleManager>
 
     public int passiveCount;
 
+
     /// <summary>
     /// 다음 순서으로 넘어가는 함수
     /// </summary>
@@ -579,7 +580,7 @@ public class BattleManager : HSingleton<BattleManager>
                     {
                         case PassiveSKill.UndeadForce:
                             passiveCount++;
-                            StartCoroutine(enemy.UndeadForce());
+                            StartCoroutine(enemy.UndeadForce());                            
                             yield return new WaitForSeconds(2.5f);
                             continue;
 

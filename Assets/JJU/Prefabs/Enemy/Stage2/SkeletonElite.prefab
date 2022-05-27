@@ -16285,7 +16285,7 @@ MonoBehaviour:
   iceballCharge: {fileID: 0}
   iceballBullet: {fileID: 0}
   iceballExplosion: {fileID: 0}
-  meeleAttackDelaySec: 0
+  meeleAttackDelaySec: 0.5
   experience: 55
   bSkeleton: 1
   bRangedMonster: 0
