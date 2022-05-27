@@ -488,9 +488,9 @@ public class DataManager : MonoBehaviour
 
         string stagedata = JsonConvert.SerializeObject(MyStageList);
 #if UNITY_EDITOR
-        string stagepath = Path.Combine(Application.dataPath, "Resources/MyStageData.txt");
+        string stagepath = Path.Combine(Application.dataPath, "Resources/MYStageData.txt");
 #elif UNITY_ANDROID
-            string mappath = Path.Combine(Application.persistentDataPath, "Resources/MyStageData.txt");
+            string stagepath = Path.Combine(Application.persistentDataPath, "Resources/MYStageData.txt");
 #endif
         File.WriteAllText(stagepath, stagedata);
 
