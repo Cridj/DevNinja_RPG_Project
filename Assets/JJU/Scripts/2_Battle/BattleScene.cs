@@ -26,6 +26,8 @@ public class BattleScene : HSingleton<BattleScene>
     public Slider currentPlayerSlider;
     public TextMeshProUGUI currentPlayerHp;
     public TextMeshProUGUI currentPlayerMaxHp;
+    public Image currentPlayerPortrait;
+
 
     //소드이펙트 오프셋
     public Transform[] swordOffsets;
@@ -54,12 +56,15 @@ public class BattleScene : HSingleton<BattleScene>
     public TextMeshProUGUI CharacterUI_MaxHP;
     public TextMeshProUGUI CharacterUI_HeroName;
     public Slider CharacterUI_heroHP_ProgressBar;
+    public Image CharacterUI_HeroPotrait;
+
 
     //stat2
     public TextMeshProUGUI CharacterUI_CurrentHP2;
     public TextMeshProUGUI CharacterUI_MaxHP2;
     public TextMeshProUGUI CharacterUI_HeroName2;
     public Slider CharacterUI_heroHP_ProgressBar2;
+    public Image CharacterUI_HeroPotrait2;
 
     public bool bBattleStart;
 
@@ -94,8 +99,23 @@ public class BattleScene : HSingleton<BattleScene>
                 stat1Panel.SetActive(true);
                 CharacterUI_CurrentHP.text = (Mathf.Round(BattleManager.I.turnUnit.Hp)).ToString();
                 CharacterUI_MaxHP.text = BattleManager.I.turnUnit.maxHP.ToString();
-                CharacterUI_HeroName.text = BattleManager.I.turnUnit.name;
+                CharacterUI_HeroName.text = BattleManager.I.turnUnit.name;                
                 CharacterUI_heroHP_ProgressBar.value = BattleManager.I.turnUnit.Hp / BattleManager.I.turnUnit.maxHP;
+                switch (BattleManager.I.turnUnit.GetComponent<Hero>().job)
+                {
+                    case PlayerJob.Dealer:
+                        CharacterUI_HeroPotrait.sprite = unitPortraits[0];
+                        break;
+
+                    case PlayerJob.Tanker:
+                        CharacterUI_HeroPotrait.sprite = unitPortraits[1];
+                        break;
+
+                    case PlayerJob.Healer:
+                        CharacterUI_HeroPotrait.sprite = unitPortraits[2];
+                        break;
+                }
+
                 turnFlipFlop = true;
                 //stat1Anim.SetTrigger("MyTurn");
                 print("처음실행");
@@ -103,6 +123,7 @@ public class BattleScene : HSingleton<BattleScene>
                 currentPlayerHp = CharacterUI_CurrentHP;
                 currentPlayerMaxHp = CharacterUI_MaxHP;
                 currentPlayerSlider = CharacterUI_heroHP_ProgressBar;
+                
                 bBattleStart = true;
             }
             else
@@ -111,6 +132,21 @@ public class BattleScene : HSingleton<BattleScene>
                 CharacterUI_MaxHP.text = BattleManager.I.turnUnit.maxHP.ToString();
                 CharacterUI_HeroName.text = BattleManager.I.turnUnit.name;
                 CharacterUI_heroHP_ProgressBar.value = BattleManager.I.turnUnit.Hp / BattleManager.I.turnUnit.maxHP;
+                switch (BattleManager.I.turnUnit.GetComponent<Hero>().job)
+                {
+                    case PlayerJob.Dealer:
+                        CharacterUI_HeroPotrait.sprite = unitPortraits[0];
+                        break;
+
+                    case PlayerJob.Tanker:
+                        CharacterUI_HeroPotrait.sprite = unitPortraits[1];
+                        break;
+
+                    case PlayerJob.Healer:
+                        CharacterUI_HeroPotrait.sprite = unitPortraits[2];
+                        break;
+                }
+
                 turnFlipFlop = true;
                 stat1Anim.SetTrigger("MyTurn");
                 stat2Anim.SetTrigger("TurnOver");
@@ -128,6 +164,21 @@ public class BattleScene : HSingleton<BattleScene>
             CharacterUI_MaxHP2.text = BattleManager.I.turnUnit.maxHP.ToString();
             CharacterUI_HeroName2.text = BattleManager.I.turnUnit.name;
             CharacterUI_heroHP_ProgressBar2.value = BattleManager.I.turnUnit.Hp / BattleManager.I.turnUnit.maxHP;
+            switch (BattleManager.I.turnUnit.GetComponent<Hero>().job)
+            {
+                case PlayerJob.Dealer:
+                    CharacterUI_HeroPotrait.sprite = unitPortraits[0];
+                    break;
+
+                case PlayerJob.Tanker:
+                    CharacterUI_HeroPotrait.sprite = unitPortraits[1];
+                    break;
+
+                case PlayerJob.Healer:
+                    CharacterUI_HeroPotrait.sprite = unitPortraits[2];
+                    break;
+            }
+
             turnFlipFlop = false;
             stat1Anim.SetTrigger("TurnOver");
             stat2Anim.SetTrigger("MyTurn");

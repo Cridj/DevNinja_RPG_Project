@@ -158,7 +158,7 @@ public class Enemy : EnemySkill
     }
 
     public void Start()
-    {
+    {        
         //???????????? ?????? ????????
         if (bSkeleton)
         {
@@ -168,7 +168,7 @@ public class Enemy : EnemySkill
             rect.Rotate(new Vector3(0f, -180f, 0f));
         }
         beginPosV3 = destinationPosV3;
-        targetPosV3 = beginPosV3 + Vector3.left;
+        targetPosV3 = beginPosV3 + Vector3.left;        
     }
 
 
@@ -188,7 +188,7 @@ public class Enemy : EnemySkill
         }
     }
 
-    #region[?????? ????????]
+    #region[공격로직]
     public IEnumerator AttackEndCoroutine()
     {
         if(passiveSKill != PassiveSKill.NONE)
@@ -451,6 +451,7 @@ public class Enemy : EnemySkill
 
         if (targetList != null)
         {
+            sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["EnemyHit"]);
             damagedUnit.DecreaseHP(unit.PhysicalAttack, unit);
             Camera.main.GetComponent<CamShake>().ShakeTime = 0.15f;
 

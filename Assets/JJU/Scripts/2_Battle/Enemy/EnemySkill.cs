@@ -168,15 +168,17 @@ public class EnemySkill : MonoBehaviour
     {
         //???? ?????? ??????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "????????";
+        BattleManager.I.skillText.text = "두번 물기";
 
         animator.SetTrigger("Attack");               
         damagedUnit.DecreaseHP(unit.PhysicalAttack * 0.6f, unit);
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["EnemyHit"]);
         Camera.main.GetComponent<CamShake>().ShakeTime = 0.1f;
         yield return new WaitForSeconds(0.8f);
 
         animator.SetTrigger("Attack");
         damagedUnit.DecreaseHP(unit.PhysicalAttack * 0.6f, unit);
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["EnemyHit"]);
         Camera.main.GetComponent<CamShake>().ShakeTime = 0.1f;
 
         yield return new WaitForSeconds(1.8f);
@@ -202,10 +204,12 @@ public class EnemySkill : MonoBehaviour
     {
         //???? ?????? ??????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "????????";
+        BattleManager.I.skillText.text = "차지어택";
+
+        yield return new WaitForSeconds(0.6f);
         animator.SetTrigger("ChargeAttack");
         damagedUnit.DecreaseHP(unit.PhysicalAttack, unit);
-
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["EnemyHit"]);
 
 
         ////hp?? 0 ????(????)??????
@@ -235,10 +239,12 @@ public class EnemySkill : MonoBehaviour
     {
         //???? ?????? ??????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "????????";
+        BattleManager.I.skillText.text = "단단해지기";
 
+        yield return new WaitForSeconds(0.4f);
         DefenseBuffParticle.SetActive(true);
         unit.defenseBuffDuration = 2;
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["DefenseBuff"]);
         yield return new WaitForSeconds(1f);
 
 
@@ -265,11 +271,13 @@ public class EnemySkill : MonoBehaviour
     {
         //???? ?????? ??????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "????";
+        BattleManager.I.skillText.text = "포이즌 어택";
 
         damagedUnit.PoisonDuration = 2;
         animator.SetTrigger("Attack");
+        yield return new WaitForSeconds(0.5f);
         damagedUnit.DecreaseHP(unit.PhysicalAttack, unit);
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["EnemyHit"]);
         Camera.main.GetComponent<CamShake>().ShakeTime = 0.1f;
         damagedUnit.HeroStatIconUpdate();
 
@@ -298,18 +306,16 @@ public class EnemySkill : MonoBehaviour
     public IEnumerator HerdHunting(Animator animator,
                                    Unit unit) 
     {
-        //???? ?????? ??????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "????????";
+        BattleManager.I.skillText.text = "무리사냥";
 
         foreach (Enemy enemy in BattleManager.I.enemyCollection.collection)
         {
             enemy.EnableHerdHunting();
             enemy.AttackBuffParticle.SetActive(true);
-            //???? ?????? ????????
             enemy.unit.MonsterStatIconUpdate();
         }
-
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["AttackBuff"]);
         yield return new WaitForSeconds(1f);
 
         StartCoroutine(unit.GetComponent<Enemy>().AttackEndCoroutine());
@@ -329,8 +335,9 @@ public class EnemySkill : MonoBehaviour
     {
         //???? ?????? ??????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "?????? ????";
+        BattleManager.I.skillText.text = "짐승의 일격";
 
+        yield return new WaitForSeconds(0.5f);
         int i = 0;
         animator.SetTrigger("Attack");
         foreach(Hero hero in BattleManager.I.heroCollection.collection)
@@ -348,6 +355,7 @@ public class EnemySkill : MonoBehaviour
             //    hero.unit.GetComponent<Hero>().OnDie();
             //}
         }
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["EnemyHit"]);
         Camera.main.GetComponent<CamShake>().ShakeTime = 0.3f;
         yield return new WaitForSeconds(1f);
 
@@ -370,7 +378,7 @@ public class EnemySkill : MonoBehaviour
     {
         //???? ?????? ??????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "?????? ????????";
+        BattleManager.I.skillText.text = "짐승의 울부짖음";
 
         foreach (Enemy enemy in BattleManager.I.enemyCollection.collection)
         {
@@ -387,6 +395,7 @@ public class EnemySkill : MonoBehaviour
             //???? ?????? ????????
             hero.unit.HeroStatIconUpdate();
         }
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["MultipleBuff"]);
         yield return new WaitForSeconds(1f);
         foreach (Enemy enemy in BattleManager.I.enemyCollection.collection)
         {
@@ -394,9 +403,6 @@ public class EnemySkill : MonoBehaviour
 
         }
 
-        //foreach (Hero hero in BattleManager.I.heroCollection.collection)
-        //{
-        //}
         yield return new WaitForSeconds(.2f);
         StartCoroutine(unit.GetComponent<Enemy>().AttackEndCoroutine());
         //???? ?????? ????????
@@ -408,11 +414,13 @@ public class EnemySkill : MonoBehaviour
     {
         //???? ?????? ??????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "??????";
+        BattleManager.I.skillText.text = "다크 아머";
 
+        yield return new WaitForSeconds(0.4f);
         unit.darkArmorDuration = 3;
         StartCoroutine(unit.DarkArmor());
         StartCoroutine(PlayParticle(MultipleBuffParticle, 1.5f, 0.0f, transform.position));
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["DefenseBuff"]);
         yield return new WaitForSeconds(1.5f);
         StartCoroutine(unit.GetComponent<Enemy>().AttackEndCoroutine());
         //???? ?????? ????????
@@ -425,8 +433,9 @@ public class EnemySkill : MonoBehaviour
     {      
         //???? ?????? ??????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "???? ????";
+        BattleManager.I.skillText.text = "암흑 화살";
 
+        yield return new WaitForSeconds(0.5f);
         animator.SetTrigger("ChargeShot");
         yield return new WaitForSeconds(0.95f);
 
@@ -436,7 +445,7 @@ public class EnemySkill : MonoBehaviour
         archer.target = damagedUnit.gameObject;
         yield return new WaitForSeconds(0.35f);
         damagedUnit.DecreaseHP(unit.currentPhysicalAttack, unit);
-
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["EnemyHit"]);
         //?? ???? ????
         damagedUnit.darkDuration = 2;
 
@@ -450,8 +459,9 @@ public class EnemySkill : MonoBehaviour
     {
         //???? ?????? ??????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "????????";
+        BattleManager.I.skillText.text = "암흑";
 
+        yield return new WaitForSeconds(0.5f);
         animator.SetTrigger("Cast");
         yield return new WaitForSeconds(0.3f);
 
@@ -473,7 +483,7 @@ public class EnemySkill : MonoBehaviour
             hero.unit.darkDuration = 2;
             hero.unit.DecreaseHP(unit.currentPhysicalAttack * 1.2f, unit);
         }
-        
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["EnemyHit"]);
         StartCoroutine(unit.GetComponent<Enemy>().AttackEndCoroutine());
         //???? ?????? ????????
         BattleManager.I.skillText.gameObject.SetActive(false);
@@ -485,8 +495,10 @@ public class EnemySkill : MonoBehaviour
     {
         //???? ?????? ??????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "????????";
+        BattleManager.I.skillText.text = "체인 라싱";
 
+
+        yield return new WaitForSeconds(0.5f);
         animator.SetTrigger("Cast");
         yield return new WaitForSeconds(0.3f);
 
@@ -500,7 +512,7 @@ public class EnemySkill : MonoBehaviour
 
 
         yield return new WaitForSeconds(0.8f);
-
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["EnemyHit"]);
         damagedUnit.DecreaseHP(unit.currentPhysicalAttack * 1.5f, unit);
         damagedUnit.chainLashingDuration = 2;
         damagedUnit.HeroStatIconUpdate();
@@ -519,13 +531,14 @@ public class EnemySkill : MonoBehaviour
     {
         //???? ?????? ??????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "?????? ????";
+        BattleManager.I.skillText.text = "강력한 일격";
 
+        yield return new WaitForSeconds(0.5f);
         animator.SetTrigger("Slash");
         yield return new WaitForSeconds(0.5f);
         damagedUnit.DecreaseHP(unit.PhysicalAttack * 1.5f, unit);
         Camera.main.GetComponent<CamShake>().ShakeTime = 0.15f;
-
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["EnemyHit"]);
         //??
         Enemy enemy = GetComponent<Enemy>();
         yield return new WaitForSeconds(0.5f);
@@ -546,8 +559,10 @@ public class EnemySkill : MonoBehaviour
     {
         //???? ?????? ??????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "????";
+        BattleManager.I.skillText.text = "흡수";
 
+
+        yield return new WaitForSeconds(0.5f);
         drainHP = 0f;
         animator.SetTrigger("ChargeAttack2H");
         yield return new WaitForSeconds(1f);
@@ -565,6 +580,7 @@ public class EnemySkill : MonoBehaviour
             StartCoroutine(PlayParticle(particle, 0.5f, 0.0f, hero.transform.position + Vector3.up));
             Destroy(particle, 2f);
         }
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["EnemyHit"]);
         Camera.main.GetComponent<CamShake>().ShakeTime = 0.15f;
 
         //??
@@ -586,8 +602,9 @@ public class EnemySkill : MonoBehaviour
     {
         //???? ?????? ??????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "?????? ????";
+        BattleManager.I.skillText.text = "암흑의 일격";
 
+        yield return new WaitForSeconds(0.5f);
         animator.SetTrigger("ChargeAttack2H");
         yield return new WaitForSeconds(1f);
 
@@ -646,6 +663,7 @@ public class EnemySkill : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Camera.main.GetComponent<CamShake>().ShakeTime = 0.1f;
         DamagedUnit.DecreaseHP(Damage, Instigator);
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["EnemyHit"]);
         Destroy(sword);
     }
 
@@ -668,11 +686,12 @@ public class EnemySkill : MonoBehaviour
     {        
         //???? ????????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "??????????";
+        BattleManager.I.skillText.text = "소리지르기";
 
 
-
+        yield return new WaitForSeconds(0.5f);
         animator.SetTrigger("Shouting");
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["Shouting"]);
         yield return new WaitForSeconds(1.5f);
         foreach (var enemy in BattleManager.I.enemyCollection.collection)
         {
@@ -696,12 +715,13 @@ public class EnemySkill : MonoBehaviour
     {
         //???? ????????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "????????????";
+        BattleManager.I.skillText.text = "찌그러트리기";
 
 
 
         animator.SetTrigger("JumpAttack");
         yield return new WaitForSeconds(0.8f);
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["EnemyHit"]);
         damagedUnit.DecreaseHP(unit.currentPhysicalAttack * 2f, unit);
 
         //????????
@@ -737,7 +757,7 @@ public class EnemySkill : MonoBehaviour
         chargeParticle.transform.position = Edge.position;
         Destroy(chargeParticle, 2f);
         //StartCoroutine(DeActiveDelay(chargeParticle, 1f));
-
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["Charge"]);
 
         yield return new WaitForSeconds(2f);
 
@@ -761,7 +781,7 @@ public class EnemySkill : MonoBehaviour
         Destroy(explosion, 0.5f);
 
         damagedUnit.DecreaseHP(unit.currentPhysicalAttack * 2f, unit);
-
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["FireExplosion"]);
 
         //???? ????????
         StartCoroutine(unit.GetComponent<Enemy>().AttackEndCoroutine());
@@ -775,9 +795,11 @@ public class EnemySkill : MonoBehaviour
     {
         //???? ????????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "아이스 스s";
+        BattleManager.I.skillText.text = "아이스 스톰";
 
         animator.SetTrigger("OgreCast");
+
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["IceCharge"]);
         yield return new WaitForSeconds(0.8f);
 
         iceballCharge.SetActive(true);
@@ -797,7 +819,7 @@ public class EnemySkill : MonoBehaviour
             damagedUnit.transform.position + Vector3.up, Quaternion.identity);
         explosion.transform.localScale = Vector3.one * 2.5f;
         Destroy(explosion, 0.5f);
-
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["IceExplosion"]);
         damagedUnit.DecreaseHP(unit.currentPhysicalAttack * 2f, unit);
 
 
@@ -828,6 +850,7 @@ public class EnemySkill : MonoBehaviour
         foreach(var hero in BattleManager.I.heroCollection.collection)
         {
             hero.unit.DecreaseHP(GetComponent<Enemy>().unit.currentPhysicalAttack * 0.5f, GetComponent<Enemy>().unit);
+            sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["Quake"]);
             Camera.main.GetComponent<CamShake>().ShakeTime = 0.2f;
         }
     }
@@ -855,7 +878,7 @@ public class EnemySkill : MonoBehaviour
             damagedUnit.transform.position + Vector3.up, Quaternion.identity);
         explosion.transform.localScale = Vector3.one * 2.5f;
         Destroy(explosion, 0.5f);
-
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["EnemyHit"]);
         damagedUnit.DecreaseHP(unit.currentPhysicalAttack * 2f, unit);
 
 
@@ -873,6 +896,7 @@ public class EnemySkill : MonoBehaviour
 
         yield return new WaitForSeconds(0.6f);
         animator.SetTrigger("Shout");
+        sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["Shouting"]);
         yield return new WaitForSeconds(0.3f);
 
         for(int i = 0; i< 4; i++)
@@ -1020,7 +1044,7 @@ public class EnemySkill : MonoBehaviour
     }
 
     public IEnumerator Passive_Mastered_BlackMagic(Animator animator,
-                                              Unit unit)
+                                                                    Unit unit)
     {
         print("?????? ???????????? ??????");
         foreach (Enemy enemy in BattleManager.I.enemyCollection.collection)
