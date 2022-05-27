@@ -113,6 +113,7 @@ public class TradeSlot : MonoBehaviour
         }
 
         Check_Obj.SetActive(true);
+        Debug.Log(nIndex + ", " + nSlot);
         m_ShopManager.SelectSlot(nIndex, nSlot);
     }
 

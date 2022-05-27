@@ -260,6 +260,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1110183 stripped
@@ -417,6 +422,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &10338161 stripped
@@ -651,6 +661,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &17735800 stripped
@@ -847,6 +862,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &35720257 stripped
@@ -1191,6 +1211,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &54709496 stripped
@@ -1421,6 +1446,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &61962314 stripped
@@ -1541,6 +1571,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425043}
         m_TargetAssemblyTypeName: LibraryManager, Assembly-CSharp
         m_MethodName: ChangeSlot
@@ -1805,6 +1847,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &72417579 stripped
@@ -1932,6 +1979,8 @@ GameObject:
   - component: {fileID: 89142630}
   - component: {fileID: 89142633}
   - component: {fileID: 89142632}
+  - component: {fileID: 89142635}
+  - component: {fileID: 89142634}
   m_Layer: 5
   m_Name: Character_Img
   m_TagString: Untagged
@@ -1972,14 +2021,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6b79413375230f842ac6b3625c7e3c0a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 819c33e5ef9027e45a4ed5473caa0855, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1997,6 +2046,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89142629}
   m_CullTransparentMesh: 1
+--- !u!114 &89142634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89142629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 200, y: -600}
+  m_UseGraphicAlpha: 1
+--- !u!114 &89142635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89142629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &93331653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2337,6 +2416,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &113697895 stripped
@@ -2494,6 +2578,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &114028510 stripped
@@ -2727,6 +2816,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &125521933 stripped
@@ -3196,6 +3290,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &144891186 stripped
@@ -3449,6 +3548,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &165521371 stripped
@@ -4300,6 +4404,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &224045358 stripped
@@ -4608,6 +4717,11 @@ PrefabInstance:
       propertyPath: m_PreviewManager
       value: 
       objectReference: {fileID: 678425044}
+    - target: {fileID: 5059798367236708332, guid: db531447312cbbc4ba90dd54c2d082cf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     - target: {fileID: 7489332985874018370, guid: db531447312cbbc4ba90dd54c2d082cf,
         type: 3}
       propertyPath: m_Name
@@ -4880,6 +4994,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &239953690 stripped
@@ -5037,6 +5156,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &246014983 stripped
@@ -5194,6 +5318,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &256726476 stripped
@@ -5696,6 +5825,7 @@ GameObject:
   m_Component:
   - component: {fileID: 301236871}
   - component: {fileID: 301236872}
+  - component: {fileID: 301236873}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -5775,6 +5905,35 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+--- !u!114 &301236873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301236870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 678425047}
+          m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+          m_MethodName: UIEPlay
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &301339036
 GameObject:
   m_ObjectHideFlags: 0
@@ -5979,6 +6138,11 @@ PrefabInstance:
       propertyPath: m_PreviewManager
       value: 
       objectReference: {fileID: 678425044}
+    - target: {fileID: 5059798367236708332, guid: db531447312cbbc4ba90dd54c2d082cf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     - target: {fileID: 7489332985874018370, guid: db531447312cbbc4ba90dd54c2d082cf,
         type: 3}
       propertyPath: m_Name
@@ -6335,6 +6499,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &339860555 stripped
@@ -6492,6 +6661,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!1001 &344114349
@@ -6511,6 +6685,11 @@ PrefabInstance:
       propertyPath: m_PreviewManager
       value: 
       objectReference: {fileID: 678425044}
+    - target: {fileID: 5059798367236708332, guid: db531447312cbbc4ba90dd54c2d082cf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     - target: {fileID: 7489332985874018370, guid: db531447312cbbc4ba90dd54c2d082cf,
         type: 3}
       propertyPath: m_Name
@@ -6734,6 +6913,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425041}
         m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
         m_MethodName: ReturnTap
@@ -6884,6 +7075,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425043}
         m_TargetAssemblyTypeName: LibraryManager, Assembly-CSharp
         m_MethodName: ChangeSlot
@@ -7061,7 +7264,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.35
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -7296,6 +7499,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &385564894 stripped
@@ -7477,6 +7685,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425041}
         m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
         m_MethodName: WarnTapOn
@@ -7792,6 +8012,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &403758442 stripped
@@ -7897,9 +8122,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425041}
         m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
-        m_MethodName: ReadyToGame
+        m_MethodName: GoToGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8760,6 +8997,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &448036701 stripped
@@ -9192,6 +9434,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425041}
         m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
         m_MethodName: SettingTapOn
@@ -9348,6 +9602,11 @@ PrefabInstance:
       propertyPath: m_PreviewManager
       value: 
       objectReference: {fileID: 678425044}
+    - target: {fileID: 5059798367236708332, guid: db531447312cbbc4ba90dd54c2d082cf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     - target: {fileID: 7489332985874018370, guid: db531447312cbbc4ba90dd54c2d082cf,
         type: 3}
       propertyPath: m_Name
@@ -9608,6 +9867,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &476277951 stripped
@@ -9945,6 +10209,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &486083536 stripped
@@ -10223,6 +10492,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!1 &493059557
@@ -10369,6 +10643,11 @@ PrefabInstance:
       propertyPath: m_PreviewManager
       value: 
       objectReference: {fileID: 678425044}
+    - target: {fileID: 5059798367236708332, guid: db531447312cbbc4ba90dd54c2d082cf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     - target: {fileID: 7489332985874018370, guid: db531447312cbbc4ba90dd54c2d082cf,
         type: 3}
       propertyPath: m_Name
@@ -11110,6 +11389,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &547261850 stripped
@@ -11130,140 +11414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad82cd3d4c79cc24590a74af6e0151aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &589145831
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 589145832}
-  - component: {fileID: 589145835}
-  - component: {fileID: 589145834}
-  - component: {fileID: 589145833}
-  m_Layer: 5
-  m_Name: Button (Legacy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &589145832
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589145831}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1227614067}
-  m_Father: {fileID: 1678472578}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -2500, y: -1300}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &589145833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589145831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 589145834}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 638166685}
-        m_TargetAssemblyTypeName: test, Assembly-CSharp
-        m_MethodName: GoToTest
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &589145834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589145831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &589145835
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589145831}
-  m_CullTransparentMesh: 1
 --- !u!1 &592720381
 GameObject:
   m_ObjectHideFlags: 0
@@ -11438,6 +11588,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &600006657 stripped
@@ -11821,6 +11976,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &628059863 stripped
@@ -12052,6 +12212,11 @@ PrefabInstance:
       propertyPath: m_PreviewManager
       value: 
       objectReference: {fileID: 678425044}
+    - target: {fileID: 5059798367236708332, guid: db531447312cbbc4ba90dd54c2d082cf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     - target: {fileID: 7489332985874018370, guid: db531447312cbbc4ba90dd54c2d082cf,
         type: 3}
       propertyPath: m_Name
@@ -12578,6 +12743,7 @@ GameObject:
   - component: {fileID: 678425043}
   - component: {fileID: 678425044}
   - component: {fileID: 678425045}
+  - component: {fileID: 678425047}
   - component: {fileID: 678425046}
   m_Layer: 0
   m_Name: LobbyManager
@@ -13059,6 +13225,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09093f1c439e04a4e8ceeb0b5728efa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &678425047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678425039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb0dff2f6ef16489d5dcbb5c26d81b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM_AS: {fileID: 428139172}
+  GE_AS: {fileID: 1825955741}
+  UIE_AS: {fileID: 382062149}
+  BGM_AC:
+  - {fileID: 0}
+  GE_AC:
+  - {fileID: 0}
+  UIE_AC:
+  - {fileID: 8300000, guid: 81e82c43696de2f46956562293130702, type: 3}
+  - {fileID: 8300000, guid: ef959bb64a77c0d4390f31598748179c, type: 3}
 --- !u!1 &681307460
 GameObject:
   m_ObjectHideFlags: 0
@@ -13301,6 +13489,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!114 &687455683 stripped
@@ -13608,6 +13801,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425041}
         m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
         m_MethodName: 
@@ -13764,6 +13969,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425041}
         m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
         m_MethodName: ReadyToExit
@@ -14440,6 +14657,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &742030709 stripped
@@ -14483,6 +14705,11 @@ PrefabInstance:
       propertyPath: m_PreviewManager
       value: 
       objectReference: {fileID: 678425044}
+    - target: {fileID: 5059798367236708332, guid: db531447312cbbc4ba90dd54c2d082cf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     - target: {fileID: 7489332985874018370, guid: db531447312cbbc4ba90dd54c2d082cf,
         type: 3}
       propertyPath: m_Name
@@ -14960,6 +15187,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &771278942 stripped
@@ -15312,6 +15544,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &803451394 stripped
@@ -15469,6 +15706,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &812305426 stripped
@@ -15702,6 +15944,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &818896471 stripped
@@ -15958,6 +16205,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &826985434 stripped
@@ -16064,6 +16316,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425042}
         m_TargetAssemblyTypeName: SoundMixerManager, Assembly-CSharp
         m_MethodName: MuteUIES
@@ -16266,6 +16530,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &829469061 stripped
@@ -16386,6 +16655,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425045}
         m_TargetAssemblyTypeName: MapManager, Assembly-CSharp
         m_MethodName: MapReset
@@ -16585,6 +16866,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &845500344 stripped
@@ -16742,6 +17028,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &853278164 stripped
@@ -16868,6 +17159,7 @@ GameObject:
   - component: {fileID: 869354204}
   - component: {fileID: 869354203}
   - component: {fileID: 869354206}
+  - component: {fileID: 869354207}
   m_Layer: 5
   m_Name: Stage_Btn
   m_TagString: Untagged
@@ -16924,7 +17216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8396226, g: 0.82774115, b: 0.82774115, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -16993,6 +17285,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425041}
         m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
         m_MethodName: StageTapOn
@@ -17005,6 +17309,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &869354207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869354201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.8396226, g: 0.5377272, b: 0.07524917, a: 1}
+  m_EffectDistance: {x: 8, y: 8}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &871036216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17142,6 +17461,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &871036217 stripped
@@ -17401,6 +17725,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &875395398 stripped
@@ -18006,6 +18335,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &910907347 stripped
@@ -18163,6 +18497,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &913358183 stripped
@@ -18200,6 +18539,11 @@ PrefabInstance:
       propertyPath: m_PreviewManager
       value: 
       objectReference: {fileID: 678425044}
+    - target: {fileID: 5059798367236708332, guid: db531447312cbbc4ba90dd54c2d082cf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     - target: {fileID: 7489332985874018370, guid: db531447312cbbc4ba90dd54c2d082cf,
         type: 3}
       propertyPath: m_Name
@@ -18548,6 +18892,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &934968686 stripped
@@ -18801,6 +19150,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!1001 &949835356
@@ -18940,6 +19294,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &949835357 stripped
@@ -19504,6 +19863,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &986014421 stripped
@@ -19661,6 +20025,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &994762149 stripped
@@ -19715,7 +20084,7 @@ RectTransform:
   - {fileID: 127464456}
   - {fileID: 1542334779}
   m_Father: {fileID: 1678472578}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -19894,7 +20263,7 @@ RectTransform:
   - {fileID: 459595958}
   - {fileID: 609362917}
   m_Father: {fileID: 1678472578}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -20521,6 +20890,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1045911584 stripped
@@ -20678,6 +21052,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1057023117 stripped
@@ -20911,6 +21290,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1071250913 stripped
@@ -21546,6 +21930,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1137792516 stripped
@@ -27483,6 +27872,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425041}
         m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
         m_MethodName: ReturnTap
@@ -27670,6 +28071,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1187355327 stripped
@@ -27923,6 +28329,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1202184161 stripped
@@ -28080,6 +28491,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1217590128 stripped
@@ -28237,6 +28653,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!1001 &1225242131
@@ -28376,6 +28797,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1225242132 stripped
@@ -28396,86 +28822,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad82cd3d4c79cc24590a74af6e0151aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1227614066
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1227614067}
-  - component: {fileID: 1227614069}
-  - component: {fileID: 1227614068}
-  m_Layer: 5
-  m_Name: Text (Legacy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1227614067
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227614066}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 589145832}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1227614068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227614066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 80
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "\uC0C1\uC810(\uD14C\uC2A4\uD2B8)"
---- !u!222 &1227614069
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227614066}
-  m_CullTransparentMesh: 1
 --- !u!1 &1230348820
 GameObject:
   m_ObjectHideFlags: 0
@@ -28722,6 +29068,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!1 &1248155372
@@ -29003,6 +29354,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1257068418 stripped
@@ -29352,6 +29708,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1271190001 stripped
@@ -29630,7 +29991,7 @@ RectTransform:
   - {fileID: 1531880695}
   - {fileID: 1456528789}
   m_Father: {fileID: 1678472578}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -29812,6 +30173,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1305793492 stripped
@@ -30006,6 +30372,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1309692152 stripped
@@ -30163,6 +30534,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1310063190 stripped
@@ -30258,12 +30634,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 01a49b63f28ec534897ab7f55aefd350, type: 3}
     m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 120
+    m_MaxSize: 130
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -30493,6 +30869,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!1 &1338049943
@@ -31137,6 +31518,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1356352672 stripped
@@ -31294,6 +31680,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1360424725 stripped
@@ -31443,7 +31834,7 @@ RectTransform:
   - {fileID: 1759062396}
   - {fileID: 1163746535}
   m_Father: {fileID: 1678472578}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -31692,6 +32083,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1389622675 stripped
@@ -31787,12 +32183,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 01a49b63f28ec534897ab7f55aefd350, type: 3}
     m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 120
+    m_MaxSize: 130
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -31945,6 +32341,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1406897070 stripped
@@ -32102,6 +32503,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1407124639 stripped
@@ -32180,7 +32586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 30c1ab6f36f533b4c85b396e7044f6f7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -32626,6 +33032,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1431381790 stripped
@@ -33045,6 +33456,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1444934246 stripped
@@ -33202,6 +33618,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1449464054 stripped
@@ -33307,6 +33728,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425041}
         m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
         m_MethodName: ReturnTap
@@ -33472,6 +33905,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425042}
         m_TargetAssemblyTypeName: SoundMixerManager, Assembly-CSharp
         m_MethodName: SoundValueSave
@@ -33876,6 +34321,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1471959932 stripped
@@ -34191,6 +34641,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1478140382 stripped
@@ -34334,6 +34789,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425042}
         m_TargetAssemblyTypeName: SoundMixerManager, Assembly-CSharp
         m_MethodName: MuteMS
@@ -34416,6 +34883,11 @@ PrefabInstance:
       propertyPath: m_PreviewManager
       value: 
       objectReference: {fileID: 678425044}
+    - target: {fileID: 5059798367236708332, guid: db531447312cbbc4ba90dd54c2d082cf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     - target: {fileID: 7489332985874018370, guid: db531447312cbbc4ba90dd54c2d082cf,
         type: 3}
       propertyPath: m_Name
@@ -35189,6 +35661,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1517011213 stripped
@@ -35425,6 +35902,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!1 &1520409224
@@ -35702,6 +36184,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425041}
         m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
         m_MethodName: ReturnTap
@@ -35889,6 +36383,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1542267961 stripped
@@ -36164,6 +36663,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1549171291 stripped
@@ -36321,6 +36825,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!114 &1557576972 stripped
@@ -36654,6 +37163,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425043}
         m_TargetAssemblyTypeName: LibraryManager, Assembly-CSharp
         m_MethodName: ChangeSlot
@@ -37238,6 +37759,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1615515300 stripped
@@ -37491,6 +38017,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1624664691 stripped
@@ -37979,6 +38510,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425042}
         m_TargetAssemblyTypeName: SoundMixerManager, Assembly-CSharp
         m_MethodName: MuteBGMS
@@ -38181,6 +38724,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1655076888 stripped
@@ -38412,6 +38960,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1672200450}
   - component: {fileID: 1672200451}
+  - component: {fileID: 1672200452}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -38491,6 +39040,35 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+--- !u!114 &1672200452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672200449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 678425047}
+          m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+          m_MethodName: UIEPlay
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1675041564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38628,6 +39206,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1675041565 stripped
@@ -38741,7 +39324,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1411419925}
-  - {fileID: 589145832}
   - {fileID: 1006280155}
   - {fileID: 999906595}
   - {fileID: 2128324492}
@@ -38893,6 +39475,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1688795038 stripped
@@ -39251,6 +39838,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425042}
         m_TargetAssemblyTypeName: SoundMixerManager, Assembly-CSharp
         m_MethodName: MuteGES
@@ -39471,6 +40070,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1724756502 stripped
@@ -39987,6 +40591,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1744916756 stripped
@@ -40330,6 +40939,7 @@ GameObject:
   - component: {fileID: 1770243482}
   - component: {fileID: 1770243481}
   - component: {fileID: 1770243480}
+  - component: {fileID: 1770243484}
   m_Layer: 5
   m_Name: Library_Btn
   m_TagString: Untagged
@@ -40402,6 +41012,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 678425047}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 678425041}
         m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
         m_MethodName: LibraryTapOn
@@ -40442,7 +41064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8396226, g: 0.82774115, b: 0.82774115, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -40467,6 +41089,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770243478}
   m_CullTransparentMesh: 1
+--- !u!114 &1770243484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770243478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.8396226, g: 0.5377272, b: 0.07524917, a: 1}
+  m_EffectDistance: {x: 8, y: 8}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &1775916382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40604,6 +41241,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1775916383 stripped
@@ -40857,6 +41499,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1789816319 stripped
@@ -41202,6 +41849,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1801731450 stripped
@@ -41759,6 +42411,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1827577726 stripped
@@ -41916,6 +42573,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1828792888 stripped
@@ -42073,6 +42735,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1834192542 stripped
@@ -42338,6 +43005,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1860218877 stripped
@@ -42705,6 +43377,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1878609075 stripped
@@ -42862,6 +43539,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &1882570655 stripped
@@ -43431,7 +44113,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1678472578}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -43643,6 +44325,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &2003932762 stripped
@@ -43800,6 +44487,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!1001 &2008608323
@@ -43939,6 +44631,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &2008608324 stripped
@@ -44065,7 +44762,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 01a49b63f28ec534897ab7f55aefd350, type: 3}
     m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 1
@@ -44223,6 +44920,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &2011873191 stripped
@@ -44957,6 +45659,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!1001 &2115700185
@@ -45096,6 +45803,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!224 &2115700186 stripped
@@ -45322,7 +46034,7 @@ RectTransform:
   - {fileID: 2121992471}
   - {fileID: 1009330945}
   m_Father: {fileID: 1678472578}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -45638,6 +46350,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5100410253984804683, guid: ddbf74eabd7edc84c89994a82c248f09,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbf74eabd7edc84c89994a82c248f09, type: 3}
 --- !u!1001 &7489332985672537961
@@ -45657,6 +46374,11 @@ PrefabInstance:
       propertyPath: m_PreviewManager
       value: 
       objectReference: {fileID: 678425044}
+    - target: {fileID: 5059798367236708332, guid: db531447312cbbc4ba90dd54c2d082cf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 678425047}
     - target: {fileID: 7489332985874018370, guid: db531447312cbbc4ba90dd54c2d082cf,
         type: 3}
       propertyPath: m_Name

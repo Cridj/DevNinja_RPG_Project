@@ -51,9 +51,9 @@ public class StageInfoManager : MonoBehaviour
 
     public void SetSlotMonster()
     {
-        //    int nMonsterIndex = 0;
-        //    for(int i = 0; i<int.Parse())
-        //    switch(m_SMSlot[nSlotIndex].type)
+        //int nMonsterIndex = 0;
+        //for (int i = 0; i < int.Parse())
+        //    switch (m_SMSlot[nSlotIndex].type)
         //    {
         //        case "N0000":
         //            nMonsterIndex = 0;
@@ -113,6 +113,6 @@ public class StageInfoManager : MonoBehaviour
         //        default: m_SMSlot[nSlotIndex].type = "N0000"; nMonsterIndex = 0; break;
         //    }
 
-        //    Slots[]
+        //Slots[]
     }
 }

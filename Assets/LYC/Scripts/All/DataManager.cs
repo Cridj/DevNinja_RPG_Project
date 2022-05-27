@@ -100,6 +100,17 @@ public class MapData
     }
 }
 
+[System.Serializable]
+public class StageData
+{
+    public string nNum;
+
+    public StageData(string _nNum)
+    {
+        nNum = _nNum;
+    }
+}
+
 //캐릭터 데이터 정보 textasset
 [System.Serializable]
 public class CharacterData
@@ -197,6 +208,9 @@ public class DataManager : MonoBehaviour
     //[Header("맵 정보")]
     public List<MapData> MyMapList;
 
+    //[Header("스테이지 정보")]
+    public List<StageData> MyStageList;
+
     //[Header("캐릭터 기본 정보")]
     public List<CharacterData> MyCharacterList;
 
@@ -273,6 +287,7 @@ public class DataManager : MonoBehaviour
             m_PlatformScript = GameObject.FindGameObjectWithTag("PlatformCS").GetComponent<PlatformScript>();
 
             m_PlatformScript.m_MapData = MyMapList;
+            m_PlatformScript.m_StageData = MyStageList;
             m_PlatformScript.m_PlayerData = m_PlayerData;
             m_PlatformScript.m_OptionData = m_OptionData;
             m_PlatformScript.m_CharacterData = MyCharacterList;
@@ -471,6 +486,14 @@ public class DataManager : MonoBehaviour
 #endif
         File.WriteAllText(mappath, mapdata);
 
+        string stagedata = JsonConvert.SerializeObject(MyStageList);
+#if UNITY_EDITOR
+        string stagepath = Path.Combine(Application.dataPath, "Resources/MyStageData.txt");
+#elif UNITY_ANDROID
+            string mappath = Path.Combine(Application.persistentDataPath, "Resources/MyStageData.txt");
+#endif
+        File.WriteAllText(stagepath, stagedata);
+
         string chardata = JsonConvert.SerializeObject(MyCharacterList); //캐릭터
 #if UNITY_EDITOR
         string charpath = Path.Combine(Application.dataPath, "Resources/MyCharacterData.txt");
@@ -580,6 +603,9 @@ public class DataManager : MonoBehaviour
     {
         TextAsset mappath = Resources.Load<TextAsset>("MyMapData");
         MyMapList = JsonConvert.DeserializeObject<List<MapData>>(mappath.text);
+
+        TextAsset stagepath = Resources.Load<TextAsset>("MyStageData");
+        MyStageList = JsonConvert.DeserializeObject<List<StageData>>(stagepath.text);
 
         TextAsset charpath = Resources.Load<TextAsset>("MyCharacterData");
         MyCharacterList = JsonConvert.DeserializeObject<List<CharacterData>>(charpath.text);

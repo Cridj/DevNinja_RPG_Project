@@ -315,6 +315,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1879912455}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1879912453}
         m_TargetAssemblyTypeName: LogoManager, Assembly-CSharp
         m_MethodName: ReadyToLobby
@@ -410,7 +422,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 60821e70f38e9724e89095be41d6b4ad, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -669,7 +681,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.35
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -1058,6 +1070,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad9d508e92593b64d83573e0b1efb1ca, type: 3}
+--- !u!1 &885589425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3313557476799281944, guid: ad9d508e92593b64d83573e0b1efb1ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 885589424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &885589426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885589425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb0dff2f6ef16489d5dcbb5c26d81b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM_AS: {fileID: 0}
+  GE_AS: {fileID: 0}
+  UIE_AS: {fileID: 0}
+  BGM_AC: []
+  GE_AC: []
+  UIE_AC: []
 --- !u!1 &1134052648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,6 +1460,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1879912455}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1879912453}
         m_TargetAssemblyTypeName: LogoManager, Assembly-CSharp
         m_MethodName: ReadyToExit
@@ -1844,6 +1892,7 @@ GameObject:
   - component: {fileID: 1879912452}
   - component: {fileID: 1879912453}
   - component: {fileID: 1879912454}
+  - component: {fileID: 1879912455}
   m_Layer: 0
   m_Name: LogoManager
   m_TagString: Untagged
@@ -1897,6 +1946,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09093f1c439e04a4e8ceeb0b5728efa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1879912455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879912451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cb0dff2f6ef16489d5dcbb5c26d81b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM_AS: {fileID: 179065606}
+  GE_AS: {fileID: 368445123}
+  UIE_AS: {fileID: 421754712}
+  BGM_AC:
+  - {fileID: 0}
+  GE_AC:
+  - {fileID: 0}
+  UIE_AC:
+  - {fileID: 8300000, guid: ef959bb64a77c0d4390f31598748179c, type: 3}
+  - {fileID: 8300000, guid: 81e82c43696de2f46956562293130702, type: 3}
 --- !u!1 &1893707372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2185,6 +2256,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1879912455}
+        m_TargetAssemblyTypeName: ListSound, Assembly-CSharp
+        m_MethodName: UIEPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1879912453}
         m_TargetAssemblyTypeName: LogoManager, Assembly-CSharp
         m_MethodName: ExitMenuOn
