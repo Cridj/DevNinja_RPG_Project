@@ -87,8 +87,8 @@ public class CharInfoSlot : MonoBehaviour
 
     public void CharUnSelect()
     {
-        Char_Btn.colors = UnSelectColors;
-        NameBG_Img.color = UnSelectColor;
+        //Char_Btn.colors = UnSelectColors;
+        //NameBG_Img.color = UnSelectColor;
     }
 
 }

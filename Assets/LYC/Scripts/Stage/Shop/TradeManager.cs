@@ -18,6 +18,8 @@ public class TradeManager : MonoBehaviour
     public List<ItemData> EpicDeck = new List<ItemData>();
     public List<ItemData> LegendDeck = new List<ItemData>();
 
+    int nCommon, nRare, nEpic, nLegend;
+
     public int total = 0;
 
     [SerializeField]
@@ -46,6 +48,11 @@ public class TradeManager : MonoBehaviour
         EpicDeck.Clear();
         LegendDeck.Clear();
 
+        nCommon = CommonDeck.Count;
+        nRare = RareDeck.Count;
+        nEpic = EpicDeck.Count;
+        nLegend = LegendDeck.Count;
+
         for (int i = 0; i < m_ItemData.Count; i++)
         {
             switch (m_ItemData[i].sRank)
@@ -66,6 +73,11 @@ public class TradeManager : MonoBehaviour
                     break;
             }
         }
+
+        nCommon = CommonDeck.Count;
+        nRare = RareDeck.Count;
+        nEpic = EpicDeck.Count;
+        nLegend = LegendDeck.Count;
 
         for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
         {
@@ -234,7 +246,7 @@ public class TradeManager : MonoBehaviour
 
                 int commonNum = CommonDeck.Count;
 
-                Debug.Log(m_PlayerData.nItemIndex.Length);
+                Debug.Log(CommonDeck.Count+"카운트");
                 for (int i = 0; i <m_PlayerData.nItemIndex.Length; i++) //만약 common 아이템을 다 갖고 있을 때
                 {
                     if(m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex == null)
@@ -249,9 +261,12 @@ public class TradeManager : MonoBehaviour
                         if (m_ItemData[nIndexNum].sRank == "Common")
                         {
                             commonNum -= 1;
+                            
+                            Debug.Log(commonNum+"커먼넘");
 
                             if (commonNum <= 0)
                             {
+                                Debug.Log("버림");
                                 return -1;
                             }
                         }
@@ -261,7 +276,18 @@ public class TradeManager : MonoBehaviour
                 Debug.Log(CommonDeck.Count);
                 selectNum = Random.Range(0, CommonDeck.Count);
 
-                if (_slot>0)
+                //if (_slot>0) //이걸로 대체할 것
+                //{
+                //    for(int nslots = _slot; nslots>0; nslots--)
+                //    {
+                //        if(m_ItemData[Slots[nslots - 1].nIndex].sType != "Common")
+                //        {
+                //            break;
+                //        }
+                //    }
+                //}
+
+                if (_slot>0)  //이거 변경할 것 slots 현 위치부터 0 까지 돌리기
                 {
                     if (CommonDeck[selectNum].nIndex == Slots[_slot - 1].nIndex.ToString())
                     {

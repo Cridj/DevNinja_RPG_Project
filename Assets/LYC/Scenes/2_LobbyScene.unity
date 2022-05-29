@@ -13056,6 +13056,66 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+  - MonsSkill_Anim:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkill_Anim:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkill_Anim:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkill_Anim:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkill_Anim:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkill_Anim:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkill_Anim:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkill_Anim:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkill_Anim:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkill_Anim:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkill_Anim:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkill_Anim:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkill_Anim:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkill_Anim:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkill_Anim:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   nType: 0
   nIndex: 0
   nNum: 0
