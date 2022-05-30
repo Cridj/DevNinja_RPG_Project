@@ -11,7 +11,7 @@ public class StageScene : HSingleton<StageScene>
     public Point targetPoint;
 
     public Point selectedPoint;
-    public GameObject MapInfoPanel;
+    public Animator MapInfoAnim;
     public GameObject[] points;
     public StageInfoManager stageInfoManager;
 
@@ -53,7 +53,7 @@ public class StageScene : HSingleton<StageScene>
 
     public void OnDisableInfoPanel()
     {
-        MapInfoPanel.SetActive(false);
+        MapInfoAnim.SetBool("Click", false);
         foreach(var point in points)
         {
             point.GetComponent<Point>().bClicked = false;

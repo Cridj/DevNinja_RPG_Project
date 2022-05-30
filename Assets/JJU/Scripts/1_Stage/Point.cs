@@ -15,6 +15,8 @@ public class Point : MonoBehaviour
     public ENEMY_TYPE[] enemies;
     public ENEMY_TYPE eliteEnemy;
 
+    public Animator StageInfoAnim;
+
     public Sprite notOpenSprite;
     public Sprite openSprite;
     public Sprite clearSprite;
@@ -29,6 +31,7 @@ public class Point : MonoBehaviour
     public Vector3 worldPos;
     public bool bClicked;
 
+    public StageInfoManager m_StageInfoManager;
 
     [Header("º¯¼öµé")]
     
@@ -136,9 +139,11 @@ public class Point : MonoBehaviour
         if (!bClicked)
         {
             StageScene.I.selectedPoint = this;
-            StageScene.I.MapInfoPanel.SetActive(true);
+            //StageScene.I.MapInfoPanel.SetActive(true);
 
-            StageScene.I.stageInfoManager.ReadSetSlot(stageNum);
+            m_StageInfoManager.ReadSetSlot(stageNum);
+
+            StageInfoAnim.SetBool("Click", true);
 
             foreach (var point in StageScene.I.points)
             {
