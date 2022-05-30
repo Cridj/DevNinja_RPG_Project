@@ -244,9 +244,10 @@ public class TradeManager : MonoBehaviour
                     }
                 }
 
-                int commonNum = CommonDeck.Count;
+                //int commonNum = CommonDeck.Count;
+                int commonNum = nCommon;
 
-                Debug.Log(CommonDeck.Count+"카운트");
+                Debug.Log(nCommon+"카운트");
                 for (int i = 0; i <m_PlayerData.nItemIndex.Length; i++) //만약 common 아이템을 다 갖고 있을 때
                 {
                     if(m_PlayerData.nItemIndex[i] == "" || m_PlayerData.nItemIndex == null)
@@ -276,26 +277,36 @@ public class TradeManager : MonoBehaviour
                 Debug.Log(CommonDeck.Count);
                 selectNum = Random.Range(0, CommonDeck.Count);
 
-                //if (_slot>0) //이걸로 대체할 것
-                //{
-                //    for(int nslots = _slot; nslots>0; nslots--)
-                //    {
-                //        if(m_ItemData[Slots[nslots - 1].nIndex].sType != "Common")
-                //        {
-                //            break;
-                //        }
-                //    }
-                //}
-
-                if (_slot>0)  //이거 변경할 것 slots 현 위치부터 0 까지 돌리기
+                if (_slot > 0) //이걸로 대체할 것
                 {
-                    if (CommonDeck[selectNum].nIndex == Slots[_slot - 1].nIndex.ToString())
+                    for (int nslots = _slot; nslots > 0; nslots--)
                     {
-                        CommonDeck.RemoveAt(selectNum);
-                        Debug.Log("일반1");
-                        selectNum = Random.Range(0, CommonDeck.Count);
+                        Debug.Log((nslots + "슬롯"));
+                        Debug.Log(m_ItemData[Slots[nslots - 1].nIndex].sRank);
+                        if (m_ItemData[Slots[nslots - 1].nIndex].sRank != "Common") //커먼 상태가 아닐 경우 중지
+                        { //여기해결
+                            break;
+                        }
+
+                        if(CommonDeck[selectNum].nIndex == Slots[nslots - 1].nIndex.ToString())
+                        {
+                            CommonDeck.RemoveAt(selectNum);
+                            Debug.Log("일반1");
+                            selectNum = Random.Range(0, CommonDeck.Count);
+                        }
+                        
                     }
-                }               
+                }
+
+                //if (_slot>0)  //이거 변경할 것 slots 현 위치부터 0 까지 돌리기
+                //{
+                //    if (CommonDeck[selectNum].nIndex == Slots[_slot - 1].nIndex.ToString())
+                //    {
+                //        CommonDeck.RemoveAt(selectNum);
+                //        Debug.Log("일반1");
+                //        selectNum = Random.Range(0, CommonDeck.Count);
+                //    }
+                //}               
 
                 Debug.Log(selectNum);
 
@@ -325,7 +336,8 @@ public class TradeManager : MonoBehaviour
                     }
                 }
 
-                int rareNum = RareDeck.Count;
+                //int rareNum = RareDeck.Count;
+                int rareNum = nRare;
 
                 for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
                 {
@@ -352,15 +364,34 @@ public class TradeManager : MonoBehaviour
                 Debug.Log(RareDeck.Count);
                 selectNum = Random.Range(0, RareDeck.Count);
 
-                if (_slot > 0)
+                if (_slot > 0) //이걸로 대체할 것
                 {
-                    if (RareDeck[selectNum].nIndex == Slots[_slot - 1].nIndex.ToString())
+                    for (int nslots = _slot; nslots > 0; nslots--)
                     {
-                        RareDeck.RemoveAt(selectNum);
-                        Debug.Log("레어1");
-                        selectNum = Random.Range(0, RareDeck.Count);
+                        if (m_ItemData[Slots[nslots - 1].nIndex].sRank != "Rare") //커먼 상태가 아닐 경우 중지
+                        {
+                            break;
+                        }
+
+                        if (RareDeck[selectNum].nIndex == Slots[nslots - 1].nIndex.ToString())
+                        {
+                            RareDeck.RemoveAt(selectNum);
+                            Debug.Log("레어1");
+                            selectNum = Random.Range(0, RareDeck.Count);
+                        }
+
                     }
                 }
+
+                //if (_slot > 0)
+                //{
+                //    if (RareDeck[selectNum].nIndex == Slots[_slot - 1].nIndex.ToString())
+                //    {
+                //        RareDeck.RemoveAt(selectNum);
+                //        Debug.Log("레어1");
+                //        selectNum = Random.Range(0, RareDeck.Count);
+                //    }
+                //}
 
                 Debug.Log(selectNum);
 
@@ -391,7 +422,8 @@ public class TradeManager : MonoBehaviour
                     }
                 }
 
-                int epicNum = EpicDeck.Count;
+                //int epicNum = EpicDeck.Count;
+                int epicNum = nEpic;
 
                 for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
                 {
@@ -417,15 +449,33 @@ public class TradeManager : MonoBehaviour
                 Debug.Log(EpicDeck.Count);
                 selectNum = Random.Range(0, EpicDeck.Count);
 
-                if (_slot > 0)
+                if (_slot > 0) //이걸로 대체할 것
                 {
-                    if (EpicDeck[selectNum].nIndex == Slots[_slot - 1].nIndex.ToString())
+                    for (int nslots = _slot; nslots > 0; nslots--)
                     {
-                        EpicDeck.RemoveAt(selectNum);
-                        Debug.Log("에픽1");
-                        selectNum = Random.Range(0, EpicDeck.Count);
+                        if (m_ItemData[Slots[nslots - 1].nIndex].sRank != "Epic") //커먼 상태가 아닐 경우 중지
+                        {
+                            break;
+                        }
+
+                        if (EpicDeck[selectNum].nIndex == Slots[nslots - 1].nIndex.ToString())
+                        {
+                            EpicDeck.RemoveAt(selectNum);
+                            Debug.Log("에픽1");
+                            selectNum = Random.Range(0, EpicDeck.Count);
+                        }
                     }
                 }
+
+                //if (_slot > 0)
+                //{
+                //    if (EpicDeck[selectNum].nIndex == Slots[_slot - 1].nIndex.ToString())
+                //    {
+                //        EpicDeck.RemoveAt(selectNum);
+                //        Debug.Log("에픽1");
+                //        selectNum = Random.Range(0, EpicDeck.Count);
+                //    }
+                //}
 
                 Debug.Log(selectNum);
                 if (int.TryParse(EpicDeck[selectNum].nIndex, out int nResult2))
@@ -455,7 +505,8 @@ public class TradeManager : MonoBehaviour
                     }
                 }
 
-                int legendNum = LegendDeck.Count;
+                //int legendNum = LegendDeck.Count;
+                int legendNum = nLegend;
 
                 for (int i = 0; i < m_PlayerData.nItemIndex.Length; i++)
                 {
@@ -481,15 +532,33 @@ public class TradeManager : MonoBehaviour
                 Debug.Log(LegendDeck.Count);
                 selectNum = Random.Range(0, LegendDeck.Count);
 
-                if (_slot > 0)
+                if (_slot > 0) //이걸로 대체할 것
                 {
-                    if (LegendDeck[selectNum].nIndex == Slots[_slot - 1].nIndex.ToString())
+                    for (int nslots = _slot; nslots > 0; nslots--)
                     {
-                        LegendDeck.RemoveAt(selectNum);
-                        Debug.Log("레전드1");
-                        selectNum = Random.Range(0, LegendDeck.Count);
+                        if (m_ItemData[Slots[nslots - 1].nIndex].sRank != "Legend") //커먼 상태가 아닐 경우 중지
+                        {
+                            break;
+                        }
+
+                        if (LegendDeck[selectNum].nIndex == Slots[nslots - 1].nIndex.ToString())
+                        {
+                            LegendDeck.RemoveAt(selectNum);
+                            Debug.Log("레전드1");
+                            selectNum = Random.Range(0, LegendDeck.Count);
+                        }
                     }
                 }
+
+                //if (_slot > 0)
+                //{
+                //    if (LegendDeck[selectNum].nIndex == Slots[_slot - 1].nIndex.ToString())
+                //    {
+                //        LegendDeck.RemoveAt(selectNum);
+                //        Debug.Log("레전드1");
+                //        selectNum = Random.Range(0, LegendDeck.Count);
+                //    }
+                //}
 
                 Debug.Log(selectNum);
                 if (int.TryParse(LegendDeck[selectNum].nIndex, out int nResult3))
