@@ -38,9 +38,11 @@ public class StageInfoManager : MonoBehaviour
         m_PlayerData = m_PlatformScript.m_PlayerData;
         m_StageData = m_PlatformScript.m_StageData;
         m_MonsterData = m_PlatformScript.m_MonsterData;
+
+        
     }
 
-    void ReadSetSlot(int _level)
+    public void ReadSetSlot(int _level)
     {
         m_PlayerData.nLevelProcess = _level;
         nSlotIndex = 0;

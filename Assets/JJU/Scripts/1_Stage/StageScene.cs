@@ -13,6 +13,7 @@ public class StageScene : HSingleton<StageScene>
     public Point selectedPoint;
     public GameObject MapInfoPanel;
     public GameObject[] points;
+    public StageInfoManager stageInfoManager;
 
     public TextMeshProUGUI goldText;
 

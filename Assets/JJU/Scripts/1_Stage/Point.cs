@@ -137,6 +137,9 @@ public class Point : MonoBehaviour
         {
             StageScene.I.selectedPoint = this;
             StageScene.I.MapInfoPanel.SetActive(true);
+
+            StageScene.I.stageInfoManager.ReadSetSlot(stageNum);
+
             foreach (var point in StageScene.I.points)
             {
                 Point pointComp =point.GetComponent<Point>();
