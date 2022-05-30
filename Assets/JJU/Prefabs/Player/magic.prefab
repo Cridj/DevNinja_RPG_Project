@@ -5548,6 +5548,7 @@ MonoBehaviour:
   HpBarSlider: {fileID: 0}
   UI_Camera: {fileID: 0}
   sfx_Audio: {fileID: 0}
+  stateTextManager: {fileID: 0}
   bDie: 0
   bTurn: 0
   bTurnover: 0
@@ -5628,6 +5629,7 @@ MonoBehaviour:
   HealingOnce: {fileID: 0}
   TranceAttackCount: 0
   job: 0
+  ultCoolDown: 0
   Level: 0
   jumpUnit: 0
   Experience: 0

@@ -12,6 +12,10 @@ public class Hero : HeroSkill
     [Header("변수들")]
     [Space(10f)]
 
+    public int ultCoolDown;
+
+
+
     /// <summary>
     /// 현재레벨
     /// </summary>
