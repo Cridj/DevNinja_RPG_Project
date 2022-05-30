@@ -83,6 +83,8 @@ public class StageManager : MonoBehaviour
     {
         bExitOn = true;
 
+        DataManager.Instance.Save();
+
         FadeStart();
     }
 
@@ -98,6 +100,8 @@ public class StageManager : MonoBehaviour
     public void ReadyToLobby() //로비씬으로 갈 준비
     {
         bLobbyOn = true;
+
+        DataManager.Instance.Save();
 
         FadeStart();
     }
@@ -121,8 +125,10 @@ public class StageManager : MonoBehaviour
 
     public void FadeStart() //페이드아웃 시작
     {
-        StageFade_Img.raycastTarget = true;
-        StageFade_Anim.SetTrigger("Fade");
+        Debug.Log("ㅊ");
+        Time.timeScale = 1;
+        //StageFade_Img.raycastTarget = true;
+        StageFade_Anim.SetBool("Fade", true);
     }
 
     public void MusicControl() //사운드 시작
