@@ -64,6 +64,7 @@ public class ShopManager : MonoBehaviour
         if (DataManager.Instance.m_PlayerData.nStack < 5)
             return;
         obj.SetActive(true);
+        DataManager.Instance.m_PlayerData.nStack = 0;
         m_TradeManager.SetTradeItem();
         m_ReinforceManager.SetReinforceChar();
     }

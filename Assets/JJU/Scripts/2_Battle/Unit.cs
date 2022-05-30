@@ -18,6 +18,8 @@ public class Unit : Stats
     public Slider HpBarSlider;
     public Camera UI_Camera;
     public AudioSource sfx_Audio;
+    public StateTextManager stateTextManager;
+
 
 
     [Header(" 변수들 ")]
@@ -25,7 +27,6 @@ public class Unit : Stats
     public bool bDie;
     public bool bTurn;
     public bool bTurnover;
-
 
 
 
@@ -214,7 +215,6 @@ public class Unit : Stats
         }
 
     }
-
     public void HeroStatIconUpdate()
     {
         ////공격력 버프 아이콘 관리
@@ -288,10 +288,6 @@ public class Unit : Stats
         }
 
     }
-
-
-
-
     public void DecreaseHP(float Damage, Unit initiator)
     {
         float currentDamage;
@@ -395,8 +391,6 @@ public class Unit : Stats
             GetComponent<Hero>().OnDie();
         }
     }
-
-
     public IEnumerator DamageTextActivate(int Damage, float Delaytime, float Duration)
     {
         if (GetComponent<Enemy>())
@@ -410,8 +404,6 @@ public class Unit : Stats
         yield return new WaitForSeconds(Duration);
         DamageText.gameObject.SetActive(false);
     }
-
-
     bool CheckHero()
     {
         if (transform.GetComponent<Hero>())
@@ -423,16 +415,12 @@ public class Unit : Stats
             return false;
         }
     }
-
     public void BuffAndDeBuffDurationDecrease()
     {
         Mathf.Clamp(howlingBuffDebuffDuration--, 0, 5);
         Mathf.Clamp(defenseBuffDuration--, 0, 5);
         Mathf.Clamp(PoisonDuration--, 0, 5);
     }
-        
-
-    
     public void HeroPassiveCheck()
     {
         if (GetComponent<Hero>())
@@ -469,7 +457,6 @@ public class Unit : Stats
         currentPhysicalAttack -= attackChange;
 
     }
-
     public IEnumerator RoarBuffDeBuff()
     {
         if (roarDuration > 0)
@@ -504,7 +491,6 @@ public class Unit : Stats
             currentSpeed += speedChange;
         }
     }
-
     public IEnumerator HowlingBuffDeBuff()
     {
         if (howlingBuffDebuffDuration > 0)
@@ -543,7 +529,6 @@ public class Unit : Stats
             currentDefense -= defenseChange;
         }
     }
-
     public IEnumerator TrollShoutingBuff()
     {
         if (trollShoutingDuration > 0)
@@ -599,9 +584,6 @@ public class Unit : Stats
         currentDefense -= defenseChange;
 
     }
-
-
-
     public void TickDamageDecrese()
     {
         if(PoisonDuration > 0)
@@ -609,16 +591,10 @@ public class Unit : Stats
             Hp = Hp * 0.95f;
         }
     }
-
     public void HpBarUpdate()
     {
         HpBarSlider.value = Hp / maxHP;
     }
-
-
-    /// <summary>
-    /// 
-    /// </summary>
     private void AttackCheck()
     {
         if (Input.GetMouseButtonDown(0))
@@ -666,8 +642,7 @@ public class Unit : Stats
                 }
             }
         }
-    }
-    
+    }    
     /// <summary>
     ///  스킬 체크
     /// </summary>
@@ -758,7 +733,6 @@ public class Unit : Stats
             }
         }
     }
-
     public void UnitTurnAction(string type)
     {
         //방금 눌렀던 버튼과 다른버튼을 누르면
@@ -880,6 +854,10 @@ public class Unit : Stats
                     BattleScene.I.skill2_Trail.SetActive(true);
                     break;
                 case "Skill3":
+
+                    if (GetComponent<Hero>().ultCoolDown > 0)
+                        return;
+
                     GetComponent<Hero>().currentSKill = transform.GetComponent<Hero>().skill_set3;
                     if ((int)GetComponent<Hero>().currentSKill > 20 && (int)GetComponent<Hero>().currentSKill < 40)
                     {
@@ -941,8 +919,6 @@ public class Unit : Stats
             }
         }
     }
-
-
     //줌 구현
     IEnumerator SkillAction(Enemy enemy)
     {
@@ -1006,7 +982,6 @@ public class Unit : Stats
             enemy1.unit.arrow.SetActive(false);
         }
     }
-
     //줌 구현
     IEnumerator SkillAction(Hero hero)
     {

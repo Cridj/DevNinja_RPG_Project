@@ -245,6 +245,7 @@ public class HeroSkill : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         animator.SetInteger("State", 2);
+        unit.GetComponent<Hero>().ultCoolDown = 3;
         BattleManager.I.skillText.gameObject.SetActive(false);
         unit.GetComponent<Hero>().ActionEnd();
         //bAttackEnd = true;
@@ -501,7 +502,7 @@ public class HeroSkill : MonoBehaviour
         }
 
         animator.SetInteger("State", 2);
-
+        unit.GetComponent<Hero>().ultCoolDown = 3;
         unit.GetComponent<Hero>().ActionEnd();
         //???? ?????? ????????
         BattleManager.I.skillText.gameObject.SetActive(false);
@@ -575,6 +576,8 @@ public class HeroSkill : MonoBehaviour
                 enemy.OnDie();
             }
         }
+
+        unit.GetComponent<Hero>().ultCoolDown = 3;
 
         animator.SetInteger("State", 2);
 

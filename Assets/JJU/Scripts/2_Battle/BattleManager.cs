@@ -70,8 +70,19 @@ public class BattleManager : HSingleton<BattleManager>
     /// </summary>
     public int aliveUnitCount;
 
+    Enemy[] DestroyEnemys = new Enemy[6];
+
     public GameObject heroBattlePanel;
 
+    List<Unit> turnNoCheckedUnit = new List<Unit>();
+
+    public int passiveCount;
+    
+    //아이템 리스트
+    private List<ItemData> CommonDeck = new List<ItemData>();
+    private List<ItemData> RareDeck = new List<ItemData>();
+    private List<ItemData> EpicDeck = new List<ItemData>();
+    private List<ItemData> LegendDeck = new List<ItemData>();
 
     [Header("승리 결과창")]
     [Space(10f)]
@@ -131,9 +142,6 @@ public class BattleManager : HSingleton<BattleManager>
         turnUnit = new Unit();
         EnemyMoveToDestinationPos();
     }
-
-
-
     void Start()
     {
         foreach (Hero hero in heroCollection.collection)
@@ -165,7 +173,6 @@ public class BattleManager : HSingleton<BattleManager>
         yield return new WaitForSeconds(2.5f);
         Turn();    
     }
-
     public IEnumerator UnitArriveCheck()
     {
         if (unitArriveCheck == 6)
@@ -204,7 +211,6 @@ public class BattleManager : HSingleton<BattleManager>
             Turn();
         }   
     }
-
     void SpawnMonster()
     {
         GameObject enemy;
@@ -270,7 +276,6 @@ public class BattleManager : HSingleton<BattleManager>
         }
         
     }
-
     void SpawnEliteMonster()
     {
         GameObject enemy;
@@ -371,10 +376,6 @@ public class BattleManager : HSingleton<BattleManager>
         }
     
     }
-
-
-    List<Unit> turnNoCheckedUnit = new List<Unit>();
-
     /// <summary>
     /// 턴 체크해서 유닛에게 턴 부여해주는 함수
     /// </summary>
@@ -499,7 +500,6 @@ public class BattleManager : HSingleton<BattleManager>
         }
         BattleScene.I.turnTextUpdate();
     }
-
     public int AliveUnitCountCheck()
     {
         aliveUnitCount = 0;
@@ -510,11 +510,6 @@ public class BattleManager : HSingleton<BattleManager>
         }
         return aliveUnitCount;
     }
-
-
-    public int passiveCount;
-
-
     /// <summary>
     /// 다음 순서으로 넘어가는 함수
     /// </summary>
@@ -561,7 +556,10 @@ public class BattleManager : HSingleton<BattleManager>
         //다음턴 진행
         Turn();
     }
-
+    /// <summary>
+    /// 턴마다 실행할 유닛들 패시브가 있는지 체크
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator unitPassiveCheck()
     {
         foreach(Unit unit in unitList)
@@ -594,7 +592,7 @@ public class BattleManager : HSingleton<BattleManager>
             //아군일때
             else
             {
-
+                Mathf.Clamp(unit.GetComponent<Hero>().ultCoolDown--,0,3) ;
             }
         }
 
@@ -613,7 +611,9 @@ public class BattleManager : HSingleton<BattleManager>
         //다음턴 진행
         Turn();
     }
-
+    /// <summary>
+    /// 적들
+    /// </summary>
     public void EnemyMoveToDestinationPos()
     {
         int i = 0;
@@ -625,7 +625,6 @@ public class BattleManager : HSingleton<BattleManager>
             i++;
         }
     }
-
     /// <summary>
     /// 적의 턴 실행시키는 함수
     /// </summary>
@@ -644,7 +643,6 @@ public class BattleManager : HSingleton<BattleManager>
         }
 
     }
-
     /// <summary>
     /// 턴이 끝났는지 체크해주는 함수
     /// </summary>
@@ -671,8 +669,7 @@ public class BattleManager : HSingleton<BattleManager>
             return true;
         }
         return false;
-    }
-    
+    }    
     /// <summary>
     /// 턴 행동 실행하는 함수 (버튼전용)
     /// </summary>
@@ -681,19 +678,10 @@ public class BattleManager : HSingleton<BattleManager>
     {
         turnUnit.UnitTurnAction(type);
     }
-
     public void ItemInit()
     {
 
-    }
-
-    //아이템 리스트
-    private List<ItemData> CommonDeck = new List<ItemData>();
-    private List<ItemData> RareDeck = new List<ItemData>();
-    private List<ItemData> EpicDeck = new List<ItemData>();
-    private List<ItemData> LegendDeck = new List<ItemData>();
-
-        
+    }        
     public int ItemDrop()
     {
         print("아이템드랍");
@@ -812,7 +800,6 @@ public class BattleManager : HSingleton<BattleManager>
 
         return ranItem.Value;
     }
-
     private int? RanDropItem(int ranRank)
     {
         int ranCommon;
@@ -864,7 +851,6 @@ public class BattleManager : HSingleton<BattleManager>
         }
         return null;
     }
-
     /// <summary>
     /// 적 전원처치, 아군 사망 체크
     /// </summary>
@@ -898,9 +884,6 @@ public class BattleManager : HSingleton<BattleManager>
         }
         return false;
     }
-
-
-    Enemy[] DestroyEnemys = new Enemy[6];
     /// <summary>
     /// 다음 웨이브로 넘어가는 함수
     /// </summary>
@@ -960,7 +943,6 @@ public class BattleManager : HSingleton<BattleManager>
             //Turn();
         }
     }
-
     void EnemyDummyRemove()
     {
         for (int i = 0; i < DestroyEnemys.Length; i++)
@@ -968,8 +950,6 @@ public class BattleManager : HSingleton<BattleManager>
             Destroy(DestroyEnemys[i].gameObject);
         }
     }
-
-
     void ScrollingAndUnitAnimationChange()
     {
         bScrolling = true;
@@ -982,9 +962,6 @@ public class BattleManager : HSingleton<BattleManager>
             }
         }
     }
-        
- 
-
     void EnemyInit()
     {
         print("적 초기화");
@@ -1001,7 +978,6 @@ public class BattleManager : HSingleton<BattleManager>
             unit.bTurnover = false;
         }
     }
-
     public void ChangeHeroAnimationState(int state)
     {
         foreach(Hero hero in heroCollection.collection)
@@ -1009,9 +985,6 @@ public class BattleManager : HSingleton<BattleManager>
             hero.animator.SetInteger("State", state);
         }
     }
-
-
-
     /// <summary>
     /// 아군 전원처치 체크
     /// </summary>
@@ -1033,13 +1006,10 @@ public class BattleManager : HSingleton<BattleManager>
         }
         return false;
     }
-
     void GameOver()
     {
         print("아군 전원사망! 게임오버");
     }
-
-
     /// <summary>
     /// 모든 적을 처치해서 스테이지로 넘어가는 함수
     /// </summary>
@@ -1064,10 +1034,9 @@ public class BattleManager : HSingleton<BattleManager>
         GameInstance.Instance.gamdData.pathData[GameInstance.Instance.nowStage + 1].pathOpen = true;
                        
 
-        victoryResultPanel.SetActive(true);       
-
-
-
+        victoryResultPanel.SetActive(true);
+        //클리어 스택 증가
+        DataManager.Instance.m_PlayerData.nStack++;
         foreach(var enemy in enemyCollection.collection)
         {
             enemy.OnDie();
@@ -1076,7 +1045,6 @@ public class BattleManager : HSingleton<BattleManager>
         //SceneLoad.LoadScene(nowStage);
         //GameInstance.Instance.gamdData.InPoint.ClearAndOpenNextPoint();
     }
-
     /// <summary>
     /// 스폰위치 배열 초기화 함수
     /// </summary>

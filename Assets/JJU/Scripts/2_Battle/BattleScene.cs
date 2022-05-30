@@ -13,6 +13,10 @@ public class BattleScene : HSingleton<BattleScene>
     public bool isPointerDown;
 
     public GameObject UI_Camera;
+    public TextMeshProUGUI ultCollDownText;
+    public Image ultButtonImg;
+
+
 
     public GameObject skill1_Trail;
     public GameObject skill2_Trail;
@@ -191,6 +195,17 @@ public class BattleScene : HSingleton<BattleScene>
         Skill1_Img.sprite = BattleManager.I.turnUnit.GetComponent<Hero>().skill1_Sprite;
         Skill2_Img.sprite = BattleManager.I.turnUnit.GetComponent<Hero>().skill2_Sprite;
         Skill3_Img.sprite = BattleManager.I.turnUnit.GetComponent<Hero>().skill3_Sprite;
+        if(BattleManager.I.turnUnit.GetComponent<Hero>().ultCoolDown > 0)
+        {
+            ultCollDownText.text = BattleManager.I.turnUnit.GetComponent<Hero>().ultCoolDown + "ео";
+            ultButtonImg.color = Color.gray;
+        }
+        else
+        {
+            ultCollDownText.text = "";
+            ultButtonImg.color = Color.white;
+        }
+
     }
 
     // Start is called before the first frame update
