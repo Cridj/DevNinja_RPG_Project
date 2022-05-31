@@ -48,7 +48,7 @@ public class CharInfoSlot : MonoBehaviour
         {
             Char_Btn.interactable = true;
             Char_Obj.SetActive(true);
-            Char_Img.sprite = m_DataManager.Char_Spr[nResult0];
+            Char_Img.sprite = m_DataManager.CharHead_Spr[nResult0];
             NameBG_Img.color = SelectColor;
             Name_Txt.text = m_CharacterData[nResult0].sName;
             bUnlock = true;

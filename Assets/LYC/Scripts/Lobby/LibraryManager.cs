@@ -225,7 +225,7 @@ public class LibraryManager : MonoBehaviour
                 if(_unlock==true)
                 {
                     Info_Img.transform.gameObject.SetActive(true);
-                    Info_Img.sprite = m_DataManager.Char_Spr[_index];
+                    Info_Img.sprite = m_DataManager.CharHead_Spr[_index];
                     Name_Txt.text = m_CharacterData[_index].sName;
                     Ability_Txt.text = "타입 : " + m_CharacterData[_index].sType + "\n" + "체력 : " + m_CharacterData[_index].fHealth + "\n" + "공격력 : " + m_CharacterData[_index].fAttack + "\n"+ "주문력 : " + m_CharacterData[_index].fMagic + "\n" + "방어력 : " + m_CharacterData[_index].fDefense + "\n" + "행동력 : " + m_CharacterData[_index].fSpeed;
                     Exp_Txt.text = m_CharacterData[_index].sExplain;
@@ -233,7 +233,7 @@ public class LibraryManager : MonoBehaviour
                 else
                 {
                     Info_Img.transform.gameObject.SetActive(false);
-                    Info_Img.sprite = m_DataManager.Char_Spr[_index];
+                    Info_Img.sprite = m_DataManager.CharHead_Spr[_index];
                     Name_Txt.text = "???";
                     Ability_Txt.text = "타입 : " + m_CharacterData[_index].sType + "\n" + "체력 : " + "???" + "\n" + "공격력 : " + "???" + "\n" + "주문력 : " + "???" + "\n" + "방어력 : " + "???" + "\n" + "행동력 : " + "???";
                     Exp_Txt.text = "???";

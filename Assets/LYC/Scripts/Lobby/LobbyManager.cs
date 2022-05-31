@@ -19,6 +19,14 @@ public class LobbyManager : MonoBehaviour
 
     public SoundMixerManager m_SMM;
 
+    public Animator ChangeCharAnim;
+
+    public Image Center_Img;
+    public Image Left_Img;
+    public Image Right_Img;
+
+    public Button Left_Btn;
+    public Button Right_Btn;
 
     public GameObject ExitTap_Obj;
     public GameObject SettingTap_Obj;
@@ -34,9 +42,23 @@ public class LobbyManager : MonoBehaviour
     public bool bFadeIn = true;
     public bool bExitOn = false;
 
+    public bool bChanging = false;
+
+    public int nNowImage = 0;
+    public int nPrevImage = 0;
+    public int nNextImage = 0;
+
     private void Start()
     {     
         m_DataManager = GameObject.FindGameObjectWithTag("Info").GetComponent<DataManager>();
+
+        Center_Img.sprite = m_DataManager.Char_Spr[0];
+        Left_Img.sprite = m_DataManager.Char_Spr[m_DataManager.Char_Spr.Length-1];
+        Right_Img.sprite = m_DataManager.Char_Spr[1];
+
+        nNowImage = 0;
+        nPrevImage = m_DataManager.Char_Spr.Length - 1;
+        nNextImage = 1;
     }
 
     private void Update()
@@ -228,6 +250,77 @@ public class LobbyManager : MonoBehaviour
 
     #endregion
 
+    public void ClickLeft()
+    {
+        if(bChanging==true)
+        {
+            return;
+        }
+
+        ChangeCharAnim.SetTrigger("Left");
+    }
+
+    public void ClickRight()
+    {
+        if(bChanging==true)
+        {
+            return;
+        }
+
+        ChangeCharAnim.SetTrigger("Right");
+    }
+
+    public void ChangingLeft()
+    {
+        if(nPrevImage == 0)
+        {
+            Center_Img.sprite = m_DataManager.Char_Spr[nPrevImage];
+            Left_Img.sprite = m_DataManager.Char_Spr[m_DataManager.Char_Spr.Length-1];
+            Right_Img.sprite = m_DataManager.Char_Spr[nNowImage];
+            nNextImage = nNowImage;
+            nNowImage = nPrevImage;
+            nPrevImage = m_DataManager.Char_Spr.Length - 1;
+        }
+        else
+        {
+            Center_Img.sprite = m_DataManager.Char_Spr[nPrevImage];
+            Left_Img.sprite = m_DataManager.Char_Spr[nPrevImage - 1];
+            Right_Img.sprite = m_DataManager.Char_Spr[nNowImage];
+
+            nNextImage = nNowImage;
+            nNowImage = nPrevImage;
+            nPrevImage = nPrevImage - 1;
+
+            bChanging = false;
+        }
+        
+    }
+
+    public void ChangingRight()
+    {
+        if(nNextImage == m_DataManager.Char_Spr.Length-1)
+        {
+            Center_Img.sprite = m_DataManager.Char_Spr[nNextImage];
+            Left_Img.sprite = m_DataManager.Char_Spr[nNowImage];
+            Right_Img.sprite = m_DataManager.Char_Spr[0];
+
+            nPrevImage = nNowImage;
+            nNowImage = nNextImage;
+            nNextImage = 0;
+        }
+        else
+        {
+            Center_Img.sprite = m_DataManager.Char_Spr[nNextImage];
+            Left_Img.sprite = m_DataManager.Char_Spr[nNowImage];
+            Right_Img.sprite = m_DataManager.Char_Spr[nNextImage+1];
+
+            nPrevImage = nNowImage;
+            nNowImage = nNextImage;
+            nNextImage = nNextImage + 1;
+
+            bChanging = false;
+        }
+    }
 }
 
 

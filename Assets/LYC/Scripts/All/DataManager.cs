@@ -228,6 +228,7 @@ public class DataManager : MonoBehaviour
 
     //[Header("스프라이트 정보")]
     public Sprite[] Maps_Spr;
+    public Sprite[] CharHead_Spr;
     public Sprite[] Char_Spr;
     public Sprite[] Mons_Spr;
     public Sprite[] Item_Spr;

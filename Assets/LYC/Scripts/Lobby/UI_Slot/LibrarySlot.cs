@@ -44,7 +44,7 @@ public class LibrarySlot : MonoBehaviour
                 }
                 else
                 {
-                    List_Img.sprite = m_DataManager.Char_Spr[_index];
+                    List_Img.sprite = m_DataManager.CharHead_Spr[_index];
                     List_Img.gameObject.SetActive(true);
                     Name_Txt.text = m_LibraryManager.m_CharacterData[_index].sName;
                 }

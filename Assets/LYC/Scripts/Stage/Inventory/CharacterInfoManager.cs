@@ -94,7 +94,7 @@ public class CharacterInfoManager : MonoBehaviour
             SkillSlots[i].gameObject.SetActive(true);
         }
 
-        Char_Img.sprite = m_DataManager.Char_Spr[_index];
+        Char_Img.sprite = m_DataManager.CharHead_Spr[_index];
         Name_Txt.text = m_CharacterData[_index].sName;
         Desc_Txt.text = "·¹º§ : " + m_PlayerData.nLevel[_index] + "\n" +
             "·©Å© : " + m_PlayerData.nRank[_index] + "\n" +
