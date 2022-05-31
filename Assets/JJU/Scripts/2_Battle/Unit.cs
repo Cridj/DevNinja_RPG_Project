@@ -27,6 +27,10 @@ public class Unit : Stats
     public bool bDie;
     public bool bTurn;
     public bool bTurnover;
+    /// <summary>
+    /// 유닛이 행동중인지 체크
+    /// </summary>
+    public bool OnAction;
 
 
 
@@ -56,12 +60,10 @@ public class Unit : Stats
     /// 하울링 버프디버프 지속시간 공/방
     /// </summary>
     public int howlingBuffDebuffDuration;
-
     /// <summary>
     /// 트롤의 울부짖음 지속시간 방어력 증가
     /// </summary>
     public int trollShoutingDuration;
-
     /// <summary>
     /// 곰 패시브 공격력증가 지속시간 /공
     /// </summary>
@@ -97,18 +99,10 @@ public class Unit : Stats
     public int darkDuration;
 
     public int shoutingDuration;
-
-
-
-
-
     /// <summary>
     /// 현재 선택중인 행동
     /// </summary>
     string nowAction;
-
-
-
     /// <summary>
     /// 남은턴 체크용 변수 아직 턴 안돌아온 유닛용
     /// </summary>
@@ -122,13 +116,8 @@ public class Unit : Stats
     /// </summary>
     public bool turnChecked;
     public int turnOrder;
-
-    //AttackBuffDebuffDuration
+    
     public int howlingBuffDebuff;
-
-
-
-
     #endregion
 
     private void Awake()
@@ -378,7 +367,6 @@ public class Unit : Stats
                 if(enemy.passiveSKill == PassiveSKill.ZealotMode)
                 {
                     GetComponent<Enemy>().ZealotMode(this, Damage,true);
-                    print("광전사모드 발동");
                 }
             }
         }
@@ -648,6 +636,8 @@ public class Unit : Stats
     /// </summary>
     private void SkillCheck()
     {
+        if (OnAction)
+            return;
         if (Input.GetMouseButtonDown(0))
         {
             mouseStartPos = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
@@ -667,14 +657,7 @@ public class Unit : Stats
                     if (enemy.bSelected)
                     {
                         StartCoroutine(SkillAction(enemy));
-
-                        //transform.GetComponent<Hero>().Skill(enemy);
-                        //enemy.bSelected = false;
-                        //foreach (Enemy enemy1 in BattleManager.I.enemyCollection.collection)
-                        //{
-                        //    enemy1.unit.arrow.GetComponent<Renderer>().material.color = Color.yellow;
-                        //    enemy1.unit.arrow.SetActive(false);
-                        //}
+                        OnAction = true;
                     }
                     else
                     {
@@ -702,15 +685,8 @@ public class Unit : Stats
                     Hero hero = hit.transform.GetComponent<Hero>();
                     if (hero.bSelected)
                     {
-                        StartCoroutine(SkillAction(hero));  
-                        //transform.GetComponent<Hero>().Skill();
-                        //transform.GetComponent<Hero>().targetHero = hero;
-                        //hero.bSelected = false;
-                        //foreach (Enemy enemy1 in BattleManager.I.enemyCollection.collection)
-                        //{
-                        //    enemy1.unit.arrow.GetComponent<Renderer>().material.color = Color.yellow;
-                        //    enemy1.unit.arrow.SetActive(false);
-                        //}
+                        StartCoroutine(SkillAction(hero));
+                        OnAction = true;
                     }
                     else
                     {
@@ -781,7 +757,6 @@ public class Unit : Stats
                                 continue;
                             hero.unit.arrow.SetActive(true);
                         }
-                        print("원거리 힐 사용할래");
                         skillAble = true;
                         nowAction = "Skill1";
                     }
@@ -793,7 +768,6 @@ public class Unit : Stats
                                 continue;
                             enemy.unit.arrow.SetActive(true);
                         }
-                        print("원거리 적 타겟 사용할래");
                         skillAble = true;
                         nowAction = "Skill1";
                     }
@@ -806,7 +780,6 @@ public class Unit : Stats
                             enemy.unit.arrow.SetActive(true);
                         }
                         skillAble = true;
-                        print("적공격근거리스킬사용할래");
                         nowAction = "Skill1";
                     }
                     BattleScene.I.skill1_Trail.SetActive(true);
@@ -823,7 +796,6 @@ public class Unit : Stats
                                 continue;
                             hero.unit.arrow.SetActive(true);
                         }
-                        print("원거리 힐 사용할래");
                         skillAble = true;
                         nowAction = "Skill2";
                     }
@@ -835,7 +807,6 @@ public class Unit : Stats
                                 continue;
                             enemy.unit.arrow.SetActive(true);
                         }
-                        print("원거리 적 타겟 사용할래");
                         skillAble = true;
                         nowAction = "Skill2";
                     }
@@ -848,7 +819,6 @@ public class Unit : Stats
                             enemy.unit.arrow.SetActive(true);
                         }
                         skillAble = true;
-                        print("적공격근거리스킬사용할래");
                         nowAction = "Skill2";
                     }
                     BattleScene.I.skill2_Trail.SetActive(true);
@@ -867,7 +837,6 @@ public class Unit : Stats
                                 continue;
                             hero.unit.arrow.SetActive(true);
                         }
-                        print("원거리 힐 사용할래");
                         skillAble = true;
                         nowAction = "Skill3";
                     }
@@ -879,7 +848,6 @@ public class Unit : Stats
                                 continue;
                             enemy.unit.arrow.SetActive(true);
                         }
-                        print("원거리 적 타겟 사용할래");
                         skillAble = true;
                         nowAction = "Skill3";
                     }
@@ -892,7 +860,6 @@ public class Unit : Stats
                             enemy.unit.arrow.SetActive(true);
                         }
                         skillAble = true;
-                        print("적공격근거리스킬사용할래");
                         nowAction = "Skill3";
                     }
                     BattleScene.I.skill3_Trail.SetActive(true);
@@ -919,10 +886,8 @@ public class Unit : Stats
             }
         }
     }
-    //줌 구현
     IEnumerator SkillAction(Enemy enemy)
     {
-        print("스킬사용");
         UI_Camera.gameObject.SetActive(false);
         mainCamera.GetComponent<CamShake>().enabled = false;
 
@@ -945,9 +910,7 @@ public class Unit : Stats
         {
             mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, 3, 0.1f);
             mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, targetPos, 0.1f);
-
-
-            print("되고있는거냐");
+           
             if (mainCamera.orthographicSize <= 3.001f && mainCamera.transform.position.x < targetPos.x * 0.99f)
                 break;
             yield return null;
@@ -965,8 +928,7 @@ public class Unit : Stats
             mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, 5, 0.1f);
             mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, originPos, 0.1f);
 
-
-            print("되고있는거냐2");
+         
             if (mainCamera.orthographicSize >= 4.999f && mainCamera.transform.position.x > -0.0001f)
                 break;
             yield return null;
@@ -982,7 +944,6 @@ public class Unit : Stats
             enemy1.unit.arrow.SetActive(false);
         }
     }
-    //줌 구현
     IEnumerator SkillAction(Hero hero)
     {
         print("스킬사용");

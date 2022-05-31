@@ -415,11 +415,7 @@ public class Hero : HeroSkill
 
     //행동이 끝난 후 제자리로 돌아오고 턴 넘기기
     public void OnTurnEndMove()
-    {
-        //if (WeaponTrail1)
-        //    WeaponTrail1.SetActive(false);
-        //if (WeaponTrail2)
-        //    WeaponTrail2.SetActive(false);
+    { 
         if (transform.position == beginPosV3)
         {
             bTurnEnd = false;
@@ -427,10 +423,7 @@ public class Hero : HeroSkill
             unit.skillAble = false;
             animator.SetInteger("State", 0);
             BattleManager.I.NextTurn();
-            //if (WeaponTrail1)
-            //    WeaponTrail1.SetActive(false);
-            //if (WeaponTrail2)
-            //    WeaponTrail2.SetActive(false);
+            unit.OnAction = false;
             return;
         }
         transform.position = Vector3.MoveTowards(transform.position, beginPosV3, moveSpeed * Time.deltaTime);
