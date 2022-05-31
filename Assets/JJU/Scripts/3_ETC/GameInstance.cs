@@ -47,6 +47,24 @@ public class ItemStatData
     public float speed;
 }
 
+[Serializable]
+public class StageMonsterList
+{
+    //wave1
+    public ENEMY_TYPE[] wave1Monster;
+
+    //wave2
+    public ENEMY_TYPE[] wave2Monster;
+
+    //wave3
+    public ENEMY_TYPE[] wave3Monster;
+
+    public ENEMY_TYPE BossMonster;
+
+}
+
+
+
 public class GameInstance : MonoBehaviour
 {
 
@@ -55,15 +73,13 @@ public class GameInstance : MonoBehaviour
 
     public GameData gamdData;
     private static GameInstance instance = null;
-    public ENEMY_TYPE enemy1;
-    public ENEMY_TYPE enemy2;
-    public ENEMY_TYPE enemy3;
-    public ENEMY_TYPE eliteENum;
+
     public ENEMY_TYPE[] enemies;
     public ENEMY_TYPE eliteEnemy;
 
     public ItemStatData[] itemStatData;
 
+    public StageMonsterList[] MonsterSpawnList;
 
     public int nowStage;
 
@@ -158,10 +174,6 @@ public class GameInstance : MonoBehaviour
             GameObject obj = Instantiate(prefab, PosV3, Rot);
             obj.GetComponent<Unit>().unitSprite = EnemyPrefab[type].Portrait;
             obj.transform.localScale = ScaleV3;
-            if (obj.GetComponent<SortingGroup>())
-            {
-                obj.GetComponent<SortingGroup>().sortingOrder = 3;
-            }
             Enemy enemy = obj.GetComponent<Enemy>();
 
             if (PosV3.y == 1f)

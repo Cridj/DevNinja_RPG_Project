@@ -52,7 +52,7 @@ public class Hero : HeroSkill
 
     /// <summary>
     /// Å¸°ÙÀ§Ä¡
-    /// </summary>
+    /// </summary 
     public Vector3 targetPosV3;
 
     /// <summary>
@@ -320,17 +320,17 @@ public class Hero : HeroSkill
         animator.SetInteger("State", 3);
 
 
-        Color color = new Color();
-        color.a = 0f;
+        //Color color = new Color();
+        //color.a = 0f;
 
-        List<Color> colors = new List<Color>();
-        //ArrayList colors = new ArrayList();
+        //List<Color> colors = new List<Color>();
+        ////ArrayList colors = new ArrayList();
 
-        foreach (SpriteRenderer sprite in renderers)
-        {
-            colors.Add(sprite.color);
-            sprite.color = color;
-        }
+        //foreach (SpriteRenderer sprite in renderers)
+        //{
+        //    colors.Add(sprite.color);
+        //    sprite.color = color;
+        //}
 
 
 
@@ -338,15 +338,15 @@ public class Hero : HeroSkill
         sfx_Audio.PlayOneShot(GameInstance.Instance.soundPrefab["JumpDash"],5f);
         int i = 0;
         yield return new WaitForSeconds(0.3f);
-        foreach (SpriteRenderer sprite in renderers)
-        {
-            sprite.DOColor(colors[i], 0.3f);
-            i++;
-        }
-        yield return new WaitForSeconds(0.3f);
+        //foreach (SpriteRenderer sprite in renderers)
+        //{
+        //    sprite.DOColor(colors[i], 0.3f);
+        //    i++;
+        //}
+        //yield return new WaitForSeconds(0.3f);
 
 
-        colors.Clear();
+        //colors.Clear();
         while (true)
         {
             yield return null;
@@ -401,6 +401,7 @@ public class Hero : HeroSkill
             { break; }
         }
 
+        unit.OnAction = false;
         bTurnEnd = false;
         unit.attackAble = false;
         unit.skillAble = false;

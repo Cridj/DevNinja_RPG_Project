@@ -17,6 +17,8 @@ public class BattleManager : HSingleton<BattleManager>
     /// </summary>
     public string nowStage;
 
+    public int stageNum;
+
     public bool bScrolling;
 
     public int unitArriveCheck = 0;
@@ -65,6 +67,8 @@ public class BattleManager : HSingleton<BattleManager>
     /// </summary>
     public TextMeshProUGUI skillText;
 
+    private StageMonsterList[] monsterList;
+
     /// <summary>
     /// 살아있는 유닛 갯수
     /// </summary>
@@ -97,53 +101,18 @@ public class BattleManager : HSingleton<BattleManager>
 
     private void Awake()
     {
-        GameObject test = GameObject.Find("TestInstance");
-        if(test != null)
-        {
-            EnemyType = new ENEMY_TYPE[3];
-            EliteEnemy = new ENEMY_TYPE();
-            EnemyType[0] = GameInstance.Instance.enemy1;
-            EnemyType[1] = GameInstance.Instance.enemy2;
-            EnemyType[2] = GameInstance.Instance.enemy3;
-            EliteEnemy = GameInstance.Instance.eliteENum;
-        }
-        GameObject gameInstance = GameObject.Find("GameInstance");
-        if (gameInstance != null)
-        {
-            EnemyType = new ENEMY_TYPE[GameInstance.Instance.enemies.Length];
-            EliteEnemy = new ENEMY_TYPE();
-            switch (GameInstance.Instance.enemies.Length)
-            {
-
-                case 1:
-                    EnemyType[0] = GameInstance.Instance.enemies[0];
-                    EliteEnemy = GameInstance.Instance.eliteEnemy;
-                    break;
-
-                case 2:
-                    EnemyType[0] = GameInstance.Instance.enemies[0];
-                    EnemyType[1] = GameInstance.Instance.enemies[1];
-                    EliteEnemy = GameInstance.Instance.eliteEnemy;
-                    break;
-
-                case 3:
-                    EnemyType[0] = GameInstance.Instance.enemies[0];
-                    EnemyType[1] = GameInstance.Instance.enemies[1];
-                    EnemyType[2] = GameInstance.Instance.enemies[2];
-                    EliteEnemy = GameInstance.Instance.eliteEnemy;
-                    break;
-    
-            }
-        }     
+        stageNum = GameInstance.Instance.nowStage;
+        monsterList = GameInstance.Instance.MonsterSpawnList;
         InitDestinationVec3();
-
         SpawnMonster();
         enemyCollection.Init();
         turnUnit = new Unit();
         EnemyMoveToDestinationPos();
+
     }
     void Start()
     {
+
         foreach (Hero hero in heroCollection.collection)
         {
             if (!hero.gameObject.activeSelf)
@@ -156,7 +125,6 @@ public class BattleManager : HSingleton<BattleManager>
                 continue;
             unitList.Add(enemy.transform.GetComponent<Unit>());
         }
-        //StartCoroutine(StartBattle());
         BattleScene.I.BattleStatePopUp.SetActive(true);
         BattleScene.I.BattleStateTextUpdate(battleNum);
     }
@@ -175,7 +143,7 @@ public class BattleManager : HSingleton<BattleManager>
     }
     public IEnumerator UnitArriveCheck()
     {
-        if (unitArriveCheck == 6)
+        if (unitArriveCheck == enemyCollection.collection.Count)
         {
             BattleScene.I.BattleStatePopUp.SetActive(false);
             unitArriveCheck = 0;
@@ -211,170 +179,71 @@ public class BattleManager : HSingleton<BattleManager>
             Turn();
         }   
     }
+
+
     void SpawnMonster()
     {
         GameObject enemy;
-        switch (EnemyType.Length)
+     
+        switch (battleNum)
         {
-            //몬스터 종류가 한마리일때
             case 1:
-                for (int i = 0; i < 6; i++)
+                //    GameObject enemy;
+                for (int i = 0; i < monsterList[stageNum].wave1Monster.Length; i++)
                 {
-                    enemy = GameInstance.Instance.CreateEnemyPrefab(EnemyType[0].ToString(),
-                                                                    transform.position,
+                    enemy = GameInstance.Instance.CreateEnemyPrefab(monsterList[stageNum].wave1Monster[i].ToString(),
+                                                                    enemySpawnPosV3[i],
                                                                     Vector3.one * 0.5f,
                                                                     Quaternion.identity);
                     enemy.transform.parent = enemyCollection.transform;
                 }
                 break;
-            //몬스터 종류가 두마리일때
             case 2:
-                for (int i = 0; i < 3; i++)
+                //    GameObject enemy;
+                for (int i = 0; i < monsterList[stageNum].wave2Monster.Length; i++)
                 {
-                    enemy = GameInstance.Instance.CreateEnemyPrefab(EnemyType[0].ToString(),
+                    enemy = GameInstance.Instance.CreateEnemyPrefab(monsterList[stageNum].wave2Monster[i].ToString(),
                                                                     enemySpawnPosV3[i],
-                                                                    Vector3.one * 0.5f,
-                                                                    Quaternion.identity);
-                    enemy.transform.parent = enemyCollection.transform;
-                }
-                for (int i = 0; i < 3; i++)
-                {
-                    enemy = GameInstance.Instance.CreateEnemyPrefab(EnemyType[1].ToString(),
-                                                                    enemySpawnPosV3[i + 3],
-                                                                    Vector3.one * 0.5f,
-                                                                    Quaternion.identity);
-                    enemy.transform.parent = enemyCollection.transform;
-                }
-                break;
-            //몬스터 종류가 세마리일때
-            case 3:
-                for (int i = 0; i < 2; i++)
-                {
-                    enemy = GameInstance.Instance.CreateEnemyPrefab(EnemyType[0].ToString(),
-                                                                    enemySpawnPosV3[i],
-                                                                    Vector3.one * 0.5f,
-                                                                    Quaternion.identity);
-                    enemy.transform.parent = enemyCollection.transform;
-                }
-                for (int i = 0; i < 2; i++)
-                {
-                    enemy = GameInstance.Instance.CreateEnemyPrefab(EnemyType[1].ToString(),
-                                                                    enemySpawnPosV3[i + 2],
-                                                                    Vector3.one * 0.5f,
-                                                                    Quaternion.identity);
-                    enemy.transform.parent = enemyCollection.transform;
-                }
-                for (int i = 0; i < 2; i++)
-                {
-                    enemy = GameInstance.Instance.CreateEnemyPrefab(EnemyType[2].ToString(),
-                                                                    enemySpawnPosV3[i + 4],
                                                                     Vector3.one * 0.5f,
                                                                     Quaternion.identity);
                     enemy.transform.parent = enemyCollection.transform;
                 }
                 break;
         }
-        
+
     }
     void SpawnEliteMonster()
     {
-        GameObject enemy;
-        switch (EnemyType.Length)
-        {
-            //몬스터 종류가 한마리일때
-            case 1:
-                for (int i = 0; i < 6; i++)
-                {
-                    if(i == 4)
-                    {
-                        enemy = GameInstance.Instance.CreateEnemyPrefab(EliteEnemy.ToString(),
-                                                                   enemySpawnPosV3[0],
-                                                                   Vector3.one * 0.8f,
-                                                                   Quaternion.identity);
-                        enemy.transform.parent = enemyCollection.transform;
-                    }
-                    else
-                    {
-                        enemy = GameInstance.Instance.CreateEnemyPrefab(EnemyType[0].ToString(),
+        //1
+        GameObject enemy1 = GameInstance.Instance.CreateEnemyPrefab(monsterList[stageNum].wave3Monster[0].ToString(),
                                                 enemySpawnPosV3[0],
                                                 Vector3.one * 0.5f,
                                                 Quaternion.identity);
-                        enemy.transform.parent = enemyCollection.transform;
-                    }
-                }
-                break;
+        enemy1.transform.parent = enemyCollection.transform;
 
-            //몬스터 종류가 두마리일때
-            case 2:
-                for (int i = 0; i < 3; i++)
-                {
-                    enemy = GameInstance.Instance.CreateEnemyPrefab(EnemyType[0].ToString(),
-                                                                    enemySpawnPosV3[i],
-                                                                    Vector3.one * 0.5f,
-                                                                    Quaternion.identity);
-                    enemy.transform.parent = enemyCollection.transform;
-                }
-                for (int i = 0; i < 3; i++)
-                {
-                    if(i == 1)
-                    {
-                        enemy = GameInstance.Instance.CreateEnemyPrefab(EliteEnemy.ToString(),
-                                                enemySpawnPosV3[i + 3],
-                                                Vector3.one * 0.8f,
-                                                Quaternion.identity);
-                        enemy.transform.parent = enemyCollection.transform;
-                    }
-                    else
-                    {
-                        enemy = GameInstance.Instance.CreateEnemyPrefab(EnemyType[1].ToString(),
-                                                enemySpawnPosV3[i + 3],
-                                                Vector3.one * 0.5f,
-                                                Quaternion.identity);
-                        enemy.transform.parent = enemyCollection.transform;
-                    }
-                }
-                break;
 
-            //몬스터 종류가 두마리일때
-            case 3:
-                for (int i = 0; i < 2; i++)
-                {
-                    enemy = GameInstance.Instance.CreateEnemyPrefab(EnemyType[0].ToString(),
-                                                                    enemySpawnPosV3[i],
-                                                                    Vector3.one * 0.5f,
-                                                                    Quaternion.identity);
-                    enemy.transform.parent = enemyCollection.transform;
-                }
-                for (int i = 0; i < 2; i++)
-                {
-                    if (i == 1)
-                    {
-                        enemy = GameInstance.Instance.CreateEnemyPrefab(EliteEnemy.ToString(),
-                                                enemySpawnPosV3[i + 2],
-                                                Vector3.one * 0.8f,
-                                                Quaternion.identity);
-                        enemy.transform.parent = enemyCollection.transform;
-                    }
-                    else
-                    {
-                        enemy = GameInstance.Instance.CreateEnemyPrefab(EnemyType[1].ToString(),
-                                                enemySpawnPosV3[i + 2],
-                                                Vector3.one * 0.5f,
-                                                Quaternion.identity);
-                        enemy.transform.parent = enemyCollection.transform;
-                    }
-                }
-                for (int i = 0; i < 2; i++)
-                {
-                    enemy = GameInstance.Instance.CreateEnemyPrefab(EnemyType[2].ToString(),
-                                                                    enemySpawnPosV3[i + 4],
-                                                                    Vector3.one * 0.5f,
-                                                                    Quaternion.identity);
-                    enemy.transform.parent = enemyCollection.transform;
-                }
-                break;
-        }
-    
+        //2
+        GameObject enemy2 = GameInstance.Instance.CreateEnemyPrefab(monsterList[stageNum].wave3Monster[1].ToString(),
+                                        enemySpawnPosV3[2],
+                                        Vector3.one * 0.5f,
+                                        Quaternion.identity);
+        enemy2.transform.parent = enemyCollection.transform;
+
+
+        //3
+        GameObject enemy3 = GameInstance.Instance.CreateEnemyPrefab(monsterList[stageNum].wave3Monster[2].ToString(),
+                                        enemySpawnPosV3[4],
+                                        Vector3.one * 0.5f,
+                                        Quaternion.identity);
+        enemy3.transform.parent = enemyCollection.transform;
+
+
+        //Boss
+        GameObject enemy4 = GameInstance.Instance.CreateEnemyPrefab(monsterList[stageNum].BossMonster.ToString(),
+                                        enemySpawnPosV3[3],
+                                        Vector3.one * 1f,
+                                        Quaternion.identity);
+        enemy4.transform.parent = enemyCollection.transform;
     }
     /// <summary>
     /// 턴 체크해서 유닛에게 턴 부여해주는 함수
@@ -621,7 +490,7 @@ public class BattleManager : HSingleton<BattleManager>
         {
             if (enemy == null)
                 continue;
-            enemy.MoveToPos(enemyDestinationPosV3[i]);
+            enemy.MoveToPos();
             i++;
         }
     }
@@ -864,13 +733,8 @@ public class BattleManager : HSingleton<BattleManager>
             if (enemy.bDie)
             {
                 bEnemyDieCount++;
-                if (bEnemyDieCount.Equals(6))
+                if (bEnemyDieCount.Equals(enemyCollection.collection.Count))
                 {
-                    //if(battleNum == 3)
-                    //{
-                    //    BackToStageScene();
-                    //    return true;
-                    //}
                     if (battleNum == 3)
                     {
                         BackToStageScene();

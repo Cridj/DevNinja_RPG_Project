@@ -14,14 +14,14 @@ public enum ENEMY_TYPE
 
 public class Enemy : EnemySkill
 {
-    [Header("???? ??????(???????? ????)")]
+    [Header("공격 딜레이")]
     public float meeleAttackDelaySec;
 
-    [Header("?????? ??????")]
-    [Tooltip("???? ?? ???? ????????")]
+    [Header("경험치")]
+    [Tooltip("경험치")]
     [Space(10f)]
     /// <summary>
-    /// ?????? ???? ????????
+    /// 경험치
     /// </summary>
     public int experience;
     [Space(20f)]
@@ -37,10 +37,9 @@ public class Enemy : EnemySkill
 
 
 
-    ///?????????? ?????? ???? ?????? true ?????? ???? 1???? ???? ?????? ???? ????????.
     public bool bInfected; 
     /// <summary>
-    /// ?????? ?????? ???????? ????????
+    /// 랜덤 타겟 히어로
     /// </summary>
     public int ranHero;
 
@@ -51,7 +50,7 @@ public class Enemy : EnemySkill
     public bool bJab;
 
     /// <summary>
-    /// ?? ?????? ???? ??????????
+    /// 선택되었는지 아닌지
     /// </summary>
     public bool bSelected;
 
@@ -258,14 +257,12 @@ public class Enemy : EnemySkill
         //particle.AddComponent<SortingGroup>().sortingOrder = 300;
 
         Destroy(particle, 1f);
-
-        //???????? ????
+        
         if (passiveSKill == PassiveSKill.REVIVE_INFECTED_RAT)
         {
             foreach(var enemy in BattleManager.I.enemyCollection.collection)
             {
                 enemy.bInfected = false;
-                //?????? ????????
                 if(enemy.name == "InfectedRat (0)")
                 {
                     enemy.gameObject.SetActive(false); 
@@ -273,8 +270,7 @@ public class Enemy : EnemySkill
             }
         }
 
-
-        //???????? ???????????? ???????? ??????????
+        
         if (bInfected)
         {
             GameObject enemy = GameInstance.Instance.CreateEnemyPrefab("INFECTED_RAT",
@@ -287,11 +283,12 @@ public class Enemy : EnemySkill
         gameObject.SetActive(false);
     }
 
-    public void MoveToPos(Vector3 destinationPosV3)
+    public void MoveToPos()
     {
+
         animator.SetInteger("State", 2);
         bMoveTrigger = true;
-        this.destinationPosV3 = destinationPosV3;
+        this.destinationPosV3 = transform.position + Vector3.left * 10f;
     }
 
     public void Move()
@@ -322,10 +319,8 @@ public class Enemy : EnemySkill
     }
 
     #region[공격]
-    //????
     public void Attack()
     {
-        print("??????????!!");
         animator.SetInteger("State", 2);
         bAttack = true;
         FindTarget();
@@ -335,8 +330,7 @@ public class Enemy : EnemySkill
 
 
     
-
-    //?????? ???? ???????????? ????
+    
     public void OnAttackMove()
     {
         if (transform.position == targetPosV3)
@@ -358,8 +352,7 @@ public class Enemy : EnemySkill
         }
         transform.position = Vector3.MoveTowards(transform.position, targetPosV3, attackMoveSpeed * Time.deltaTime);
     }
-
-    //?????? ???? ?? ???????? ???????? ?? ??????
+    
     public void OnAttackEndMove()
     {
         if (transform.position == beginPosV3)
@@ -387,8 +380,7 @@ public class Enemy : EnemySkill
     public List<Unit> targetList = new List<Unit>();
 
 
-
-    //???? ????
+   
     public IEnumerator OnAttack()
     {
         if (bSkeleton)
@@ -398,7 +390,6 @@ public class Enemy : EnemySkill
                 if (bMagician)
                 {
                     animator.SetTrigger("Cast");
-                    print("????????!");
                     yield return new WaitForSeconds(0.3f);
                     
                     MagicainBasicAttackMissile.SetActive(true);
@@ -411,7 +402,6 @@ public class Enemy : EnemySkill
                 else
                 {
                     animator.SetTrigger("SimpleBowShot");
-                    print("????????!");
                     yield return new WaitForSeconds(0.3f);
 
                     ArcherArrow archer = bowArrow.GetComponent<ArcherArrow>();
@@ -428,13 +418,11 @@ public class Enemy : EnemySkill
                 {
                     animator.SetTrigger("Jab");
                     yield return new WaitForSeconds(meeleAttackDelaySec);
-                    print("????!");
                 }
                 else
                 {
                     animator.SetTrigger("Slash");
                     yield return new WaitForSeconds(meeleAttackDelaySec);
-                    print("????!");
                 }
 
 
@@ -443,7 +431,6 @@ public class Enemy : EnemySkill
         else
         {
             animator.SetTrigger("Attack");
-            print("????!");
 
             //?????????????????? ???????? ?????????? ???????? ?????? ???????? ????
             yield return new WaitForSeconds(meeleAttackDelaySec);

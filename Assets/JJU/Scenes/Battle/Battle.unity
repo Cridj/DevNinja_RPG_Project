@@ -3404,6 +3404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nowStage: Stage1
+  stageNum: 0
   bScrolling: 0
   unitArriveCheck: 0
   bulletOffsets:
@@ -3429,12 +3430,12 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   enemySpawnPosV3:
-  - {x: 8, y: -3, z: 0}
-  - {x: 8, y: -1, z: 0}
-  - {x: 8, y: 1, z: 0}
-  - {x: 12, y: -3, z: 0}
-  - {x: 12, y: -1, z: 0}
-  - {x: 12, y: 1, z: 0}
+  - {x: 13, y: 1, z: 0}
+  - {x: 17, y: 1, z: 0}
+  - {x: 13, y: -1, z: 0}
+  - {x: 17, y: -1, z: 0}
+  - {x: 13, y: -3, z: 0}
+  - {x: 17, y: -3, z: 0}
   skillText: {fileID: 899641654}
   aliveUnitCount: 0
   heroBattlePanel: {fileID: 1151599367}

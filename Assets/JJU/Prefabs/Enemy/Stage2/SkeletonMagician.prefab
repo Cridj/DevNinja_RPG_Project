@@ -16355,6 +16355,7 @@ MonoBehaviour:
   bDie: 0
   bTurn: 0
   bTurnover: 0
+  OnAction: 0
   fSkillChance: 90
   attackAble: 0
   mouseStartPos: {x: 0, y: 0, z: 0}
