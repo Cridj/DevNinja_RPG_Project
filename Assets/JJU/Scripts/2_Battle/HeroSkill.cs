@@ -274,6 +274,8 @@ public class HeroSkill : MonoBehaviour
 
         var particle = Instantiate(GameInstance.Instance.particlePrefab["Energy"], damagedUnit.transform.position + Vector3.up, Quaternion.identity);
 
+        damagedUnit.stateTextManager.ActivateState(new string[] { "DefenseDown", "Slow" });
+
 
         //hp?? 0 ????(????)??????
         if (damagedUnit.Hp <= 0)
@@ -304,7 +306,7 @@ public class HeroSkill : MonoBehaviour
                              Unit unit)
     {
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "????";
+        BattleManager.I.skillText.text = "도발";
 
         unit.tauntDuration = 3;
         animator.SetInteger("State", 4);
@@ -319,6 +321,11 @@ public class HeroSkill : MonoBehaviour
         sfx_Audio.PlayOneShot(GameInstance.Instance.soundPrefab["Shield"],3);
         yield return new WaitForSeconds(0.7f);
         animator.SetInteger("State", 2);
+
+        foreach(var enemy in BattleManager.I.enemyCollection.collection)
+        {
+            enemy.unit.stateTextManager.ActivateState(new string[] { "Taunt" });
+        }
 
         unit.GetComponent<Hero>().ActionEnd();
         //???? ?????? ????????
@@ -337,7 +344,7 @@ public class HeroSkill : MonoBehaviour
     {
         //???? ?????? ??????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "????";
+        BattleManager.I.skillText.text = "로어";
         animator.SetTrigger("Cast");
         yield return new WaitForSeconds(0.3f);
 
@@ -346,7 +353,19 @@ public class HeroSkill : MonoBehaviour
             Unit.roarDuration = 3;
             StartCoroutine(Unit.RoarBuffDeBuff());
         }
+
+        foreach(var hero in BattleManager.I.heroCollection.collection)
+        {
+            hero.unit.stateTextManager.ActivateState(new string[] { "DefenseUp" });
+        }
+        foreach (var enemy in BattleManager.I.enemyCollection.collection)
+        {
+            enemy.unit.stateTextManager.ActivateState(new string[] { "Slow" });
+        }
+
         yield return new WaitForSeconds(1f);
+
+
 
         animator.SetInteger("State", 2);
         unit.GetComponent<Hero>().ActionEnd();
@@ -376,6 +395,8 @@ public class HeroSkill : MonoBehaviour
             StartCoroutine(Munchkin((targetUnit.unit.maxHP * 0.7f) * 0.2f, targetUnit));
             yield return new WaitForSeconds(0.3f);
         }
+
+        targetUnit.unit.stateTextManager.ActivateState(new string[] { "AttackUp" });
 
         yield return new WaitForSeconds(1f);
 
@@ -435,8 +456,8 @@ public class HeroSkill : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
             damagedUnit.GetComponent<Enemy>().OnDie();
         }
-        
 
+        damagedUnit.stateTextManager.ActivateState(new string[] { "DefenseDown","AttackDown","Silent" });
 
         yield return new WaitForSeconds(0.6f);
         animator.SetInteger("State", 2);
