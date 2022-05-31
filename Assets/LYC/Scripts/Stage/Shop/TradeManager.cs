@@ -22,6 +22,8 @@ public class TradeManager : MonoBehaviour
 
     public int total = 0;
 
+    public Button Shop_Btn;
+
     [SerializeField]
     private GameObject SlotsBase_Obj;
 
@@ -37,12 +39,23 @@ public class TradeManager : MonoBehaviour
 
         m_PlayerData = m_PlatformScript.m_PlayerData;
         m_ItemData = m_PlatformScript.m_ItemData;
+
+        Shop_Btn.interactable = false;
+
+        if(m_PlayerData.nStack>=5)
+        {
+            Shop_Btn.interactable = true;
+        }
             
     }
 
     [ContextMenu("b")]
     public void SetDeck()
     {
+        Shop_Btn.interactable = false;
+
+        m_PlayerData.nStack -= 5;
+
         CommonDeck.Clear();
         RareDeck.Clear();
         EpicDeck.Clear();

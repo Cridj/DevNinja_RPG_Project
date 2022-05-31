@@ -114,12 +114,14 @@ public class StageManager : MonoBehaviour
     public void ReadyToBattle() //배틀씬으로 갈 준비
     {
         bBattleOn = true;
+        DataManager.Instance.m_PlayerData.nStack++;
+        DataManager.Instance.Save();
 
         FadeStart();
     }
 
     private void GoToBattle()
-    {
+    {      
         SceneManager.LoadScene("Battle");
     }
 
