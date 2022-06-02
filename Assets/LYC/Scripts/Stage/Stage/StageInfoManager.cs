@@ -29,6 +29,8 @@ public class StageInfoManager : MonoBehaviour
     public int nSlotIndex;
     public bool nSlotEnd;
 
+    public List<int> nSaveNum;
+
     public StageMonsterSlot[] Slots;
     public StageMonsterSlot[] GetSlots() { return Slots; }
 
@@ -42,107 +44,200 @@ public class StageInfoManager : MonoBehaviour
 
     public void ReadSetSlot(int _level)
     {
-        m_PlayerData.nLevelProcess = _level;
-        nSlotIndex = 0;
-        nSlotEnd = false;
+        nSaveNum.Clear();
 
-        TextAsset textAsset = Resources.Load<TextAsset>($"Stage/{GetFileName(m_PlayerData.nLevelProcess)}") as TextAsset;
-        if(textAsset == null)
-        {
-            return;
-        }
-        StringReader stringReader = new StringReader(textAsset.text);
-
-        while(stringReader != null)
-        {
-            string line = stringReader.ReadLine();
-
-            if(line==null)
-            {
-                break;
-            }
-
-            SMSlot smslotData = new SMSlot();
-            smslotData.type = line.Split(',')[0];
-            m_SMSlot.Add(smslotData);
-        }
-
-        SetSlotMonster();
-    }
-
-    static string GetFileName(int nMonster)
-    {
-        return string.Format("stage_{0:D4}", nMonster);
-    }
-
-    public void SetSlotMonster()
-    {
+        int nmonlist = GameInstance.Instance.MonsterSpawnList[_level].EnemyList.Length;
         int nMonsterIndex = 0;
-        for (int i = 0; i < int.Parse(m_StageData[m_PlayerData.nLevelProcess].nNum); i++)
+        for(int i = 0; i < nmonlist; i++)
         {
-            switch (m_SMSlot[nSlotIndex].type)
+            switch(GameInstance.Instance.MonsterSpawnList[_level].EnemyList[i])
             {
-                case "N0000":
+                case ENEMY_TYPE.WOLF:
                     nMonsterIndex = 0;
                     break;
-                case "N0001":
+                case ENEMY_TYPE.BOAR:
                     nMonsterIndex = 1;
                     break;
-                case "N0002":
+                case ENEMY_TYPE.ELITEWOLF:
                     nMonsterIndex = 2;
                     break;
-                case "N0003":
+                case ENEMY_TYPE.BAT:
                     nMonsterIndex = 3;
                     break;
-                case "N0004":
+                case ENEMY_TYPE.BEAR:
                     nMonsterIndex = 4;
                     break;
-                case "N0005":
+                case ENEMY_TYPE.BLACKBEAR:
                     nMonsterIndex = 5;
                     break;
-                case "N0006":
+                case ENEMY_TYPE.INFECTED_RAT:
                     nMonsterIndex = 6;
                     break;
-                case "N0007":
+                case ENEMY_TYPE.RAT:
                     nMonsterIndex = 7;
                     break;
-                case "N0008":
+                case ENEMY_TYPE.RAT_KING:
                     nMonsterIndex = 8;
                     break;
-                case "N0009":
+                case ENEMY_TYPE.SKELETON:
                     nMonsterIndex = 9;
                     break;
-                case "N0010":
+                case ENEMY_TYPE.SKELETON_ARCHER:
                     nMonsterIndex = 10;
                     break;
-                case "N0011":
+                case ENEMY_TYPE.SKELETON_ELITE:
                     nMonsterIndex = 11;
                     break;
-                case "N0012":
+                case ENEMY_TYPE.SKELETON_EMPERER:
                     nMonsterIndex = 12;
                     break;
-                case "N0013":
+                case ENEMY_TYPE.SKELETON_MAGICIAN:
                     nMonsterIndex = 13;
                     break;
-                case "N0014":
+                case ENEMY_TYPE.CANNIBAL:
                     nMonsterIndex = 14;
                     break;
-                case "N0015":
+                case ENEMY_TYPE.DREADNOUGHT:
                     nMonsterIndex = 15;
                     break;
-                case "N0016":
+                case ENEMY_TYPE.JUGGERNAUT:
                     nMonsterIndex = 16;
                     break;
-                case "N0017":
+                case ENEMY_TYPE.MANEATER:
                     nMonsterIndex = 17;
                     break;
-
-                default: m_SMSlot[nSlotIndex].type = "N0000"; nMonsterIndex = 0; break;
+                case ENEMY_TYPE.OGRE:
+                    nMonsterIndex = 18;
+                    break;
+                case ENEMY_TYPE.TROLL:
+                    nMonsterIndex = 19; 
+                    break;
+                case ENEMY_TYPE.MAGICIANTROLL:
+                    nMonsterIndex = 20;
+                    break;      
+                default:
+                    nMonsterIndex = 20;
+                    break;
             }
-            Slots[i].UnlockSlot(nMonsterIndex, m_MonsterData[i].bUnlock);
+            Slots[i].UnlockSlot(nMonsterIndex, m_MonsterData[nMonsterIndex].bUnlock);
             Slots[i].gameObject.SetActive(true);
-            nSlotIndex++;
+
+        }
+    }
+
+    public void GetTrue()
+    {
+        for(int i = 0; i < nSaveNum.Count; i++)
+        {
+            m_DataManager.MyMonsterList[nSaveNum[i]].bUnlock = true;
         }
 
+        m_DataManager.Save();
     }
+
+    //public void ReadSetSlot(int _level)
+    //{
+    //    m_PlayerData.nLevelProcess = _level;
+    //    nSlotIndex = 0;
+    //    nSlotEnd = false;
+
+    //    TextAsset textAsset = Resources.Load<TextAsset>($"Stage/{GetFileName(m_PlayerData.nLevelProcess)}") as TextAsset;
+    //    if(textAsset == null)
+    //    {
+    //        return;
+    //    }
+    //    StringReader stringReader = new StringReader(textAsset.text);
+
+    //    while(stringReader != null)
+    //    {
+    //        string line = stringReader.ReadLine();
+
+    //        if(line==null)
+    //        {
+    //            break;
+    //        }
+
+    //        SMSlot smslotData = new SMSlot();
+    //        smslotData.type = line.Split(',')[0];
+    //        m_SMSlot.Add(smslotData);
+    //    }
+
+    //    SetSlotMonster();
+    //}
+
+    //static string GetFileName(int nMonster)
+    //{
+    //    return string.Format("stage_{0:D4}", nMonster);
+    //}
+
+    //public void SetSlotMonster()
+    //{
+    //    int nMonsterIndex = 0;
+    //    for (int i = 0; i < int.Parse(m_StageData[m_PlayerData.nLevelProcess].nNum); i++)
+    //    {
+    //        switch (m_SMSlot[nSlotIndex].type)
+    //        {
+    //            case "N0000":
+    //                nMonsterIndex = 0;
+    //                break;
+    //            case "N0001":
+    //                nMonsterIndex = 1;
+    //                break;
+    //            case "N0002":
+    //                nMonsterIndex = 2;
+    //                break;
+    //            case "N0003":
+    //                nMonsterIndex = 3;
+    //                break;
+    //            case "N0004":
+    //                nMonsterIndex = 4;
+    //                break;
+    //            case "N0005":
+    //                nMonsterIndex = 5;
+    //                break;
+    //            case "N0006":
+    //                nMonsterIndex = 6;
+    //                break;
+    //            case "N0007":
+    //                nMonsterIndex = 7;
+    //                break;
+    //            case "N0008":
+    //                nMonsterIndex = 8;
+    //                break;
+    //            case "N0009":
+    //                nMonsterIndex = 9;
+    //                break;
+    //            case "N0010":
+    //                nMonsterIndex = 10;
+    //                break;
+    //            case "N0011":
+    //                nMonsterIndex = 11;
+    //                break;
+    //            case "N0012":
+    //                nMonsterIndex = 12;
+    //                break;
+    //            case "N0013":
+    //                nMonsterIndex = 13;
+    //                break;
+    //            case "N0014":
+    //                nMonsterIndex = 14;
+    //                break;
+    //            case "N0015":
+    //                nMonsterIndex = 15;
+    //                break;
+    //            case "N0016":
+    //                nMonsterIndex = 16;
+    //                break;
+    //            case "N0017":
+    //                nMonsterIndex = 17;
+    //                break;
+
+    //            default: m_SMSlot[nSlotIndex].type = "N0000"; nMonsterIndex = 0; break;
+    //        }
+    //        Slots[i].UnlockSlot(nMonsterIndex, m_MonsterData[i].bUnlock);
+    //        Slots[i].gameObject.SetActive(true);
+    //        nSlotIndex++;
+    //    }
+
+    //}
 }
