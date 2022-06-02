@@ -1819,34 +1819,34 @@ MonoBehaviour:
     fSpeed: 
     bUnlock: 0
   Maps_Spr:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 30c1ab6f36f533b4c85b396e7044f6f7, type: 3}
+  - {fileID: 21300000, guid: 6e69e9cfba1fce345a20d62303e51ca6, type: 3}
+  - {fileID: 21300000, guid: e9dbdaaf3d72739478f85341b67cc60e, type: 3}
+  - {fileID: 21300000, guid: 85927622813b0a44aa7439f0f6139119, type: 3}
+  - {fileID: 21300000, guid: ae0fdf130fcf4e84d849a3260f566ac0, type: 3}
   CharHead_Spr:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: be93b19a1712c5f44a555cb01a57aa65, type: 3}
+  - {fileID: 21300000, guid: 8bad0f17a7b7ff2418a681076987325c, type: 3}
+  - {fileID: 21300000, guid: 9d1fa0d05d7047544a51ba5656bc9142, type: 3}
   Char_Spr:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 819c33e5ef9027e45a4ed5473caa0855, type: 3}
+  - {fileID: 21300000, guid: bb8bae8d3b4ba4481b28f0c8f2568db4, type: 3}
+  - {fileID: 21300000, guid: 2b12afe59cb13a24dbe317ce4513d5c3, type: 3}
   Mons_Spr:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: eebe470f99defb3439b82b461cea7c3b, type: 3}
+  - {fileID: 21300000, guid: fe8c43946ba6920478806677443b9af8, type: 3}
+  - {fileID: 21300000, guid: 0eb57fcc32bb3f3468044b44c01e8d5c, type: 3}
+  - {fileID: 21300000, guid: 1dd8fc390cbfdfb4ea7d9f8579194072, type: 3}
+  - {fileID: 21300000, guid: 585fa4054ec2a0c4fbba7b4d9f4d5a1f, type: 3}
+  - {fileID: 21300000, guid: fcfb85245859fae4f897c8bce386be2f, type: 3}
+  - {fileID: 21300000, guid: 55ba71d73edeebd4ba17fe502d2b7574, type: 3}
+  - {fileID: 21300000, guid: 265a034422a4aa1478677d1f81c32bf5, type: 3}
+  - {fileID: 21300000, guid: 0f40a0e63c3633d4f9395d9855b66040, type: 3}
+  - {fileID: 21300000, guid: b3c2386a6c1f2ba4b94aaee0f72a8b09, type: 3}
+  - {fileID: 21300000, guid: c4bf4a777e86a3c42a2dec8c2ee99a20, type: 3}
+  - {fileID: 21300000, guid: 673f624f92010f74bb3038694cb4e8e5, type: 3}
+  - {fileID: 21300000, guid: 6eeabeab3bf3865418ca9229775905fe, type: 3}
+  - {fileID: 21300000, guid: 1cacacb43cd3b384aabdc9c5a7accf56, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -1969,18 +1969,93 @@ MonoBehaviour:
   Unknown_Spr: {fileID: 21300000, guid: c755281814b27194e8112860de279d17, type: 3}
   CharSkill_Spr:
   - CharSkillSpr:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 21300000, guid: 08c71e4e0565fe4469d1e0a593047156, type: 3}
+    - {fileID: 21300000, guid: 0389074d1deba1c448d45812db40c0df, type: 3}
+    - {fileID: 21300000, guid: 2a5c892bdd014164da633b8c6fd0f246, type: 3}
+    - {fileID: 21300000, guid: c67fbf9375ad5c34399c2849430ca7f7, type: 3}
   - CharSkillSpr:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 21300000, guid: 08c71e4e0565fe4469d1e0a593047156, type: 3}
+    - {fileID: 21300000, guid: bb67b03c2969d104caba950c446f8c8d, type: 3}
+    - {fileID: 21300000, guid: eed44235dcbd621438f7c0c4f05e2356, type: 3}
+    - {fileID: 21300000, guid: ee40d72ece864764f9d17d015aedb524, type: 3}
   - CharSkillSpr:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 21300000, guid: 08c71e4e0565fe4469d1e0a593047156, type: 3}
+    - {fileID: 21300000, guid: a2563f2b8dbc4044b9a50537d3a29962, type: 3}
+    - {fileID: 21300000, guid: f6b8b85cbdc82ce439a41ae3d56d57ee, type: 3}
+    - {fileID: 21300000, guid: bbe833a9207e7fa41bbd3ce71ad09605, type: 3}
   MonsSkill_Spr:
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - MonsSkillSpr:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - MonsSkillSpr:
     - {fileID: 0}
     - {fileID: 0}
