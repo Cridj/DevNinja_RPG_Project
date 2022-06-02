@@ -99,7 +99,7 @@ public class HeroSkill : MonoBehaviour
     {
         //???? ?????? ??????
         BattleManager.I.skillText.gameObject.SetActive(true);
-        BattleManager.I.skillText.text = "?????????? ??";
+        BattleManager.I.skillText.text = "무아지경의 검";
 
         animator.SetTrigger("TranceSword");
 

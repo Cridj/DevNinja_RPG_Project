@@ -122,7 +122,6 @@ public class BattleScene : HSingleton<BattleScene>
 
                 turnFlipFlop = true;
                 //stat1Anim.SetTrigger("MyTurn");
-                print("처음실행");
                 currentPopupPlayer = BattleManager.I.turnUnit;
                 currentPlayerHp = CharacterUI_CurrentHP;
                 currentPlayerMaxHp = CharacterUI_MaxHP;
@@ -158,7 +157,6 @@ public class BattleScene : HSingleton<BattleScene>
                 currentPlayerHp = CharacterUI_CurrentHP;
                 currentPlayerMaxHp = CharacterUI_MaxHP;
                 currentPlayerSlider = CharacterUI_heroHP_ProgressBar;
-                print("세번쨰");
             }
         }
         else
@@ -190,7 +188,6 @@ public class BattleScene : HSingleton<BattleScene>
             currentPlayerHp = CharacterUI_CurrentHP2;
             currentPlayerMaxHp = CharacterUI_MaxHP2;
             currentPlayerSlider = CharacterUI_heroHP_ProgressBar2;
-            print("두번째");
         }
         Skill1_Img.sprite = BattleManager.I.turnUnit.GetComponent<Hero>().skill1_Sprite;
         Skill2_Img.sprite = BattleManager.I.turnUnit.GetComponent<Hero>().skill2_Sprite;

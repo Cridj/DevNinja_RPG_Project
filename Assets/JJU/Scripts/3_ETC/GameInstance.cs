@@ -61,6 +61,8 @@ public class StageMonsterList
 
     public ENEMY_TYPE BossMonster;
 
+    public ENEMY_TYPE[] EnemyList;
+
 }
 
 
@@ -106,7 +108,7 @@ public class GameInstance : MonoBehaviour
     [Space(10f)]
     public HeroItemListPrefabDic ItemDatas;
 
-    
+
 
 
 
@@ -230,7 +232,6 @@ public class GameInstance : MonoBehaviour
             if (item != "" && item != null)
             {
                 ApplyItem(item);
-                print("æ∆¿Ã≈€");
             }
         }
     }

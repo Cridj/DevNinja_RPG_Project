@@ -133,7 +133,6 @@ public class Point : MonoBehaviour
     {
         if (!bOpen || bClear)
             return;
-        print("버튼눌림");
         //StageScene.I.MapInfoPanel.SetActive(true);
 
         if (!bClicked)
@@ -151,7 +150,6 @@ public class Point : MonoBehaviour
                 if (pointComp.bClicked == true)
                 {                   
                     pointComp.bClicked = false;
-                    print("클릭해제");
                 }
             }
             bClicked = true;
