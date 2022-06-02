@@ -145,6 +145,7 @@ public class Enemy : EnemySkill
 
     public void Awake()
     {
+        moveSpeed = 8f;
         rangedOffset = GameObject.Find("HealOffset").GetComponent<Transform>();
         sortingGroup = GetComponent<SortingGroup>();
         unit = transform.GetComponent<Unit>();
@@ -285,7 +286,6 @@ public class Enemy : EnemySkill
 
     public void MoveToPos()
     {
-
         animator.SetInteger("State", 2);
         bMoveTrigger = true;
         this.destinationPosV3 = transform.position + Vector3.left * 10f;

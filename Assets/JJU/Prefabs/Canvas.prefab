@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4052066211842565973}
   - component: {fileID: 7143943512194237134}
   - component: {fileID: 4250892146147478955}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 7089218225057749042}
   - component: {fileID: 7899280931465101378}
   - component: {fileID: 4702286952308390467}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Poison
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 2547301308327852697}
   - component: {fileID: 1179852991506645549}
   - component: {fileID: 3463034616497734758}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1179852991506645549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 5771453572558430046}
   - component: {fileID: 3305524278651410910}
   - component: {fileID: 911169688547742952}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 2396338490202389989}
   - component: {fileID: 5315996378238166094}
   - component: {fileID: 3606703717145203542}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 9173739023716680109}
   - component: {fileID: 2104490377356276005}
   - component: {fileID: 7698828245522478765}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: AttackBuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -527,7 +527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1560449538255874450}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 606899314475598779}
   - component: {fileID: 69757012978905299}
   - component: {fileID: 2730844734708737217}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -642,7 +642,7 @@ GameObject:
   - component: {fileID: 7285045072289622435}
   - component: {fileID: 5763112473984185393}
   - component: {fileID: 1973670234102080748}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: DefenseDebuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -719,7 +719,7 @@ GameObject:
   - component: {fileID: 424626132539289880}
   - component: {fileID: 1822300977864716122}
   - component: {fileID: 5578648670990863584}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: DefenseBuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,7 +796,7 @@ GameObject:
   - component: {fileID: 6855417982562637541}
   - component: {fileID: 5897406062495046026}
   - component: {fileID: 3320555116489777104}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: MagicBuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -873,7 +873,7 @@ GameObject:
   - component: {fileID: 9159490578052065285}
   - component: {fileID: 673765467388103362}
   - component: {fileID: 7384923632072985760}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -950,7 +950,7 @@ GameObject:
   - component: {fileID: 7528440015559780455}
   - component: {fileID: 5173517188881907113}
   - component: {fileID: 1928338536695499560}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: DamageFlottingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1108,7 +1108,7 @@ GameObject:
   - component: {fileID: 4968790944765739638}
   - component: {fileID: 3818970783575419241}
   - component: {fileID: 4829610091151417838}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1184,7 +1184,7 @@ GameObject:
   - component: {fileID: 3237264254160535441}
   - component: {fileID: 859248562544446358}
   - component: {fileID: 2631796893444391970}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1260,7 +1260,7 @@ GameObject:
   - component: {fileID: 3947169414488404816}
   - component: {fileID: 7495324622609689372}
   - component: {fileID: 5325040479617791685}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1336,7 +1336,7 @@ GameObject:
   - component: {fileID: 8964246517176871264}
   - component: {fileID: 15158564979273827}
   - component: {fileID: 4665526211312324812}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: LevelImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1412,7 +1412,7 @@ GameObject:
   - component: {fileID: 8494967738469804488}
   - component: {fileID: 9170850079562657627}
   - component: {fileID: 4886030845315829886}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: AttackDeBuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1489,7 +1489,7 @@ GameObject:
   - component: {fileID: 2752753832383338215}
   - component: {fileID: 2809109950634754931}
   - component: {fileID: 3073678608478967545}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1565,7 +1565,7 @@ GameObject:
   - component: {fileID: 5015431203024897457}
   - component: {fileID: 5560598894807152483}
   - component: {fileID: 5892090576131810989}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Silence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1641,7 +1641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 640599647521493358}
   - component: {fileID: 2328743436930095422}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: BuffGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1714,7 +1714,7 @@ GameObject:
   - component: {fileID: 8735328424685872080}
   - component: {fileID: 3488342678412936576}
   - component: {fileID: 3478974747177103458}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Darkness
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1790,7 +1790,7 @@ GameObject:
   - component: {fileID: 5788621447018532131}
   - component: {fileID: 2666714789574312692}
   - component: {fileID: 7511558461374010658}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1865,7 +1865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7854816076660146481}
   - component: {fileID: 523429633840562610}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HpBar_Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1958,7 +1958,7 @@ GameObject:
   - component: {fileID: 6694451575924878420}
   - component: {fileID: 3996168923090897727}
   - component: {fileID: 7208132131669856738}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Slow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

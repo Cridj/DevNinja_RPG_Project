@@ -35,7 +35,6 @@ public class Collection<T> : MonoBehaviour
     {
         int nCount = transform.childCount;
         //int nCount = ;
-        print(nCount);
         for (int i = 6; i < nCount; i++)
         {
             if (!transform.GetChild(i).gameObject.activeSelf)

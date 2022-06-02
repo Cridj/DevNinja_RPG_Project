@@ -16,6 +16,7 @@ public class BattleScene : HSingleton<BattleScene>
     public TextMeshProUGUI ultCollDownText;
     public Image ultButtonImg;
 
+    public GameObject WarningBar_Panel;
 
 
     public GameObject skill1_Trail;

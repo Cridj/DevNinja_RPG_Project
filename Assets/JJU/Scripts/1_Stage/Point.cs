@@ -103,42 +103,21 @@ public class Point : MonoBehaviour
     public void InitVertex()
     {
         node = new GraphNode<Point>();
-        node.Data = this;
+        node.Data = this;     
 
-         
-        //foreach (GameObject point in egdes)
-        //{
-        //    if (node != null)
-        //    {
-        //        node._neighbors.Add(
-        //        point.GetComponent<Point>().node);
-        //    }
-
-        //}
     }
 
 
-
-    //public void ClearAndOpenNextPoint()
-    //{
-    //    this.bClear = true;
-    //    foreach(Point p in NextPoint)
-    //    {
-    //        p.bOpen = true;
-    //    }
-    //}
 
 
     public void ClickButton()
     {
         if (!bOpen || bClear)
             return;
-        //StageScene.I.MapInfoPanel.SetActive(true);
 
         if (!bClicked)
         {
             StageScene.I.selectedPoint = this;
-            //StageScene.I.MapInfoPanel.SetActive(true);
 
             m_StageInfoManager.ReadSetSlot(stageNum);
 
@@ -154,9 +133,7 @@ public class Point : MonoBehaviour
             }
             bClicked = true;
             return;
-        }    
-        
-        //StartPointEvent();
+        }            
     }
 
 
@@ -189,8 +166,6 @@ public class Point : MonoBehaviour
                 GameInstance.Instance.eliteEnemy = eliteEnemy;
                 break;
         }
-
-        //GameInstance.Instance.gamdData.InPoint = this;
         switch (type)
         {
             case POINT_TYPE.BATTLE:

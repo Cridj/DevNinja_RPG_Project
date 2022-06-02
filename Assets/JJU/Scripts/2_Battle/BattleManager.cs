@@ -15,7 +15,7 @@ public class BattleManager : HSingleton<BattleManager>
     /// <summary>
     /// 현재 스테이지 저장하는 인수
     /// </summary>
-    public string nowStage;
+    public string nowStage;       
 
     public int stageNum;
 
@@ -104,15 +104,32 @@ public class BattleManager : HSingleton<BattleManager>
         stageNum = GameInstance.Instance.nowStage;
         monsterList = GameInstance.Instance.MonsterSpawnList;
         InitDestinationVec3();
-        SpawnMonster();
-        enemyCollection.Init();
-        turnUnit = new Unit();
-        EnemyMoveToDestinationPos();
+        //SpawnMonster();
+        //enemyCollection.Init();
+        //turnUnit = new Unit();
+        //EnemyMoveToDestinationPos();
 
     }
     void Start()
     {
+        StartCoroutine(StartBattle());
 
+    }
+
+    public int TotalExp
+    {
+        get { return totalEXP; }
+        set { totalEXP = value; }
+    }
+    
+
+    private IEnumerator StartBattle()
+    {
+        BattleScene.I.BattleStatePopUp.SetActive(true);
+        BattleScene.I.BattleStateTextUpdate(battleNum);
+        SpawnMonster();
+        enemyCollection.Init();
+        turnUnit = new Unit();
         foreach (Hero hero in heroCollection.collection)
         {
             if (!hero.gameObject.activeSelf)
@@ -125,27 +142,23 @@ public class BattleManager : HSingleton<BattleManager>
                 continue;
             unitList.Add(enemy.transform.GetComponent<Unit>());
         }
-        BattleScene.I.BattleStatePopUp.SetActive(true);
-        BattleScene.I.BattleStateTextUpdate(battleNum);
+
+        ScrollingAndUnitAnimationChange();
+        yield return new WaitForSeconds(1.5f);
+        BattleScene.I.BattleStatePopUp.SetActive(false);
+        yield return new WaitForSeconds(1.5f);
+        BattleScene.I.WarningBar_Panel.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        EnemyMoveToDestinationPos();
+        yield return new WaitForSeconds(3f);
+        BattleScene.I.WarningBar_Panel.SetActive(false);
     }
 
-    public int TotalExp
-    {
-        get { return totalEXP; }
-        set { totalEXP = value; }
-    }
-    
-
-    private IEnumerator StartBattle()
-    {
-        yield return new WaitForSeconds(2.5f);
-        Turn();    
-    }
     public IEnumerator UnitArriveCheck()
     {
         if (unitArriveCheck == enemyCollection.collection.Count)
         {
-            BattleScene.I.BattleStatePopUp.SetActive(false);
+            //BattleScene.I.BattleStatePopUp.SetActive(false);
             unitArriveCheck = 0;
             bScrolling = false;
             foreach (Enemy enemy in enemyCollection.collection)
@@ -490,7 +503,9 @@ public class BattleManager : HSingleton<BattleManager>
         {
             if (enemy == null)
                 continue;
+
             enemy.MoveToPos();
+            enemy.beginPosV3 = enemy.destinationPosV3;
             i++;
         }
     }
@@ -724,6 +739,7 @@ public class BattleManager : HSingleton<BattleManager>
     /// 적 전원처치, 아군 사망 체크
     /// </summary>
     /// <returns></returns>
+    /// 
     bool EnemyAllDie()
     {
         int bEnemyDieCount = 0;
@@ -757,56 +773,53 @@ public class BattleManager : HSingleton<BattleManager>
         BattleScene.I.turnFlipFlop = false;
         BattleScene.I.stat1Panel.SetActive(false);
         BattleScene.I.stat2Panel.SetActive(false);
-
-
         battleNum++;
         DestroyEnemys = null;
         DestroyEnemys = new Enemy[6];
-        //세번째 전투일때
-        //정예몹 만들어주기     
-        //Turn();
-        if (battleNum == 3)
-        {
-            int inum = 0;
-            foreach (Enemy enemy in enemyCollection.collection)
-            {
-                unitList.Remove(enemy.unit);
-                DestroyEnemys[inum] = enemy;
-                inum++;
-            }
 
-            EnemyDummyRemove();
-            enemyCollection.collection.Clear();
-            InitDestinationVec3();
+        StartCoroutine(NextWaveCoroutine());
+    }
+
+    IEnumerator NextWaveCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        int inum = 0;
+        foreach (Enemy enemy in enemyCollection.collection)
+        {
+            unitList.Remove(enemy.unit);
+            DestroyEnemys[inum] = enemy;
+            inum++;
+        }
+
+        EnemyDummyRemove();
+        enemyCollection.collection.Clear();
+        InitDestinationVec3();
+        if(battleNum == 3)
+        {
             SpawnEliteMonster();
-            EnemyInit();
-            EnemyMoveToDestinationPos();
-            ScrollingAndUnitAnimationChange();
-            BattleScene.I.BattleStatePopUp.SetActive(true);
-            BattleScene.I.BattleStateTextUpdate(battleNum);
         }
         else
         {
-            int inum = 0;
-            foreach (Enemy enemy in enemyCollection.collection)
-            {
-                unitList.Remove(enemy.unit);
-                DestroyEnemys[inum] = enemy;
-                inum++;
-            }
-
-            EnemyDummyRemove();
-            enemyCollection.collection.Clear();
-            InitDestinationVec3();
             SpawnMonster();
-            EnemyInit(); 
-            EnemyMoveToDestinationPos();
-            ScrollingAndUnitAnimationChange();
-            BattleScene.I.BattleStatePopUp.SetActive(true);
-            BattleScene.I.BattleStateTextUpdate(battleNum);
-            //Turn();
         }
+        EnemyInit();
+
+        ScrollingAndUnitAnimationChange();
+        BattleScene.I.BattleStatePopUp.SetActive(true);
+        BattleScene.I.BattleStateTextUpdate(battleNum);
+        yield return new WaitForSeconds(1.5f);
+        BattleScene.I.BattleStatePopUp.SetActive(false);
+        yield return new WaitForSeconds(1.5f);
+        BattleScene.I.WarningBar_Panel.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        EnemyMoveToDestinationPos();
+
+        yield return new WaitForSeconds(3f);
+        BattleScene.I.WarningBar_Panel.SetActive(false);
+        //Turn();
     }
+
+
     void EnemyDummyRemove()
     {
         for (int i = 0; i < DestroyEnemys.Length; i++)

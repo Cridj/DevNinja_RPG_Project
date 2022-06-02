@@ -170,18 +170,20 @@ public class EnemySkill : MonoBehaviour
         BattleManager.I.skillText.gameObject.SetActive(true);
         BattleManager.I.skillText.text = "두번 물기";
 
-        animator.SetTrigger("Attack");               
+        animator.SetTrigger("Attack");
+        yield return new WaitForSeconds(0.5f);
         damagedUnit.DecreaseHP(unit.PhysicalAttack * 0.6f, unit);
         sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["EnemyHit"]);
         Camera.main.GetComponent<CamShake>().ShakeTime = 0.1f;
         yield return new WaitForSeconds(0.8f);
 
         animator.SetTrigger("Attack");
+        yield return new WaitForSeconds(0.5f);
         damagedUnit.DecreaseHP(unit.PhysicalAttack * 0.6f, unit);
         sfx_AS.PlayOneShot(GameInstance.Instance.soundPrefab["EnemyHit"]);
         Camera.main.GetComponent<CamShake>().ShakeTime = 0.1f;
 
-        yield return new WaitForSeconds(1.8f);
+        yield return new WaitForSeconds(1f);
 
         BattleManager.I.skillText.gameObject.SetActive(false);
 

@@ -32,15 +32,13 @@ public class StageMonsterSlot : MonoBehaviour
         {
             Mons_Img.sprite = m_DataManager.Mons_Spr[nIndex];
             Mons_Img.gameObject.SetActive(true);
-            Mons_Txt.text = m_MonsterData[nIndex].sName;
-            
+            Mons_Txt.text = m_MonsterData[nIndex].sName;            
         }
         else
         {
             Mons_Img.sprite = m_DataManager.Unknown_Spr;
             Mons_Img.gameObject.SetActive(true);
-            Mons_Txt.text = "???";
-            
+            Mons_Txt.text = "???";            
         }
     }
     

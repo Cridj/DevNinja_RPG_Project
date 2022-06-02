@@ -971,7 +971,6 @@ public class Unit : Stats
             mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, targetPos, 0.1f);
 
 
-            print("되고있는거냐");
             if (mainCamera.orthographicSize <= 3.001f && mainCamera.transform.position.x < targetPos.x * 0.99f)
                 break;
             yield return null;
@@ -992,7 +991,6 @@ public class Unit : Stats
             mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, originPos, 0.1f);
 
 
-            print("되고있는거냐2");
             if (mainCamera.orthographicSize >= 4.999f && mainCamera.transform.position.x > -0.0001f)
                 break;
             yield return new WaitForEndOfFrame();
