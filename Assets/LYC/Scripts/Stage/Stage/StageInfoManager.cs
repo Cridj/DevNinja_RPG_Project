@@ -130,6 +130,7 @@ public class StageInfoManager : MonoBehaviour
         for(int i = 0; i < nSaveNum.Count; i++)
         {
             m_DataManager.MyMonsterList[nSaveNum[i]].bUnlock = true;
+            Debug.Log("ÀúÀåµÊ");
         }
 
         m_DataManager.Save();
